@@ -6,19 +6,10 @@ public class Fackel : MonoBehaviour
 {
     [SerializeField]
     private GameObject flame;
+    [SerializeField]
+    private GameObject pointLight;
     public bool activeFlame = false;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -34,12 +25,14 @@ public class Fackel : MonoBehaviour
     private void ActivateFlame()
     {
         flame.SetActive(true);
+        pointLight.SetActive(true);
         activeFlame = true;
     }
 
     private void DeactivateFlame()
     {
         flame.SetActive(false);
+        pointLight.SetActive(false);
         activeFlame = false;
     }
 }
