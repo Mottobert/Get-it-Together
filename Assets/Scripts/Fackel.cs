@@ -10,7 +10,6 @@ public class Fackel : MonoBehaviour
     private GameObject pointLight;
     public bool activeFlame = false;
 
-
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "fire")

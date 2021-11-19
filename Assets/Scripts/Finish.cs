@@ -7,46 +7,43 @@ public class Finish : MonoBehaviour
     private int finishedPlayers = 0;
     [SerializeField]
     private GameObject flag;
+    [SerializeField]
+    private ParticleSystem finishParticleSystem;
 
     [SerializeField]
     private GameObject[] finishRequirements;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public LayerMask playerLayer;
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(finishedPlayers);
-        Debug.Log(other.gameObject);
-        if(other.gameObject.tag == "fire" || other.gameObject.tag == "water")
+        
+        if(other.gameObject.tag == "playerFinishCollider")
         {
             finishedPlayers++;
         }
 
-        if(finishedPlayers == 4)
+        if (finishedPlayers == 2)
         {
             if (CheckFinishRequirements())
             {
                 Debug.Log("Finished");
                 flag.SetActive(true);
+                finishParticleSystem.Play();
             }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "fire" || other.tag == "water")
+        if (other.gameObject.tag == "fire" || other.gameObject.tag == "water")
         {
             finishedPlayers--;
+        }
+
+        if (finishedPlayers < 0)
+        {
+            finishedPlayers = 0;
         }
     }
 
@@ -54,7 +51,7 @@ public class Finish : MonoBehaviour
     {
         foreach(GameObject g in finishRequirements)
         {
-            if (!g.GetComponent<Fackel>().activeFlame)
+            if (g.GetComponent<Fackel>() && !g.GetComponent<Fackel>().activeFlame || g.GetComponent<Waterfall>() && !g.GetComponent<Waterfall>().activeWaterfall)
             {
                 return false;
             }
