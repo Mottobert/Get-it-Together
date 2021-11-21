@@ -10,12 +10,18 @@ public class Fackel : MonoBehaviour
     private GameObject pointLight;
     public bool activeFlame = false;
 
+    [SerializeField]
+    private GameObject connectedFackel;
+    [SerializeField]
+    private bool isConnectedFackel;
+
+
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "fire")
+        if(other.tag == "fire" && !isConnectedFackel)
         {
             ActivateFlame();
-        } else if(other.tag == "water")
+        } else if(other.tag == "water" && !isConnectedFackel)
         {
             DeactivateFlame();
         }
@@ -26,6 +32,7 @@ public class Fackel : MonoBehaviour
         flame.SetActive(true);
         pointLight.SetActive(true);
         activeFlame = true;
+        connectedFackel.GetComponent<Fackel>().ActivateConnectedFlame();
     }
 
     private void DeactivateFlame()
@@ -33,5 +40,19 @@ public class Fackel : MonoBehaviour
         flame.SetActive(false);
         pointLight.SetActive(false);
         activeFlame = false;
+        connectedFackel.GetComponent<Fackel>().DeactivateConnectedFlame();
+    }
+
+
+    private void ActivateConnectedFlame()
+    {
+        flame.SetActive(true);
+        pointLight.SetActive(true);
+    }
+
+    private void DeactivateConnectedFlame()
+    {
+        flame.SetActive(false);
+        pointLight.SetActive(false);
     }
 }
