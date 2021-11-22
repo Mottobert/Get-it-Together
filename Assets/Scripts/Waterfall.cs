@@ -10,17 +10,25 @@ public class Waterfall : MonoBehaviour
     private Material waterfallFlowingMaterial;
     [SerializeField]
     private GameObject waterfallObject;
+    [SerializeField]
+    private Transform iceblockSpawnPoint;
+    [SerializeField]
+    private GameObject iceblockObject;
+    private GameObject activeIceblock;
 
     public bool activeWaterfall = false;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "water")
+        if (other.tag == "water" && !activeWaterfall)
         {
             ActivateWaterfall();
         }
-        else
+        else if (other.tag == "water" && activeWaterfall && !activeIceblock)
         {
+            //activeIceblock = Instantiate(iceblockObject, iceblockSpawnPoint.position, Quaternion.identity);
+        }
+        else if(other.tag == "fire") { 
             DeactivateWaterfall();
         }
     }

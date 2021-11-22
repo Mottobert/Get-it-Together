@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
-    //public bool player1;
+    private float pushPower = 2.0f;
 
     [SerializeField]
     private string verticalInput;
@@ -49,10 +49,10 @@ public class PlayerController : MonoBehaviour
 
         bool isGrounded = Physics.CheckSphere(groundCheck.position, 0.2f, groundLayer);
 
-        //if(Input.GetButtonDown("Jump") && isGrounded)
-        //{
-        //    direction.y = jumpForce;
-        //}
+        if(Input.GetAxis(verticalInput) > 0 && isGrounded)
+        {
+            direction.y = jumpForce;
+        }
 
         hInput = Input.GetAxis(horizontalInput);
         bool hitInfo = Physics.Raycast(transform.position, Vector3.up, 2f, ladderLayer);
@@ -104,5 +104,33 @@ public class PlayerController : MonoBehaviour
     private void ChangeTag(string newTag)
     {
         gameObject.tag = newTag;
+    }
+
+
+    void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        Rigidbody body = hit.collider.attachedRigidbody;
+
+        // no rigidbody
+        if (body == null || body.isKinematic)
+        {
+            return;
+        }
+
+        // We dont want to push objects below us
+        if (hit.moveDirection.y < -0.3)
+        {
+            return;
+        }
+
+        // Calculate push direction from move direction,
+        // we only push objects to the sides never up and down
+        Vector3 pushDir = new Vector3(hit.moveDirection.x, 0, hit.moveDirection.z);
+
+        // If you know how fast your character is trying to move,
+        // then you can also multiply the push velocity by that.
+
+        // Apply the push
+        body.velocity = pushDir * pushPower;
     }
 }
