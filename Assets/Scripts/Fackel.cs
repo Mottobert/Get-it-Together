@@ -15,6 +15,7 @@ public class Fackel : MonoBehaviour
     [SerializeField]
     private bool isConnectedFackel;
 
+    public GameObject puzzleManager;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -33,6 +34,7 @@ public class Fackel : MonoBehaviour
         pointLight.SetActive(true);
         activeFlame = true;
         connectedFackel.GetComponent<Fackel>().ActivateConnectedFlame();
+        puzzleManager.GetComponent<Puzzle>().CheckPuzzleObjects();
     }
 
     private void DeactivateFlame()
@@ -41,6 +43,7 @@ public class Fackel : MonoBehaviour
         pointLight.SetActive(false);
         activeFlame = false;
         connectedFackel.GetComponent<Fackel>().DeactivateConnectedFlame();
+        puzzleManager.GetComponent<Puzzle>().CheckPuzzleObjects();
     }
 
 

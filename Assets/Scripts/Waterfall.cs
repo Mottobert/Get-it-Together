@@ -18,6 +18,8 @@ public class Waterfall : MonoBehaviour
 
     public bool activeWaterfall = false;
 
+    public GameObject puzzleManager;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "water" && !activeWaterfall)
@@ -37,11 +39,13 @@ public class Waterfall : MonoBehaviour
     {
         waterfallObject.GetComponent<MeshRenderer>().material = waterfallFlowingMaterial;
         activeWaterfall = true;
+        puzzleManager.GetComponent<Puzzle>().CheckPuzzleObjects();
     }
 
     private void DeactivateWaterfall()
     {
         waterfallObject.GetComponent<MeshRenderer>().material = waterfallEmptyMaterial;
         activeWaterfall = false;
+        puzzleManager.GetComponent<Puzzle>().CheckPuzzleObjects();
     }
 }
