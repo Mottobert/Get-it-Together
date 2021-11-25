@@ -34,10 +34,12 @@ public class Puzzle : MonoBehaviour
         {
             if(puzzleObjects[i].GetComponent<Fackel>() && !(puzzleObjects[i].GetComponent<Fackel>().activeFlame == puzzleObjectsStatus[i]))
             {
+                PuzzleUnsolved();
                 return;
             }
             else if(puzzleObjects[i].GetComponent<Waterfall>() && !(puzzleObjects[i].GetComponent<Waterfall>().activeWaterfall == puzzleObjectsStatus[i]))
             {
+                PuzzleUnsolved();
                 return;
             } 
         }
@@ -47,7 +49,13 @@ public class Puzzle : MonoBehaviour
 
     private void PuzzleSloved()
     {
-        Debug.Log("Puzzle Solved");
+        //Debug.Log("Puzzle Solved");
         solvedObject.SetActive(false);
+    }
+
+    private void PuzzleUnsolved()
+    {
+        //Debug.Log("Puzzle Unsolved");
+        solvedObject.SetActive(true);
     }
 }

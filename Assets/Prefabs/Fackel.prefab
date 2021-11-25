@@ -43,7 +43,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.64591235, b: 0, a: 1}
-  m_Intensity: 5
+  m_Intensity: 1
   m_Range: 5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -320,6 +320,9 @@ MonoBehaviour:
   flame: {fileID: 8038047026874368374}
   pointLight: {fileID: 1977785929749203286}
   activeFlame: 0
+  connectedFackel: {fileID: 0}
+  isConnectedFackel: 0
+  puzzleManager: {fileID: 0}
 --- !u!65 &373336472
 BoxCollider:
   m_ObjectHideFlags: 0
