@@ -35,6 +35,16 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     private bool gravityEnabled = true;
 
+    [SerializeField]
+    private GameObject visualObject;
+    [SerializeField]
+    private Material activeMaterial;
+    [SerializeField]
+    private Material inactiveMaterial;
+
+    [SerializeField]
+    private GameObject pointLightFirePlayer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -82,11 +92,11 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKey(supressInput))
         {
-            ChangeTag("Untagged");
+            DeactivateAbility();
         }
         else
         {
-            ChangeTag(playerTag);
+            ActivateAbility();
         }
     }
 
@@ -104,6 +114,26 @@ public class PlayerController : MonoBehaviour
     private void ChangeTag(string newTag)
     {
         gameObject.tag = newTag;
+    }
+
+    private void ActivateAbility()
+    {
+        ChangeTag(playerTag);
+        visualObject.GetComponent<MeshRenderer>().material = activeMaterial;
+        if (pointLightFirePlayer)
+        {
+            pointLightFirePlayer.SetActive(true);
+        }
+    }
+
+    private void DeactivateAbility()
+    {
+        ChangeTag("Untagged");
+        visualObject.GetComponent<MeshRenderer>().material = inactiveMaterial;
+        if (pointLightFirePlayer)
+        {
+            pointLightFirePlayer.SetActive(false);
+        }
     }
 
 
