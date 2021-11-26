@@ -52,6 +52,9 @@ public class PlayerController : MonoBehaviour
 
     private bool abilityActive;
 
+    [SerializeField]
+    private PhotonView PV;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -97,15 +100,15 @@ public class PlayerController : MonoBehaviour
         direction.x = hInput * speed;
         controller.Move(direction * Time.deltaTime);
 
-        if (inputController.supressInput && abilityActive)
+        if (inputController.supressInput && abilityActive && PV.IsMine)
         {
-            DeactivateAbility();
-            gameObject.GetComponent<PhotonView>().RPC("DeactivateAbilityForAll", RpcTarget.All, gameObject.GetComponent<PhotonView>().ViewID);
+            //DeactivateAbility();
+            PV.RPC("DeactivateAbilityForAll", RpcTarget.All, PV.ViewID);
         }
-        else if(!inputController.supressInput && !abilityActive)
+        else if(!inputController.supressInput && !abilityActive && PV.IsMine)
         {
-            ActivateAbility();
-            gameObject.GetComponent<PhotonView>().RPC("ActivateAbilityForAll", RpcTarget.All, gameObject.GetComponent<PhotonView>().ViewID);
+            //ActivateAbility();
+            PV.RPC("ActivateAbilityForAll", RpcTarget.All, PV.ViewID);
         }
     }
 
@@ -151,6 +154,7 @@ public class PlayerController : MonoBehaviour
     public void ActivateAbilityForAll(int viewID)
     {
         Debug.Log("Activate Ability For All received");
+        Debug.Log(viewID);
         PhotonView.Find(viewID).GetComponent<PlayerController>().ActivateAbility();
     }
 
@@ -158,6 +162,7 @@ public class PlayerController : MonoBehaviour
     public void DeactivateAbilityForAll(int viewID)
     {
         Debug.Log("Deactivate Ability For All received");
+        Debug.Log(viewID);
         PhotonView.Find(viewID).GetComponent<PlayerController>().DeactivateAbility();
     }
 

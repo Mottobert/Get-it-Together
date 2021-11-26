@@ -258,6 +258,7 @@ MonoBehaviour:
   activeMaterial: {fileID: 2100000, guid: b66d4272d7f3c2b49ba8387cae37f123, type: 2}
   inactiveMaterial: {fileID: 2100000, guid: 311fe82d4a883ac4eb0aa05a2496a01f, type: 2}
   pointLightFirePlayer: {fileID: 0}
+  PV: {fileID: 6890826907260334978}
 --- !u!114 &6890826907260334978
 MonoBehaviour:
   m_ObjectHideFlags: 0
