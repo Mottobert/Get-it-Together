@@ -8,109 +8,50 @@ using UnityEngine;
 public class PhotonPlayer : MonoBehaviour
 {
     public PhotonView PV;
-    private Photon.Realtime.Player[] allPlayers;
-    private int myNumberInRoom = 0;
 
     private GameObject myAvatar;
-    private GameObject myBall;
     [SerializeField]
     private GameObject avatarCamera;
 
-    private GameObject playerSpawnPositions;
-    private Transform playerSpawnPosition;
-
-    private void Awake()
-    {
-        if (PlayerPrefs.GetString("Mod1") == null || PlayerPrefs.GetString("Mod1") == "")
-        {
-            PlayerPrefs.SetString("Mod1", "Bombe");
-        }
-
-        if (PlayerPrefs.GetString("Mod2") == null || PlayerPrefs.GetString("Mod2") == "")
-        {
-            PlayerPrefs.SetString("Mod2", "Schild");
-        }
-
-        //PlayerPrefs.DeleteAll();
-    }
+    private Transform fireSpawnPosition;
+    private Transform waterSpawnPosition;
 
     // Start is called before the first frame update
     void Start()
     {
-        playerSpawnPositions = GameObject.FindGameObjectWithTag("PlayerSpawnPoints");
+        fireSpawnPosition = GameObject.Find("FeuerspielerSpawnPoint").transform;
+        waterSpawnPosition = GameObject.Find("WasserspielerSpawnPoint").transform;
 
         PV = GetComponent<PhotonView>();
 
-        allPlayers = PhotonNetwork.PlayerList;
 
-
-        string viewIDString = "" + PV.ViewID;
-        string firstDigitOfViewID = viewIDString.Substring(0, 1);
-        int firstDigitOfViewIDInt = int.Parse(firstDigitOfViewID) - 1;
-
-        myNumberInRoom = firstDigitOfViewIDInt;
-
-
-        if (PV.IsMine)
+        if (PV.IsMine && PhotonNetwork.IsMasterClient)
         {
-            Invoke("SpawnPlayer", 0.3f);
+            Invoke("SpawnPlayerFire", 0.3f);
+        }
+        else if(PV.IsMine && !PhotonNetwork.IsMasterClient)
+        {
+            Invoke("SpawnPlayerWater", 0.3f);
         }
     }
 
-    private Transform GetSpawnPosition()
+    private void SpawnPlayerFire()
     {
-        if (PlayerPrefs.GetInt("SpawnMode") == 0)
-        {
-            Debug.Log("Custom Matchmaking Spawn");
-            return null; //SpawnController.instance.spawnPoints[myNumberInRoom];
-        }
-        else
-        {
-            Debug.Log("Quick Start Spawn");
-            return PickRandomSpawn(playerSpawnPositions);
-        }
-    }
-
-    private void SpawnPlayer()
-    {
-        playerSpawnPosition = GetSpawnPosition();
-        SpawnAvatar(playerSpawnPosition);
+        myAvatar = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "FeuerSpieler"), fireSpawnPosition.position, fireSpawnPosition.rotation);
+        myAvatar.GetComponent<PlayerController>().inputController.gameObject.SetActive(true);
         ConnectCameraToAvatar();
     }
 
-    private void SpawnAvatar(Transform playerSpawn)
+    private void SpawnPlayerWater()
     {
-        myAvatar = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerAvatar0" + PlayerPrefs.GetInt("SelectedCarIndex")), playerSpawn.position, playerSpawn.rotation);
-    }
-
-    private void SpawnBall()
-    {
-        //myBall = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Ball"), myAvatar.GetComponent<Player>().ballSpawn.transform.position, Quaternion.identity);
+        myAvatar = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "WasserSpieler"), waterSpawnPosition.position, waterSpawnPosition.rotation);
+        myAvatar.GetComponent<PlayerController>().inputController.gameObject.SetActive(true);
+        ConnectCameraToAvatar();
     }
 
     private void ConnectCameraToAvatar()
     {
-        //myAvatar.GetComponentInChildren<InputController>().playerCamera = avatarCamera.GetComponentInChildren<Camera>();
         avatarCamera.GetComponent<CameraFollow>().Target = myAvatar.transform;
-
-        avatarCamera.GetComponent<Camera>().gameObject.SetActive(false);
-    }
-
-    private void ConnectBallToAvatar()
-    {
-        //myAvatar.GetComponent<Player>().ball = myBall;
-    }
-
-    private Transform PickRandomSpawn(GameObject playerSpawns)
-    {
-        for (int i = 0; i < playerSpawns.transform.childCount - 1; i++)
-        {
-            //if (!playerSpawns.transform.GetChild(i).GetComponent<SpawnPoint>().isBlocked)
-            {
-                return playerSpawns.transform.GetChild(i).transform;
-            }
-        }
-
-        return null;
+        avatarCamera.GetComponent<Camera>().gameObject.SetActive(true);
     }
 }

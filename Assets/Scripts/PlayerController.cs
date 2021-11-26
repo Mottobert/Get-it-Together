@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,15 +9,19 @@ public class PlayerController : MonoBehaviour
 {
     private float pushPower = 2.0f;
 
-    [SerializeField]
-    private string verticalInput;
-    [SerializeField]
-    private string horizontalInput;
-    [SerializeField]
-    private string playerTag;
+    //[SerializeField]
+    //private string verticalInput;
+    //[SerializeField]
+    //private string horizontalInput;
     [SerializeField]
     private string supressInput;
 
+    [SerializeField]
+    public InputController inputController;
+
+    [SerializeField]
+    private string playerTag;
+    
 
     private CharacterController controller;
     private Vector3 direction;
@@ -45,6 +50,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private GameObject pointLightFirePlayer;
 
+    private bool abilityActive;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -59,17 +66,17 @@ public class PlayerController : MonoBehaviour
 
         bool isGrounded = Physics.CheckSphere(groundCheck.position, 0.2f, groundLayer);
 
-        if(Input.GetAxis(verticalInput) > 0 && isGrounded)
+        if(inputController.verticalInput > 0 && isGrounded)
         {
             direction.y = jumpForce;
         }
 
-        hInput = Input.GetAxis(horizontalInput);
+        hInput = inputController.horizontalInput;  // Input.GetAxis(horizontalInput);
         bool hitInfo = Physics.Raycast(transform.position, Vector3.up, 2f, ladderLayer);
 
         if (hitInfo)
         {
-            vInput = Input.GetAxis(verticalInput);
+            vInput = inputController.verticalInput; // Input.GetAxis(verticalInput);
 
             gravityEnabled = false;
         }
@@ -90,13 +97,15 @@ public class PlayerController : MonoBehaviour
         direction.x = hInput * speed;
         controller.Move(direction * Time.deltaTime);
 
-        if (Input.GetKey(supressInput))
+        if (inputController.supressInput && abilityActive)
         {
             DeactivateAbility();
+            gameObject.GetComponent<PhotonView>().RPC("DeactivateAbilityForAll", RpcTarget.All, gameObject.GetComponent<PhotonView>().ViewID);
         }
-        else
+        else if(!inputController.supressInput && !abilityActive)
         {
             ActivateAbility();
+            gameObject.GetComponent<PhotonView>().RPC("ActivateAbilityForAll", RpcTarget.All, gameObject.GetComponent<PhotonView>().ViewID);
         }
     }
 
@@ -120,6 +129,7 @@ public class PlayerController : MonoBehaviour
     {
         ChangeTag(playerTag);
         visualObject.GetComponent<MeshRenderer>().material = activeMaterial;
+        abilityActive = true;
         if (pointLightFirePlayer)
         {
             pointLightFirePlayer.SetActive(true);
@@ -130,10 +140,25 @@ public class PlayerController : MonoBehaviour
     {
         ChangeTag("Untagged");
         visualObject.GetComponent<MeshRenderer>().material = inactiveMaterial;
+        abilityActive = false;
         if (pointLightFirePlayer)
         {
             pointLightFirePlayer.SetActive(false);
         }
+    }
+
+    [PunRPC]
+    public void ActivateAbilityForAll(int viewID)
+    {
+        Debug.Log("Activate Ability For All received");
+        PhotonView.Find(viewID).GetComponent<PlayerController>().ActivateAbility();
+    }
+
+    [PunRPC]
+    public void DeactivateAbilityForAll(int viewID)
+    {
+        Debug.Log("Deactivate Ability For All received");
+        PhotonView.Find(viewID).GetComponent<PlayerController>().DeactivateAbility();
     }
 
 
