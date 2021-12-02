@@ -39,6 +39,7 @@ public class PhotonPlayer : MonoBehaviour
     {
         myAvatar = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "FeuerSpieler"), fireSpawnPosition.position, fireSpawnPosition.rotation);
         myAvatar.GetComponent<PlayerController>().inputController.gameObject.SetActive(true);
+        myAvatar.GetComponent<PlayerController>().canvas.gameObject.SetActive(true);
         ConnectCameraToAvatar();
     }
 
@@ -46,6 +47,7 @@ public class PhotonPlayer : MonoBehaviour
     {
         myAvatar = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "WasserSpieler"), waterSpawnPosition.position, waterSpawnPosition.rotation);
         myAvatar.GetComponent<PlayerController>().inputController.gameObject.SetActive(true);
+        myAvatar.GetComponent<PlayerController>().canvas.gameObject.SetActive(true);
         ConnectCameraToAvatar();
     }
 

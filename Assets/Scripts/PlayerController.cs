@@ -55,6 +55,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private PhotonView PV;
 
+    public GameObject canvas;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -69,7 +71,7 @@ public class PlayerController : MonoBehaviour
 
         bool isGrounded = Physics.CheckSphere(groundCheck.position, 0.2f, groundLayer);
 
-        if(inputController.verticalInput > 0 && isGrounded)
+        if(inputController.verticalInput > 0.5 && isGrounded)
         {
             direction.y = jumpForce;
         }
