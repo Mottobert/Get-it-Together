@@ -564,7 +564,7 @@ GameObject:
   - component: {fileID: 9156975852710540484}
   - component: {fileID: 9156975852710540483}
   - component: {fileID: 6890826907260334978}
-  - component: {fileID: 1506029417279161779}
+  - component: {fileID: 4849905875254925650}
   m_Layer: 8
   m_Name: WasserSpieler
   m_TagString: water
@@ -751,11 +751,11 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
-  - {fileID: 1506029417279161779}
+  - {fileID: 4849905875254925650}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &1506029417279161779
+--- !u!114 &4849905875254925650
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -1,3 +1,4 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,19 +10,12 @@ public class Flower : MonoBehaviour
     [SerializeField]
     private GameObject[] ladderObjects;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        
+        //gameObject.name = GetInstanceID().ToString();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void ChangeObjectStatus(bool status, GameObject[] objects)
+    private void ChangeObjectStatus(GameObject[] objects, bool status)
     {
         foreach(GameObject g in objects)
         {
@@ -31,14 +25,29 @@ public class Flower : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "water")
+        PhotonView PVPlayer = other.gameObject.GetComponent<PhotonView>();
+
+        if(other.tag == "water" && PVPlayer.IsMine)
         {
-            ChangeObjectStatus(false, flowerObjects);
-            ChangeObjectStatus(true, ladderObjects);
-        } else if(other.tag == "fire")
-        {
-            ChangeObjectStatus(true, flowerObjects);
-            ChangeObjectStatus(false, ladderObjects);
+            //ActivateLadder();
+            PVPlayer.RPC("ActivateFlowerForAll", RpcTarget.All, gameObject.name);
         }
+        else if(other.tag == "fire" && PVPlayer.IsMine)
+        {
+            //DeactivateLadder();
+            PVPlayer.RPC("DeactivateFlowerForAll", RpcTarget.All, gameObject.name);
+        }
+    }
+
+    public void ActivateLadder()
+    {
+        ChangeObjectStatus(flowerObjects, false);
+        ChangeObjectStatus(ladderObjects, true);
+    }
+
+    public void DeactivateLadder()
+    {
+        ChangeObjectStatus(flowerObjects, true);
+        ChangeObjectStatus(ladderObjects, false);
     }
 }

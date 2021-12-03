@@ -114,16 +114,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void OnMove(InputAction.CallbackContext context)
-    {
-        //Debug.Log("MoveTest");
-        //movementInput = context.ReadValue<Vector2>();
-    }
-    public void OnJump(InputAction.CallbackContext context)
-    {
-        //Debug.Log("JumpTest");
-        //jumped = context.action.triggered;
-    }
 
     private void ChangeTag(string newTag)
     {
@@ -194,5 +184,79 @@ public class PlayerController : MonoBehaviour
 
         // Apply the push
         body.velocity = pushDir * pushPower;
+    }
+
+
+
+
+    // Wood
+    [PunRPC]
+    public void ActivateWoodForAll(string name)
+    {
+        //Debug.Log("Activate Flower For All received");
+        //Debug.Log(name);
+        GameObject.Find(name).GetComponent<Wood>().ActivateWood();
+    }
+
+    [PunRPC]
+    public void DeactivateWoodForAll(string name)
+    {
+        //Debug.Log("Deactivate Flower For All received");
+        //Debug.Log(name);
+        GameObject.Find(name).GetComponent<Wood>().DeactivateWood();
+    }
+
+
+    // Flower
+    [PunRPC]
+    public void ActivateFlowerForAll(string name)
+    {
+        //Debug.Log("Activate Flower For All received");
+        //Debug.Log(name);
+        GameObject.Find(name).GetComponent<Flower>().ActivateLadder();
+    }
+
+    [PunRPC]
+    public void DeactivateFlowerForAll(string name)
+    {
+        //Debug.Log("Deactivate Flower For All received");
+        //Debug.Log(name);
+        GameObject.Find(name).GetComponent<Flower>().DeactivateLadder();
+    }
+
+
+    // Fackel
+    [PunRPC]
+    public void ActivateFackelForAll(string name)
+    {
+        //Debug.Log("Activate Flower For All received");
+        //Debug.Log(name);
+        GameObject.Find(name).GetComponent<Fackel>().ActivateFlame();
+    }
+
+    [PunRPC]
+    public void DeactivateFackelForAll(string name)
+    {
+        //Debug.Log("Deactivate Flower For All received");
+        //Debug.Log(name);
+        GameObject.Find(name).GetComponent<Fackel>().DeactivateFlame();
+    }
+
+
+    // Flower
+    [PunRPC]
+    public void ActivateWaterfallForAll(string name)
+    {
+        //Debug.Log("Activate Flower For All received");
+        //Debug.Log(name);
+        GameObject.Find(name).GetComponent<Waterfall>().ActivateWaterfall();
+    }
+
+    [PunRPC]
+    public void DeactivateWaterfallForAll(string name)
+    {
+        //Debug.Log("Deactivate Flower For All received");
+        //Debug.Log(name);
+        GameObject.Find(name).GetComponent<Waterfall>().DeactivateWaterfall();
     }
 }

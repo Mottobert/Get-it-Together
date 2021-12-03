@@ -1,3 +1,4 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,32 +21,70 @@ public class Waterfall : MonoBehaviour
 
     public GameObject puzzleManager;
 
+    [SerializeField]
+    private GameObject movingPlatform;
+
+    private void Awake()
+    {
+        //gameObject.name = GetInstanceID().ToString();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "water" && !activeWaterfall)
+        PhotonView PVPlayer = other.gameObject.GetComponent<PhotonView>();
+
+        if (other.tag == "water" && !activeWaterfall && PVPlayer.IsMine)
         {
-            ActivateWaterfall();
+            //ActivateWaterfall();
+            PVPlayer.RPC("ActivateWaterfallForAll", RpcTarget.All, gameObject.name);
         }
         else if (other.tag == "water" && activeWaterfall && !activeIceblock)
         {
             //activeIceblock = Instantiate(iceblockObject, iceblockSpawnPoint.position, Quaternion.identity);
         }
-        else if(other.tag == "fire") { 
-            DeactivateWaterfall();
+        else if(other.tag == "fire" && PVPlayer.IsMine) {
+            //DeactivateWaterfall();
+            PVPlayer.RPC("DeactivateWaterfallForAll", RpcTarget.All, gameObject.name);
         }
     }
 
-    private void ActivateWaterfall()
+    private void OnTriggerExit(Collider other)
+    {
+        PhotonView PVPlayer = other.gameObject.GetComponent<PhotonView>();
+
+        if (movingPlatform && other.tag == "water" && PVPlayer.IsMine)
+        {
+            PVPlayer.RPC("DeactivateWaterfallForAll", RpcTarget.All, gameObject.name);
+        }
+    }
+
+    public void ActivateWaterfall()
     {
         waterfallObject.GetComponent<MeshRenderer>().material = waterfallFlowingMaterial;
         activeWaterfall = true;
-        puzzleManager.GetComponent<Puzzle>().CheckPuzzleObjects();
+        if (puzzleManager)
+        {
+            puzzleManager.GetComponent<Puzzle>().CheckPuzzleObjects();
+        }
+
+        if (movingPlatform)
+        {
+            movingPlatform.GetComponent<MovingPlatform>().ActivateMovingPlatform();
+        }
     }
 
-    private void DeactivateWaterfall()
+    public void DeactivateWaterfall()
     {
         waterfallObject.GetComponent<MeshRenderer>().material = waterfallEmptyMaterial;
         activeWaterfall = false;
-        puzzleManager.GetComponent<Puzzle>().CheckPuzzleObjects();
+        if (puzzleManager)
+        {
+            puzzleManager.GetComponent<Puzzle>().CheckPuzzleObjects();
+        }
+
+        if (movingPlatform)
+        {
+            movingPlatform.GetComponent<MovingPlatform>().DeactivateMovingPlatform();
+        }
     }
 }

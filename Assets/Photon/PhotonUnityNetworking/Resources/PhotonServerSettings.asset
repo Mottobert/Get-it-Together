@@ -41,6 +41,14 @@ MonoBehaviour:
   - RespawnSpaceship
   - ActivateAbilityForAll
   - DeactivateAbilityForAll
+  - ActivateFlowerForAll
+  - DeactivateFlowerForAll
+  - ActivateWoodForAll
+  - DeactivateWoodForAll
+  - ActivateFackelForAll
+  - ActivateWaterfallForAll
+  - DeactivateFackelForAll
+  - DeactivateWaterfallForAll
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

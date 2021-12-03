@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 853998863966152564}
   - component: {fileID: 853998863966152562}
   - component: {fileID: 2992962766756869570}
-  - component: {fileID: 2554605074902502026}
+  - component: {fileID: 8253690377185598455}
   m_Layer: 8
   m_Name: FeuerSpieler
   m_TagString: fire
@@ -369,11 +369,11 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
-  - {fileID: 2554605074902502026}
+  - {fileID: 8253690377185598455}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &2554605074902502026
+--- !u!114 &8253690377185598455
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

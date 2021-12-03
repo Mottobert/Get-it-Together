@@ -1,3 +1,4 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,33 +18,78 @@ public class Fackel : MonoBehaviour
 
     public GameObject puzzleManager;
 
+    [SerializeField]
+    private GameObject movingPlatform;
+
+    private void Awake()
+    {
+        //gameObject.name = GetInstanceID().ToString();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "fire" && !isConnectedFackel)
+        PhotonView PVPlayer = other.gameObject.GetComponent<PhotonView>();
+
+        if (other.tag == "fire" && !isConnectedFackel && PVPlayer.IsMine)
         {
-            ActivateFlame();
-        } else if(other.tag == "water" && !isConnectedFackel)
+            //ActivateFlame();
+            PVPlayer.RPC("ActivateFackelForAll", RpcTarget.All, gameObject.name);
+        } 
+        else if(other.tag == "water" && !isConnectedFackel && PVPlayer.IsMine)
         {
-            DeactivateFlame();
+            //DeactivateFlame();
+            PVPlayer.RPC("DeactivateFackelForAll", RpcTarget.All, gameObject.name);
         }
     }
 
-    private void ActivateFlame()
+    private void OnTriggerExit(Collider other)
+    {
+        PhotonView PVPlayer = other.gameObject.GetComponent<PhotonView>();
+
+        if (movingPlatform && other.tag == "fire" && PVPlayer.IsMine)
+        {
+            PVPlayer.RPC("DeactivateFackelForAll", RpcTarget.All, gameObject.name);
+        }
+    }
+
+    public void ActivateFlame()
     {
         flame.SetActive(true);
         pointLight.SetActive(true);
         activeFlame = true;
-        connectedFackel.GetComponent<Fackel>().ActivateConnectedFlame();
-        puzzleManager.GetComponent<Puzzle>().CheckPuzzleObjects();
+        if (connectedFackel)
+        {
+            connectedFackel.GetComponent<Fackel>().ActivateConnectedFlame();
+        }
+        if (puzzleManager)
+        {
+            puzzleManager.GetComponent<Puzzle>().CheckPuzzleObjects();
+        }
+
+        if (movingPlatform)
+        {
+            movingPlatform.GetComponent<MovingPlatform>().ActivateMovingPlatform();
+        }
     }
 
-    private void DeactivateFlame()
+    public void DeactivateFlame()
     {
         flame.SetActive(false);
         pointLight.SetActive(false);
         activeFlame = false;
-        connectedFackel.GetComponent<Fackel>().DeactivateConnectedFlame();
-        puzzleManager.GetComponent<Puzzle>().CheckPuzzleObjects();
+        if (connectedFackel)
+        {
+            connectedFackel.GetComponent<Fackel>().DeactivateConnectedFlame();
+        }
+        if (puzzleManager)
+        {
+            puzzleManager.GetComponent<Puzzle>().CheckPuzzleObjects();
+        }
+
+        if (movingPlatform)
+        {
+            movingPlatform.GetComponent<MovingPlatform>().DeactivateMovingPlatform();
+        }
     }
 
 

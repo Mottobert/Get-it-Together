@@ -1,3 +1,4 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,26 +11,34 @@ public class Wood : MonoBehaviour
     [SerializeField]
     private new Collider collider;
 
+    private void Awake()
+    {
+        //gameObject.name = GetInstanceID().ToString();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "fire")
+        PhotonView PVPlayer = other.gameObject.GetComponent<PhotonView>();
+
+        if(other.tag == "fire" && PVPlayer.IsMine)
         {
-            DeactivateWood();
+            //DeactivateWood();
+            PVPlayer.RPC("DeactivateWoodForAll", RpcTarget.All, gameObject.name);
         } 
-        else if(other.tag == "water")
+        else if(other.tag == "water" && PVPlayer.IsMine)
         {
-            ActivateWood();
+            //ActivateWood();
+            PVPlayer.RPC("ActivateWoodForAll", RpcTarget.All, gameObject.name);
         }
     }
 
-    private void ActivateWood()
+    public void ActivateWood()
     {
         fire.SetActive(false);
         collider.enabled = true;
     }
 
-    private void DeactivateWood()
+    public void DeactivateWood()
     {
         fire.SetActive(true);
         collider.enabled = false;
