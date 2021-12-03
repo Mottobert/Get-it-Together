@@ -1,6 +1,7 @@
 using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class Waterfall : MonoBehaviour
@@ -40,7 +41,7 @@ public class Waterfall : MonoBehaviour
         }
         else if (other.tag == "water" && activeWaterfall && !activeIceblock)
         {
-            //activeIceblock = Instantiate(iceblockObject, iceblockSpawnPoint.position, Quaternion.identity);
+            //activeIceblock = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Eisblock"), iceblockSpawnPoint.position, Quaternion.identity); //Instantiate(iceblockObject, iceblockSpawnPoint.position, Quaternion.identity);
         }
         else if(other.tag == "fire" && PVPlayer.IsMine) {
             //DeactivateWaterfall();

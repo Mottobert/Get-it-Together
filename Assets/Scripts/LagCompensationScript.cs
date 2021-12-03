@@ -33,7 +33,7 @@ public class LagCompensationScript : MonoBehaviour, IPunObservable
             networkRotation = (Quaternion)stream.ReceiveNext();
             myRigidbody.velocity = (Vector3)stream.ReceiveNext();
 
-            float lag = Mathf.Abs((float)(PhotonNetwork.Time - info.timestamp));
+            float lag = Mathf.Abs((float)(PhotonNetwork.Time - info.SentServerTime));
             networkPosition += (this.myRigidbody.velocity * lag);
         }
     }

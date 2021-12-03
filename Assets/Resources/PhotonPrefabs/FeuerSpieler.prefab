@@ -350,6 +350,7 @@ MonoBehaviour:
   pointLightFirePlayer: {fileID: 4108569645955865848}
   PV: {fileID: 2992962766756869570}
   canvas: {fileID: 3650692873767431867}
+  triggerCollider: {fileID: 853998863966152565}
 --- !u!114 &2992962766756869570
 MonoBehaviour:
   m_ObjectHideFlags: 0

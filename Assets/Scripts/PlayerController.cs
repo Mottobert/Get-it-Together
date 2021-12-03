@@ -9,10 +9,6 @@ public class PlayerController : MonoBehaviour
 {
     private float pushPower = 2.0f;
 
-    //[SerializeField]
-    //private string verticalInput;
-    //[SerializeField]
-    //private string horizontalInput;
     [SerializeField]
     private string supressInput;
 
@@ -56,6 +52,9 @@ public class PlayerController : MonoBehaviour
     private PhotonView PV;
 
     public GameObject canvas;
+
+    [SerializeField]
+    private BoxCollider triggerCollider;
 
     // Start is called before the first frame update
     void Start()
@@ -124,6 +123,7 @@ public class PlayerController : MonoBehaviour
     {
         ChangeTag(playerTag);
         visualObject.GetComponent<MeshRenderer>().material = activeMaterial;
+        triggerCollider.enabled = true;
         abilityActive = true;
         if (pointLightFirePlayer)
         {
@@ -135,6 +135,7 @@ public class PlayerController : MonoBehaviour
     {
         ChangeTag("Untagged");
         visualObject.GetComponent<MeshRenderer>().material = inactiveMaterial;
+        triggerCollider.enabled = false;
         abilityActive = false;
         if (pointLightFirePlayer)
         {
@@ -258,5 +259,15 @@ public class PlayerController : MonoBehaviour
         //Debug.Log("Deactivate Flower For All received");
         //Debug.Log(name);
         GameObject.Find(name).GetComponent<Waterfall>().DeactivateWaterfall();
+    }
+
+
+    // Finish
+    [PunRPC]
+    public void LevelFinishedForAll(string name)
+    {
+        //Debug.Log("Activate Flower For All received");
+        //Debug.Log(name);
+        GameObject.Find(name).GetComponent<Finish>().LevelFinished();
     }
 }

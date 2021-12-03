@@ -17,10 +17,10 @@ TagManager:
   - UI
   - Ground
   - ladder
-  - Player
-  - 
-  - 
-  - 
+  - PlayerFire
+  - PlayerWater
+  - ObstacleReleaseFire
+  - ObstacleReleaseWater
   - 
   - 
   - 

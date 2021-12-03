@@ -1,3 +1,4 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,19 +18,19 @@ public class Finish : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        
-        if(other.gameObject.tag == "playerFinishCollider")
+        PhotonView PVPlayer = other.gameObject.GetComponent<PhotonView>();
+
+        if (other.gameObject.tag == "playerFinishCollider")
         {
             finishedPlayers++;
         }
 
         if (finishedPlayers == 2)
         {
-            if (CheckFinishRequirements())
+            if (CheckFinishRequirements() && PVPlayer.IsMine)
             {
-                Debug.Log("Finished");
-                flag.SetActive(true);
-                finishParticleSystem.Play();
+                //LevelFinished();
+                PVPlayer.RPC("LevelFinishedForAll", RpcTarget.All, gameObject.name);
             }
         }
     }
@@ -57,5 +58,12 @@ public class Finish : MonoBehaviour
             }
         }
         return true;
+    }
+
+    public void LevelFinished()
+    {
+        Debug.Log("Finished");
+        flag.SetActive(true);
+        finishParticleSystem.Play();
     }
 }

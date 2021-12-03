@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8817698984331130127}
   - component: {fileID: 4675840146759062028}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: InputController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 4933583606791107162}
   - component: {fileID: 5923225555726945402}
   - component: {fileID: 6769159017972408325}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,7 +161,7 @@ GameObject:
   - component: {fileID: 7956928537169242157}
   - component: {fileID: 2340668611203441842}
   - component: {fileID: 6365188178848030347}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -295,7 +295,7 @@ GameObject:
   - component: {fileID: 7005842588678366237}
   - component: {fileID: 6042916543624585022}
   - component: {fileID: 5296329039857440978}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: EventSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -363,7 +363,7 @@ GameObject:
   - component: {fileID: 6837252433239187337}
   - component: {fileID: 986181829180710253}
   - component: {fileID: 4940013477807895258}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -526,7 +526,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9156975852218433860}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -565,7 +565,7 @@ GameObject:
   - component: {fileID: 9156975852710540483}
   - component: {fileID: 6890826907260334978}
   - component: {fileID: 4849905875254925650}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: WasserSpieler
   m_TagString: water
   m_Icon: {fileID: 0}
@@ -732,6 +732,7 @@ MonoBehaviour:
   pointLightFirePlayer: {fileID: 0}
   PV: {fileID: 6890826907260334978}
   canvas: {fileID: 1598079841572056302}
+  triggerCollider: {fileID: 9156975852710540485}
 --- !u!114 &6890826907260334978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -781,7 +782,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9156975852719603892}
   - component: {fileID: 9156975852719603891}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: PlayerFinishCollider
   m_TagString: playerFinishCollider
   m_Icon: {fileID: 0}
@@ -922,6 +923,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fixed Joystick
       objectReference: {fileID: 0}
+    - target: {fileID: 2929252283123773939, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2929252285020697097, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
 --- !u!224 &6790612318356325656 stripped
@@ -1010,6 +1019,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7aa7d0faa9b6814419e53837ef1fdfc9, type: 3}
       propertyPath: m_Name
       value: Wassercharacter
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7aa7d0faa9b6814419e53837ef1fdfc9, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7aa7d0faa9b6814419e53837ef1fdfc9, type: 3}
