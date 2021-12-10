@@ -27,8 +27,6 @@ public class CustomMatchmakingRoomController : MonoBehaviourPunCallbacks
     [SerializeField]
     private TextMeshProUGUI roomNameDisplay;
 
-    private int customMatchmakingSpawnMode = 0;
-
     void ClearPlayerListings()
     {
         for (int i = playersContainer.childCount - 1; i >= 0; i--)
@@ -85,13 +83,12 @@ public class CustomMatchmakingRoomController : MonoBehaviourPunCallbacks
     {
         if (PhotonNetwork.IsMasterClient)
         {
-            PlayerPrefs.SetInt("SpawnMode", customMatchmakingSpawnMode);
             PhotonNetwork.CurrentRoom.IsOpen = false;
             PhotonNetwork.LoadLevel(multiplayerSceneIndex);
         }
     }
 
-    IEnumerator rejoinLobby()
+IEnumerator rejoinLobby()
     {
         yield return new WaitForSeconds(1);
         PhotonNetwork.JoinLobby();

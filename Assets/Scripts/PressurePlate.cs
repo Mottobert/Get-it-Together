@@ -11,6 +11,11 @@ public class PressurePlate : MonoBehaviour
     [SerializeField]
     private GameObject plateObject;
 
+    [SerializeField]
+    private GameObject puzzleManager;
+
+    public bool active = false;
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "water" || other.tag == "fire" || other.tag == "iceblock")
@@ -35,13 +40,31 @@ public class PressurePlate : MonoBehaviour
 
     public void ActivatePressurePlate()
     {
-        plateObject.transform.position = new Vector3(plateObject.transform.position.x, - 0.02f, plateObject.transform.position.z);
-        movingPlatform.GetComponent<MovingPlatform>().ActivateMovingPlatform();
+        plateObject.transform.position = new Vector3(plateObject.transform.position.x, plateObject.transform.position.y - 0.01f, plateObject.transform.position.z);
+        active = true;
+        if (movingPlatform)
+        {
+            movingPlatform.GetComponent<MovingPlatform>().ActivateMovingPlatform();
+        }
+
+        if (puzzleManager)
+        {
+            puzzleManager.GetComponent<Puzzle>().CheckPuzzleObjects();
+        }
     }
 
     public void DeactivatePressurePlate()
     {
-        plateObject.transform.position = new Vector3(plateObject.transform.position.x, 0.05f, plateObject.transform.position.z);
-        movingPlatform.GetComponent<MovingPlatform>().DeactivateMovingPlatform();
+        plateObject.transform.position = new Vector3(plateObject.transform.position.x, plateObject.transform.position.y + 0.01f, plateObject.transform.position.z);
+        active = false;
+        if (movingPlatform)
+        {
+            movingPlatform.GetComponent<MovingPlatform>().DeactivateMovingPlatform();
+        }
+
+        if (puzzleManager)
+        {
+            puzzleManager.GetComponent<Puzzle>().CheckPuzzleObjects();
+        }
     }
 }

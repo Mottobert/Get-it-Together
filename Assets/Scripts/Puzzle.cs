@@ -41,7 +41,12 @@ public class Puzzle : MonoBehaviour
             {
                 PuzzleUnsolved();
                 return;
-            } 
+            }
+            else if (puzzleObjects[i].GetComponent<PressurePlate>() && !(puzzleObjects[i].GetComponent<PressurePlate>().active == puzzleObjectsStatus[i]))
+            {
+                PuzzleUnsolved();
+                return;
+            }
         }
 
         PuzzleSloved();

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class InputController : MonoBehaviour
@@ -21,9 +22,25 @@ public class InputController : MonoBehaviour
 
     private bool mobileInput = true;
 
+    private string activeSceneName;
+
+    [SerializeField]
+    private GameObject levelauswahlButton;
+
     private void Start()
     {
-        DeactivateLevelauswahlPanel();
+        activeSceneName = SceneManager.GetActiveScene().name;
+
+        if (activeSceneName != "Levelauswahl")
+        {
+            DeactivateLevelauswahlPanel();
+            levelauswahlButton.SetActive(true);
+        }
+        else
+        {
+            ActivateKeyboardInput();
+            levelauswahlButton.SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -37,7 +54,7 @@ public class InputController : MonoBehaviour
             }
         } 
         
-        if (Input.touchCount != 0 || Input.GetMouseButton(0))
+        if ((Input.touchCount != 0 || Input.GetMouseButton(0)) && activeSceneName != "Levelauswahl")
         {
             ActivateMobileInput();
         }
