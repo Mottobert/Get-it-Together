@@ -8,6 +8,8 @@ TagManager:
   - water
   - ladder
   - playerFinishCollider
+  - platformMovable
+  - iceblock
   layers:
   - Default
   - TransparentFX

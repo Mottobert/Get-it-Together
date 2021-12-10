@@ -6,8 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Start.unity
+    guid: dc3c95163a0c8bb43895c0aaab8480c0
+  - enabled: 1
     path: Assets/Scenes/QuickConnect.unity
     guid: a7bf45b28f4d1924fb2eabeb83e90cb6
+  - enabled: 1
+    path: Assets/Scenes/CustomMatchmaking.unity
+    guid: 5a37f5612595e614fbda856fe0eceac3
   - enabled: 1
     path: Assets/Scenes/Level 01.unity
     guid: 1be87bff47b58704ab26a9b7c8babfa0

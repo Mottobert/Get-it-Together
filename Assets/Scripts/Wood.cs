@@ -23,12 +23,12 @@ public class Wood : MonoBehaviour
         if(other.tag == "fire" && PVPlayer.IsMine)
         {
             //DeactivateWood();
-            PVPlayer.RPC("DeactivateWoodForAll", RpcTarget.All, gameObject.name);
+            PVPlayer.RPC("DeactivateWoodForAll", RpcTarget.AllBufferedViaServer, gameObject.name);
         } 
         else if(other.tag == "water" && PVPlayer.IsMine)
         {
             //ActivateWood();
-            PVPlayer.RPC("ActivateWoodForAll", RpcTarget.All, gameObject.name);
+            PVPlayer.RPC("ActivateWoodForAll", RpcTarget.AllBufferedViaServer, gameObject.name);
         }
     }
 

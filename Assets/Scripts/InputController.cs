@@ -14,7 +14,17 @@ public class InputController : MonoBehaviour
     [SerializeField]
     private Button supressButton;
 
+    [SerializeField]
+    private GameObject mobileInputPanel;
+    [SerializeField]
+    private GameObject levelauswahlPanel;
+
     private bool mobileInput = true;
+
+    private void Start()
+    {
+        DeactivateLevelauswahlPanel();
+    }
 
     // Update is called once per frame
     void FixedUpdate()
@@ -58,17 +68,52 @@ public class InputController : MonoBehaviour
 
     private void ActivateMobileInput()
     {
-        joystick.gameObject.SetActive(true);
-        supressButton.gameObject.SetActive(true);
+        //joystick.gameObject.SetActive(true);
+        //supressButton.gameObject.SetActive(true);
+
+        mobileInputPanel.SetActive(true);
 
         mobileInput = true;
     }
 
     private void ActivateKeyboardInput()
     {
-        joystick.gameObject.SetActive(false);
-        supressButton.gameObject.SetActive(false);
+        //joystick.gameObject.SetActive(false);
+        //supressButton.gameObject.SetActive(false);
+
+        mobileInputPanel.SetActive(false);
 
         mobileInput = false;
+    }
+
+    public void ActivateLevelauswahlPanel()
+    {
+        //levelauswahlPanel.SetActive(true);
+        levelauswahlPanel.GetComponent<CanvasGroup>().alpha = 1;
+        levelauswahlPanel.GetComponent<CanvasGroup>().interactable = true;
+        //mobileInputPanel.SetActive(false);
+    }
+
+    public void DeactivateLevelauswahlPanel()
+    {
+        //levelauswahlPanel.SetActive(false);
+        //levelauswahlPanel.GetComponent<RectTransform>().offsetMax = new Vector2(0, -450);
+        //levelauswahlPanel.GetComponent<RectTransform>().offsetMin = new Vector2(0, 450);
+
+        levelauswahlPanel.GetComponent<CanvasGroup>().alpha = 0;
+        levelauswahlPanel.GetComponent<CanvasGroup>().interactable = false;
+        //mobileInputPanel.SetActive(true);
+    }
+
+    public void ToogleLevelauswahlPanel()
+    {
+        if (levelauswahlPanel.GetComponent<CanvasGroup>().interactable)
+        {
+            DeactivateLevelauswahlPanel();
+        }
+        else
+        {
+            ActivateLevelauswahlPanel();
+        }
     }
 }

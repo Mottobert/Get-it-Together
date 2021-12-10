@@ -30,7 +30,7 @@ public class Finish : MonoBehaviour
             if (CheckFinishRequirements() && PVPlayer.IsMine)
             {
                 //LevelFinished();
-                PVPlayer.RPC("LevelFinishedForAll", RpcTarget.All, gameObject.name);
+                PVPlayer.RPC("LevelFinishedForAll", RpcTarget.AllBufferedViaServer, gameObject.name);
             }
         }
     }

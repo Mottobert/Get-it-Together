@@ -18,12 +18,9 @@ public class Fackel : MonoBehaviour
 
     public GameObject puzzleManager;
 
-    [SerializeField]
-    private GameObject movingPlatform;
-
     private void Awake()
     {
-        //gameObject.name = GetInstanceID().ToString();
+        //gameObject.name = GetInstanceID().ToString(); // Sollte aktiviert werden, wenn das Spiel final gebuilded wird
     }
 
     private void OnTriggerEnter(Collider other)
@@ -33,24 +30,24 @@ public class Fackel : MonoBehaviour
         if (other.tag == "fire" && !isConnectedFackel && PVPlayer.IsMine)
         {
             //ActivateFlame();
-            PVPlayer.RPC("ActivateFackelForAll", RpcTarget.All, gameObject.name);
+            PVPlayer.RPC("ActivateFackelForAll", RpcTarget.AllBufferedViaServer, gameObject.name);
         } 
         else if(other.tag == "water" && !isConnectedFackel && PVPlayer.IsMine)
         {
             //DeactivateFlame();
-            PVPlayer.RPC("DeactivateFackelForAll", RpcTarget.All, gameObject.name);
+            PVPlayer.RPC("DeactivateFackelForAll", RpcTarget.AllBufferedViaServer, gameObject.name);
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        PhotonView PVPlayer = other.gameObject.GetComponent<PhotonView>();
-
-        if (movingPlatform && other.tag == "fire" && PVPlayer.IsMine)
-        {
-            PVPlayer.RPC("DeactivateFackelForAll", RpcTarget.All, gameObject.name);
-        }
-    }
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    PhotonView PVPlayer = other.gameObject.GetComponent<PhotonView>();
+    //
+    //    if (movingPlatform && other.tag == "fire" && PVPlayer.IsMine)
+    //    {
+    //        PVPlayer.RPC("DeactivateFackelForAll", RpcTarget.All, gameObject.name);
+    //    }
+    //}
 
     public void ActivateFlame()
     {
@@ -64,11 +61,6 @@ public class Fackel : MonoBehaviour
         if (puzzleManager)
         {
             puzzleManager.GetComponent<Puzzle>().CheckPuzzleObjects();
-        }
-
-        if (movingPlatform)
-        {
-            movingPlatform.GetComponent<MovingPlatform>().ActivateMovingPlatform();
         }
     }
 
@@ -84,11 +76,6 @@ public class Fackel : MonoBehaviour
         if (puzzleManager)
         {
             puzzleManager.GetComponent<Puzzle>().CheckPuzzleObjects();
-        }
-
-        if (movingPlatform)
-        {
-            movingPlatform.GetComponent<MovingPlatform>().DeactivateMovingPlatform();
         }
     }
 

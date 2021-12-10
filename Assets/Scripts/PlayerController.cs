@@ -76,20 +76,20 @@ public class PlayerController : MonoBehaviour
         }
 
         hInput = inputController.horizontalInput;  // Input.GetAxis(horizontalInput);
-        bool hitInfo = Physics.Raycast(transform.position, Vector3.up, 2f, ladderLayer);
+        bool hitInfoLadder = Physics.Raycast(transform.position, Vector3.up, 2f, ladderLayer);
 
-        if (hitInfo)
+        if (hitInfoLadder)
         {
             vInput = inputController.verticalInput; // Input.GetAxis(verticalInput);
 
             gravityEnabled = false;
         }
-        else if(!hitInfo)
+        else if(!hitInfoLadder)
         {
             gravityEnabled = true;
         }
 
-        if (gravityEnabled && !hitInfo)
+        if (gravityEnabled && !hitInfoLadder)
         {
             direction.y += gravity * Time.deltaTime;
         }
@@ -146,16 +146,16 @@ public class PlayerController : MonoBehaviour
     [PunRPC]
     public void ActivateAbilityForAll(int viewID)
     {
-        Debug.Log("Activate Ability For All received");
-        Debug.Log(viewID);
+        //Debug.Log("Activate Ability For All received");
+        //Debug.Log(viewID);
         PhotonView.Find(viewID).GetComponent<PlayerController>().ActivateAbility();
     }
 
     [PunRPC]
     public void DeactivateAbilityForAll(int viewID)
     {
-        Debug.Log("Deactivate Ability For All received");
-        Debug.Log(viewID);
+        //Debug.Log("Deactivate Ability For All received");
+        //Debug.Log(viewID);
         PhotonView.Find(viewID).GetComponent<PlayerController>().DeactivateAbility();
     }
 
@@ -262,6 +262,42 @@ public class PlayerController : MonoBehaviour
     }
 
 
+    // Pressure Plate
+    [PunRPC]
+    public void ActivatePressurePlateForAll(string name)
+    {
+        //Debug.Log("Activate Flower For All received");
+        //Debug.Log(name);
+        GameObject.Find(name).GetComponent<PressurePlate>().ActivatePressurePlate();
+    }
+
+    [PunRPC]
+    public void DeactivatePressurePlateForAll(string name)
+    {
+        //Debug.Log("Deactivate Flower For All received");
+        //Debug.Log(name);
+        GameObject.Find(name).GetComponent<PressurePlate>().DeactivatePressurePlate();
+    }
+
+
+    // Vote Poll
+    [PunRPC]
+    public void VoteUpForAll(string name)
+    {
+        //Debug.Log("Activate Flower For All received");
+        //Debug.Log(name);
+        GameObject.Find(name).GetComponent<LevelSelectionButton>().VoteUp();
+    }
+
+    [PunRPC]
+    public void VoteDownForAll(string name)
+    {
+        //Debug.Log("Activate Flower For All received");
+        //Debug.Log(name);
+        GameObject.Find(name).GetComponent<LevelSelectionButton>().VoteDown();
+    }
+
+
     // Finish
     [PunRPC]
     public void LevelFinishedForAll(string name)
@@ -269,5 +305,10 @@ public class PlayerController : MonoBehaviour
         //Debug.Log("Activate Flower For All received");
         //Debug.Log(name);
         GameObject.Find(name).GetComponent<Finish>().LevelFinished();
+
+        if (PhotonNetwork.IsMasterClient)
+        {
+            inputController.ActivateLevelauswahlPanel();
+        }
     }
 }

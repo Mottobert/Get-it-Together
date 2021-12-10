@@ -30,12 +30,12 @@ public class Flower : MonoBehaviour
         if(other.tag == "water" && PVPlayer.IsMine)
         {
             //ActivateLadder();
-            PVPlayer.RPC("ActivateFlowerForAll", RpcTarget.All, gameObject.name);
+            PVPlayer.RPC("ActivateFlowerForAll", RpcTarget.AllBufferedViaServer, gameObject.name);
         }
         else if(other.tag == "fire" && PVPlayer.IsMine)
         {
             //DeactivateLadder();
-            PVPlayer.RPC("DeactivateFlowerForAll", RpcTarget.All, gameObject.name);
+            PVPlayer.RPC("DeactivateFlowerForAll", RpcTarget.AllBufferedViaServer, gameObject.name);
         }
     }
 

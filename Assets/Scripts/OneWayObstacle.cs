@@ -4,20 +4,13 @@ using UnityEngine;
 
 public class OneWayObstacle : MonoBehaviour
 {
-    //[SerializeField]
-    //private bool leftTrigger;
-    //[SerializeField]
-    //private bool rightTrigger;
-
     [SerializeField]
     private bool rightSided;
 
     private BoxCollider obstacleCollider;
 
-
     private void DisableCollider(string tag)
     {
-        Debug.Log("Now");
         if(tag == "fire")
         {
             gameObject.layer = LayerMask.NameToLayer("ObstacleReleaseFire");

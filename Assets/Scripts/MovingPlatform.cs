@@ -53,10 +53,12 @@ public class MovingPlatform : MonoBehaviour
         Vector3 endPos;
 
         startPos = platform.transform.position;
-        platform.transform.position = Vector3.Lerp(platform.transform.position, toPoint.position, 0.01f);
+        platform.transform.position = Vector3.Lerp(platform.transform.position, toPoint.position, movingSpeed);
         endPos = platform.transform.position;
 
         Vector3 movement = endPos - startPos;
+
+        //Debug.Log(startPos.x + " " + endPos.x + " " + movement.x);
 
         MoveAllPlayersOnPlatform(movement);
     }
@@ -76,11 +78,19 @@ public class MovingPlatform : MonoBehaviour
     {
         if (playersOnPlatform.Count != 0)
         {
-            //Debug.Log(playersOnPlatform[0]);
+            //Debug.Log(playersOnPlatform.Count);
             foreach (GameObject p in playersOnPlatform)
             {
-                Debug.Log(movement);
-                p.GetComponent<CharacterController>().Move(movement);
+                if (p.GetComponentInParent<CharacterController>())
+                {
+                    p.GetComponentInParent<CharacterController>().Move(movement);
+                    //Debug.Log(movement);
+                    //Debug.Log(p.transform.position.x);
+                }
+                else
+                {
+                    p.transform.parent.transform.position = p.transform.parent.transform.position + movement;
+                }
             }
         }
     }

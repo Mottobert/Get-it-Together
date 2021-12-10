@@ -18,16 +18,16 @@ public class Waterfall : MonoBehaviour
     private GameObject iceblockObject;
     private GameObject activeIceblock;
 
+    [SerializeField]
+    private bool spawnIceblock;
+
     public bool activeWaterfall = false;
 
     public GameObject puzzleManager;
 
-    [SerializeField]
-    private GameObject movingPlatform;
-
     private void Awake()
     {
-        //gameObject.name = GetInstanceID().ToString();
+        //gameObject.name = GetInstanceID().ToString(); // Sollte aktiviert werden, wenn das Spiel final gebuilded wird
     }
 
     private void OnTriggerEnter(Collider other)
@@ -37,27 +37,27 @@ public class Waterfall : MonoBehaviour
         if (other.tag == "water" && !activeWaterfall && PVPlayer.IsMine)
         {
             //ActivateWaterfall();
-            PVPlayer.RPC("ActivateWaterfallForAll", RpcTarget.All, gameObject.name);
+            PVPlayer.RPC("ActivateWaterfallForAll", RpcTarget.AllBufferedViaServer, gameObject.name);
         }
-        else if (other.tag == "water" && activeWaterfall && !activeIceblock)
+        else if (other.tag == "water" && activeWaterfall && !activeIceblock && spawnIceblock && PVPlayer.IsMine)
         {
-            //activeIceblock = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Eisblock"), iceblockSpawnPoint.position, Quaternion.identity); //Instantiate(iceblockObject, iceblockSpawnPoint.position, Quaternion.identity);
+            activeIceblock = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Eisblock"), iceblockSpawnPoint.position, Quaternion.identity); //Instantiate(iceblockObject, iceblockSpawnPoint.position, Quaternion.identity);
         }
         else if(other.tag == "fire" && PVPlayer.IsMine) {
             //DeactivateWaterfall();
-            PVPlayer.RPC("DeactivateWaterfallForAll", RpcTarget.All, gameObject.name);
+            PVPlayer.RPC("DeactivateWaterfallForAll", RpcTarget.AllBufferedViaServer, gameObject.name);
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        PhotonView PVPlayer = other.gameObject.GetComponent<PhotonView>();
-
-        if (movingPlatform && other.tag == "water" && PVPlayer.IsMine)
-        {
-            PVPlayer.RPC("DeactivateWaterfallForAll", RpcTarget.All, gameObject.name);
-        }
-    }
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    PhotonView PVPlayer = other.gameObject.GetComponent<PhotonView>();
+    //
+    //    if (movingPlatform && other.tag == "water" && PVPlayer.IsMine)
+    //    {
+    //        PVPlayer.RPC("DeactivateWaterfallForAll", RpcTarget.All, gameObject.name);
+    //    }
+    //}
 
     public void ActivateWaterfall()
     {
@@ -66,11 +66,6 @@ public class Waterfall : MonoBehaviour
         if (puzzleManager)
         {
             puzzleManager.GetComponent<Puzzle>().CheckPuzzleObjects();
-        }
-
-        if (movingPlatform)
-        {
-            movingPlatform.GetComponent<MovingPlatform>().ActivateMovingPlatform();
         }
     }
 
@@ -81,11 +76,6 @@ public class Waterfall : MonoBehaviour
         if (puzzleManager)
         {
             puzzleManager.GetComponent<Puzzle>().CheckPuzzleObjects();
-        }
-
-        if (movingPlatform)
-        {
-            movingPlatform.GetComponent<MovingPlatform>().DeactivateMovingPlatform();
         }
     }
 }
