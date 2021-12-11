@@ -54,6 +54,7 @@ MonoBehaviour:
   - DeactivatePressurePlateForAll
   - VoteDownForAll
   - VoteUpForAll
+  - DisplayEmojiForAll
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

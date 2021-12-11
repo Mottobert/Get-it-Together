@@ -19,6 +19,8 @@ public class InputController : MonoBehaviour
     private GameObject mobileInputPanel;
     [SerializeField]
     private GameObject levelauswahlPanel;
+    [SerializeField]
+    private GameObject kommunikationPanel;
 
     private bool mobileInput = true;
 
@@ -132,5 +134,27 @@ public class InputController : MonoBehaviour
         {
             ActivateLevelauswahlPanel();
         }
+    }
+
+    public void ToogleKommunikationPanel()
+    {
+        if (kommunikationPanel.gameObject.activeInHierarchy)
+        {
+            DeactivateKommunikationPanel();
+        }
+        else
+        {
+            ActivateKommunikationPanel();
+        }
+    }
+
+    public void ActivateKommunikationPanel()
+    {
+        kommunikationPanel.SetActive(true);
+    }
+
+    public void DeactivateKommunikationPanel()
+    {
+        kommunikationPanel.SetActive(false);
     }
 }

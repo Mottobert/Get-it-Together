@@ -298,6 +298,16 @@ public class PlayerController : MonoBehaviour
     }
 
 
+    // Emoji
+    [PunRPC]
+    public void DisplayEmojiForAll(string name)
+    {
+        //Debug.Log("Activate Flower For All received");
+        //Debug.Log(name);
+        GameObject.Find(name).GetComponent<DisplayEmoji>().ShowEmoji();
+    }
+
+
     // Finish
     [PunRPC]
     public void LevelFinishedForAll(string name)
@@ -306,9 +316,11 @@ public class PlayerController : MonoBehaviour
         //Debug.Log(name);
         GameObject.Find(name).GetComponent<Finish>().LevelFinished();
 
+        inputController.ActivateLevelauswahlPanel();
+
         if (PhotonNetwork.IsMasterClient)
         {
-            inputController.ActivateLevelauswahlPanel();
+            
         }
     }
 }

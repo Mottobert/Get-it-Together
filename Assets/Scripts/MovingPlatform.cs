@@ -14,7 +14,7 @@ public class MovingPlatform : MonoBehaviour
     [SerializeField]
     private float movingSpeed;
 
-    private bool active;
+    public bool active;
 
     private List<GameObject> playersOnPlatform = new List<GameObject>();
 
