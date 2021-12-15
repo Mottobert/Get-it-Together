@@ -300,11 +300,11 @@ public class PlayerController : MonoBehaviour
 
     // Emoji
     [PunRPC]
-    public void DisplayEmojiForAll(string name)
+    public void DisplayEmojiForAll(string name, int index)
     {
         //Debug.Log("Activate Flower For All received");
         //Debug.Log(name);
-        GameObject.Find(name).GetComponent<DisplayEmoji>().ShowEmoji();
+        GameObject.Find(name).GetComponent<DisplayEmojiController>().DisplayEmojiForPlayers(index);
     }
 
 

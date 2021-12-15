@@ -34,7 +34,7 @@ public class LevelSelectionButton : MonoBehaviour
     public void VoteUp()
     {
         votes++;
-        votesText.text = "" + votes;
+        votesText.text = "" + votes + "/2";
 
         levelSelectionPoll.CheckAllButtons();
     }
@@ -47,6 +47,6 @@ public class LevelSelectionButton : MonoBehaviour
     public void VoteDown()
     {
         votes--;
-        votesText.text = "" + votes;
+        votesText.text = "" + votes + "/2";
     }
 }

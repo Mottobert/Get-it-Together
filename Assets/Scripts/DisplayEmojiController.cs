@@ -15,22 +15,31 @@ public class DisplayEmojiController : MonoBehaviour
 
     public void DisplayEmojiForPlayers(int index)
     {
-        if (!active)
+        if (active)
         {
-            active = true;
-            activeEmojiIndex = index;
-            emojis[activeEmojiIndex].SetActive(true);
-
-            inputController.DeactivateKommunikationPanel();
-
-            Invoke("DisableActiveEmoji", 3f);
+            DisableActiveEmoji();
+            StopAllCoroutines();
         }
-        
+
+        active = true;
+        activeEmojiIndex = index;
+        emojis[activeEmojiIndex].SetActive(true);
+
+        inputController.DeactivateKommunikationPanel();
+
+        //Invoke("DisableActiveEmoji", 3f);
+        StartCoroutine(DeactivateEmoji());
     }
 
     private void DisableActiveEmoji()
     {
         active = false;
         emojis[activeEmojiIndex].SetActive(false);
+    }
+
+    IEnumerator DeactivateEmoji()
+    {
+        yield return new WaitForSeconds(3);
+        DisableActiveEmoji();
     }
 }

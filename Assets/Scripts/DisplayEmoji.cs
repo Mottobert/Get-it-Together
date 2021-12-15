@@ -12,7 +12,8 @@ public class DisplayEmoji : MonoBehaviour
 
     public void ShowEmojiRPC()
     {
-        gameObject.transform.GetComponentInParent<PhotonView>().RPC("DipslayEmojiForAll", RpcTarget.AllBufferedViaServer, gameObject.name);
+        gameObject.transform.GetComponentInParent<PhotonView>().RPC("DisplayEmojiForAll", RpcTarget.All, emojiController.name, emojiIndex);
+        //Debug.Log(gameObject.name);
     }
 
     public void ShowEmoji()

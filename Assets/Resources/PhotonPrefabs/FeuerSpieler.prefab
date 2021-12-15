@@ -1325,8 +1325,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 62, y: 0}
-  m_SizeDelta: {x: 22.84, y: 36.4}
+  m_AnchoredPosition: {x: 56, y: 0}
+  m_SizeDelta: {x: 42, y: 36}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7472585017628369118
 CanvasRenderer:
@@ -1356,7 +1356,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 0/2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1459,8 +1459,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 62, y: 0}
-  m_SizeDelta: {x: 22.84, y: 36.4}
+  m_AnchoredPosition: {x: 56, y: 0}
+  m_SizeDelta: {x: 42, y: 36}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4848219889789174859
 CanvasRenderer:
@@ -1490,7 +1490,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 0/2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2191,7 +2191,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5920312100522013511
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2267,7 +2267,7 @@ GameObject:
   - component: {fileID: 8128566354582098863}
   - component: {fileID: 236961457109359882}
   m_Layer: 5
-  m_Name: Stop Button (3)
+  m_Name: Stop Button (3) Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2376,7 +2376,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 236961457109359882}
         m_TargetAssemblyTypeName: DisplayEmoji, Assembly-CSharp
-        m_MethodName: ShowEmoji
+        m_MethodName: ShowEmojiRPC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2601,8 +2601,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 62, y: 0}
-  m_SizeDelta: {x: 22.84, y: 36.4}
+  m_AnchoredPosition: {x: 56, y: 0}
+  m_SizeDelta: {x: 42, y: 36}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1328777769346124288
 CanvasRenderer:
@@ -2632,7 +2632,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 0/2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2735,8 +2735,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 62, y: 0}
-  m_SizeDelta: {x: 22.84, y: 36.4}
+  m_AnchoredPosition: {x: 56, y: 0}
+  m_SizeDelta: {x: 42, y: 36}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8434653430207064904
 CanvasRenderer:
@@ -2766,7 +2766,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 0/2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3351,7 +3351,7 @@ GameObject:
   - component: {fileID: 1640650562868606243}
   - component: {fileID: 1569259739993858594}
   m_Layer: 8
-  m_Name: WorldSpaceCanvas
+  m_Name: WorldSpaceCanvasFire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3366,7 +3366,7 @@ RectTransform:
   m_GameObject: {fileID: 6073566582906285169}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.99999976, y: 1, z: 0.99999976}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6172918808173019885}
   - {fileID: 6314288812426468862}
@@ -3690,7 +3690,7 @@ GameObject:
   - component: {fileID: 8981426459179572556}
   - component: {fileID: 7284130106840113243}
   m_Layer: 5
-  m_Name: Stop Button (5)
+  m_Name: Stop Button (5) Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3799,7 +3799,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7284130106840113243}
         m_TargetAssemblyTypeName: DisplayEmoji, Assembly-CSharp
-        m_MethodName: ShowEmoji
+        m_MethodName: ShowEmojiRPC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3971,7 +3971,7 @@ GameObject:
   - component: {fileID: 4249990911466853964}
   - component: {fileID: 174840949387910424}
   m_Layer: 5
-  m_Name: Stop Button (2)
+  m_Name: Stop Button (2) Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4080,7 +4080,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 174840949387910424}
         m_TargetAssemblyTypeName: DisplayEmoji, Assembly-CSharp
-        m_MethodName: ShowEmoji
+        m_MethodName: ShowEmojiRPC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4118,7 +4118,7 @@ GameObject:
   - component: {fileID: 8754377806511151429}
   - component: {fileID: 8205919474506129578}
   m_Layer: 5
-  m_Name: Stop Button (4)
+  m_Name: Stop Button (4) Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4227,7 +4227,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8205919474506129578}
         m_TargetAssemblyTypeName: DisplayEmoji, Assembly-CSharp
-        m_MethodName: ShowEmoji
+        m_MethodName: ShowEmojiRPC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4265,7 +4265,7 @@ GameObject:
   - component: {fileID: 1764158188959646425}
   - component: {fileID: 5792471373979830293}
   m_Layer: 5
-  m_Name: Stop Button (1)
+  m_Name: Stop Button (1) Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4374,7 +4374,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5792471373979830293}
         m_TargetAssemblyTypeName: DisplayEmoji, Assembly-CSharp
-        m_MethodName: ShowEmoji
+        m_MethodName: ShowEmojiRPC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4695,7 +4695,7 @@ GameObject:
   - component: {fileID: 8666836202798435054}
   - component: {fileID: 341500266634473537}
   m_Layer: 5
-  m_Name: Stop Button (6)
+  m_Name: Stop Button (6) Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4804,7 +4804,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 341500266634473537}
         m_TargetAssemblyTypeName: DisplayEmoji, Assembly-CSharp
-        m_MethodName: ShowEmoji
+        m_MethodName: ShowEmojiRPC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4842,7 +4842,7 @@ GameObject:
   - component: {fileID: 7435620748596974746}
   - component: {fileID: 428459788012587975}
   m_Layer: 5
-  m_Name: Stop Button
+  m_Name: Stop Button Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4951,7 +4951,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 428459788012587975}
         m_TargetAssemblyTypeName: DisplayEmoji, Assembly-CSharp
-        m_MethodName: ShowEmoji
+        m_MethodName: ShowEmojiRPC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5218,11 +5218,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
---- !u!224 &2586523151989776195 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
-  m_PrefabInstance: {fileID: 811745747181809329}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2586523151989776206 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2929252283123773951, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
@@ -5234,6 +5229,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45977bbae16431c46a013576a1aea384, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &2586523151989776195 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
+  m_PrefabInstance: {fileID: 811745747181809329}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4108569645290763553
 PrefabInstance:
   m_ObjectHideFlags: 0

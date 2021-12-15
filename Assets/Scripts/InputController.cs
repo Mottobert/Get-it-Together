@@ -36,6 +36,7 @@ public class InputController : MonoBehaviour
         if (activeSceneName != "Levelauswahl")
         {
             DeactivateLevelauswahlPanel();
+            DeactivateKommunikationPanel();
             levelauswahlButton.SetActive(true);
         }
         else
@@ -110,6 +111,8 @@ public class InputController : MonoBehaviour
         //levelauswahlPanel.SetActive(true);
         levelauswahlPanel.GetComponent<CanvasGroup>().alpha = 1;
         levelauswahlPanel.GetComponent<CanvasGroup>().interactable = true;
+        levelauswahlPanel.GetComponent<CanvasGroup>().blocksRaycasts = true;
+        DeactivateKommunikationPanel();
         //mobileInputPanel.SetActive(false);
     }
 
@@ -121,6 +124,7 @@ public class InputController : MonoBehaviour
 
         levelauswahlPanel.GetComponent<CanvasGroup>().alpha = 0;
         levelauswahlPanel.GetComponent<CanvasGroup>().interactable = false;
+        levelauswahlPanel.GetComponent<CanvasGroup>().blocksRaycasts = false;
         //mobileInputPanel.SetActive(true);
     }
 
@@ -138,7 +142,7 @@ public class InputController : MonoBehaviour
 
     public void ToogleKommunikationPanel()
     {
-        if (kommunikationPanel.gameObject.activeInHierarchy)
+        if (kommunikationPanel.GetComponent<CanvasGroup>().interactable)
         {
             DeactivateKommunikationPanel();
         }
@@ -150,11 +154,18 @@ public class InputController : MonoBehaviour
 
     public void ActivateKommunikationPanel()
     {
-        kommunikationPanel.SetActive(true);
+        //kommunikationPanel.SetActive(true);
+        kommunikationPanel.GetComponent<CanvasGroup>().alpha = 1;
+        kommunikationPanel.GetComponent<CanvasGroup>().interactable = true;
+        kommunikationPanel.GetComponent<CanvasGroup>().blocksRaycasts = true;
+        DeactivateLevelauswahlPanel();
     }
 
     public void DeactivateKommunikationPanel()
     {
-        kommunikationPanel.SetActive(false);
+        //kommunikationPanel.SetActive(false);
+        kommunikationPanel.GetComponent<CanvasGroup>().alpha = 0;
+        kommunikationPanel.GetComponent<CanvasGroup>().interactable = false;
+        kommunikationPanel.GetComponent<CanvasGroup>().blocksRaycasts = false;
     }
 }
