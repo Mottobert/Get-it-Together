@@ -25,6 +25,9 @@ public class Waterfall : MonoBehaviour
 
     public GameObject puzzleManager;
 
+    [SerializeField]
+    private HintManager hintManager;
+
     private void Awake()
     {
         //gameObject.name = GetInstanceID().ToString(); // Sollte aktiviert werden, wenn das Spiel final gebuilded wird
@@ -67,6 +70,11 @@ public class Waterfall : MonoBehaviour
         {
             puzzleManager.GetComponent<Puzzle>().CheckPuzzleObjects();
         }
+
+        if (hintManager)
+        {
+            hintManager.ActivateHintObjects();
+        }
     }
 
     public void DeactivateWaterfall()
@@ -76,6 +84,11 @@ public class Waterfall : MonoBehaviour
         if (puzzleManager)
         {
             puzzleManager.GetComponent<Puzzle>().CheckPuzzleObjects();
+        }
+
+        if (hintManager)
+        {
+            hintManager.DeactivateHintObjects();
         }
     }
 }

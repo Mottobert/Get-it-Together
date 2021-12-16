@@ -21,13 +21,15 @@ public class InputController : MonoBehaviour
     private GameObject levelauswahlPanel;
     [SerializeField]
     private GameObject kommunikationPanel;
+    [SerializeField]
+    private GameObject menuePanel;
 
     private bool mobileInput = true;
 
     private string activeSceneName;
 
     [SerializeField]
-    private GameObject levelauswahlButton;
+    private GameObject kommunikationsButton;
 
     private void Start()
     {
@@ -37,12 +39,16 @@ public class InputController : MonoBehaviour
         {
             DeactivateLevelauswahlPanel();
             DeactivateKommunikationPanel();
-            levelauswahlButton.SetActive(true);
+            DeactivateMenuePanel();
+            kommunikationsButton.SetActive(true);
         }
         else
         {
             ActivateKeyboardInput();
-            levelauswahlButton.SetActive(false);
+            DeactivateKommunikationPanel();
+            DeactivateMenuePanel();
+            ActivateLevelauswahlPanel();
+            kommunikationsButton.SetActive(false);
         }
     }
 
@@ -113,6 +119,7 @@ public class InputController : MonoBehaviour
         levelauswahlPanel.GetComponent<CanvasGroup>().interactable = true;
         levelauswahlPanel.GetComponent<CanvasGroup>().blocksRaycasts = true;
         DeactivateKommunikationPanel();
+        DeactivateMenuePanel();
         //mobileInputPanel.SetActive(false);
     }
 
@@ -152,6 +159,18 @@ public class InputController : MonoBehaviour
         }
     }
 
+    public void ToogleMenuePanel()
+    {
+        if (menuePanel.GetComponent<CanvasGroup>().interactable)
+        {
+            DeactivateMenuePanel();
+        }
+        else
+        {
+            ActivateMenuePanel();
+        }
+    }
+
     public void ActivateKommunikationPanel()
     {
         //kommunikationPanel.SetActive(true);
@@ -159,6 +178,7 @@ public class InputController : MonoBehaviour
         kommunikationPanel.GetComponent<CanvasGroup>().interactable = true;
         kommunikationPanel.GetComponent<CanvasGroup>().blocksRaycasts = true;
         DeactivateLevelauswahlPanel();
+        DeactivateMenuePanel();
     }
 
     public void DeactivateKommunikationPanel()
@@ -167,5 +187,23 @@ public class InputController : MonoBehaviour
         kommunikationPanel.GetComponent<CanvasGroup>().alpha = 0;
         kommunikationPanel.GetComponent<CanvasGroup>().interactable = false;
         kommunikationPanel.GetComponent<CanvasGroup>().blocksRaycasts = false;
+    }
+
+    public void ActivateMenuePanel()
+    {
+        //kommunikationPanel.SetActive(true);
+        menuePanel.GetComponent<CanvasGroup>().alpha = 1;
+        menuePanel.GetComponent<CanvasGroup>().interactable = true;
+        menuePanel.GetComponent<CanvasGroup>().blocksRaycasts = true;
+        DeactivateLevelauswahlPanel();
+        DeactivateKommunikationPanel();
+    }
+
+    public void DeactivateMenuePanel()
+    {
+        //kommunikationPanel.SetActive(false);
+        menuePanel.GetComponent<CanvasGroup>().alpha = 0;
+        menuePanel.GetComponent<CanvasGroup>().interactable = false;
+        menuePanel.GetComponent<CanvasGroup>().blocksRaycasts = false;
     }
 }
