@@ -10,6 +10,8 @@ public class ChangeScene : MonoBehaviour
     private int sceneIndex;
     [SerializeField]
     private bool disconnectOnSceneChange;
+    [SerializeField]
+    private bool nextLevel;
 
     public void ChangeSceneOnClick()
     {
@@ -17,11 +19,28 @@ public class ChangeScene : MonoBehaviour
         {
             PhotonNetwork.Disconnect();
         }
-        SceneManager.LoadScene(sceneBuildIndex: sceneIndex);
+        if (nextLevel)
+        {
+            OpenNextLevel();
+        }
+        else
+        {
+            SceneManager.LoadScene(sceneBuildIndex: sceneIndex);
+        }
     }
 
     public void ReloadScene()
     {
         SceneManager.LoadScene(sceneBuildIndex: SceneManager.GetActiveScene().buildIndex);
+    }
+
+    private void OpenNextLevel()
+    {
+        int nextLevel = SceneManager.GetActiveScene().buildIndex + 1;
+
+        if (SceneManager.GetSceneByBuildIndex(nextLevel) != null)
+        {
+            SceneManager.LoadScene(sceneBuildIndex: SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
 }

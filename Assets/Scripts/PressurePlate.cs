@@ -16,11 +16,15 @@ public class PressurePlate : MonoBehaviour
 
     public bool active = false;
 
+    public int collisionCounter;
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "water" || other.tag == "fire" || other.tag == "iceblock")
         {
             PhotonView PVPlayer = other.gameObject.GetComponentInParent<PhotonView>();
+
+            collisionCounter++;
 
             //ActivatePressurePlate();
             PVPlayer.RPC("ActivatePressurePlateForAll", RpcTarget.AllBufferedViaServer, gameObject.name);
@@ -29,12 +33,16 @@ public class PressurePlate : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "water" || other.tag == "fire" || other.tag == "iceblock")
+        if ((other.tag == "water" || other.tag == "fire" || other.tag == "iceblock") && collisionCounter == 2)
         {
             PhotonView PVPlayer = other.gameObject.GetComponentInParent<PhotonView>();
 
             //DeactivatePressurePlate();
             PVPlayer.RPC("DeactivatePressurePlateForAll", RpcTarget.AllBufferedViaServer, gameObject.name);
+        }
+        else if(other.tag == "water" || other.tag == "fire" || other.tag == "iceblock" && collisionCounter > 2)
+        {
+            collisionCounter--;
         }
     }
 
@@ -42,6 +50,7 @@ public class PressurePlate : MonoBehaviour
     {
         plateObject.transform.position = new Vector3(plateObject.transform.position.x, plateObject.transform.position.y - 0.01f, plateObject.transform.position.z);
         active = true;
+
         if (movingPlatform)
         {
             movingPlatform.GetComponent<MovingPlatform>().ActivateMovingPlatform();
@@ -57,6 +66,9 @@ public class PressurePlate : MonoBehaviour
     {
         plateObject.transform.position = new Vector3(plateObject.transform.position.x, plateObject.transform.position.y + 0.01f, plateObject.transform.position.z);
         active = false;
+
+        collisionCounter--;
+
         if (movingPlatform)
         {
             movingPlatform.GetComponent<MovingPlatform>().DeactivateMovingPlatform();
