@@ -317,10 +317,5 @@ public class PlayerController : MonoBehaviour
         GameObject.Find(name).GetComponent<Finish>().LevelFinished();
 
         inputController.ActivateLevelauswahlPanel();
-
-        if (PhotonNetwork.IsMasterClient)
-        {
-            
-        }
     }
 }

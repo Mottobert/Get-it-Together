@@ -14,23 +14,36 @@ public class Finish : MonoBehaviour
     [SerializeField]
     private GameObject[] finishRequirements;
 
+    private GameObject[] playersInFinish = new GameObject[2];
+
     public LayerMask playerLayer;
 
     private void OnTriggerEnter(Collider other)
     {
-        PhotonView PVPlayer = other.gameObject.GetComponent<PhotonView>();
+        PhotonView PVPlayer = other.gameObject.transform.GetComponentInParent<PhotonView>();
+
+        // .Log(other.gameObject);
 
         if (other.gameObject.tag == "playerFinishCollider")
         {
+            playersInFinish[finishedPlayers] = other.gameObject;
             finishedPlayers++;
         }
 
+        Debug.Log(playersInFinish.Length);
+
         if (finishedPlayers == 2)
         {
+            
             if (CheckFinishRequirements() && PVPlayer.IsMine)
             {
                 //LevelFinished();
-                PVPlayer.RPC("LevelFinishedForAll", RpcTarget.AllBufferedViaServer, gameObject.name);
+                //PVPlayer.RPC("LevelFinishedForAll", RpcTarget.AllBufferedViaServer, gameObject.name);
+                
+                foreach(GameObject p in playersInFinish)
+                {
+                    p.GetComponentInParent<PhotonView>().RPC("LevelFinishedForAll", RpcTarget.AllBufferedViaServer, gameObject.name);
+                }
             }
         }
     }
