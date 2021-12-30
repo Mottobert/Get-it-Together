@@ -24,6 +24,10 @@ public class DisplayEmojiController : MonoBehaviour
         active = true;
         activeEmojiIndex = index;
         emojis[activeEmojiIndex].SetActive(true);
+        if (emojis[activeEmojiIndex].GetComponent<Animator>())
+        {
+            emojis[activeEmojiIndex].GetComponent<Animator>().SetTrigger("activateAnimation");
+        }
 
         inputController.DeactivateKommunikationPanel();
 

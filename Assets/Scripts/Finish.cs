@@ -9,6 +9,14 @@ public class Finish : MonoBehaviour
     [SerializeField]
     private GameObject flag;
     [SerializeField]
+    private Transform flagStart;
+    [SerializeField]
+    private Transform flagMid;
+    [SerializeField]
+    private Transform flagEnd;
+
+
+    [SerializeField]
     private ParticleSystem finishParticleSystem;
 
     [SerializeField]
@@ -18,11 +26,15 @@ public class Finish : MonoBehaviour
 
     public LayerMask playerLayer;
 
+    private void Start()
+    {
+        flag.SetActive(true);
+        flag.transform.position = flagStart.position;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         PhotonView PVPlayer = other.gameObject.transform.GetComponentInParent<PhotonView>();
-
-        // .Log(other.gameObject);
 
         if (other.gameObject.tag == "playerFinishCollider")
         {
@@ -30,16 +42,15 @@ public class Finish : MonoBehaviour
             finishedPlayers++;
         }
 
-        Debug.Log(playersInFinish.Length);
+        if(finishedPlayers == 1)
+        {
+            //flag.transform.position = Vector3.Lerp(flag.transform.position, flagMid.position, 0.01f);
+        }
 
         if (finishedPlayers == 2)
         {
-            
             if (CheckFinishRequirements() && PVPlayer.IsMine)
-            {
-                //LevelFinished();
-                //PVPlayer.RPC("LevelFinishedForAll", RpcTarget.AllBufferedViaServer, gameObject.name);
-                
+            {   
                 foreach(GameObject p in playersInFinish)
                 {
                     p.GetComponentInParent<PhotonView>().RPC("LevelFinishedForAll", RpcTarget.AllBufferedViaServer, gameObject.name);
@@ -57,6 +68,7 @@ public class Finish : MonoBehaviour
 
         if (finishedPlayers < 0)
         {
+            //flag.transform.position = Vector3.Lerp(flag.transform.position, flagStart.position, 0.01f);
             finishedPlayers = 0;
         }
     }
@@ -75,6 +87,7 @@ public class Finish : MonoBehaviour
 
     public void LevelFinished()
     {
+        //flag.transform.position = Vector3.Lerp(flag.transform.position, flagEnd.position, 0.01f);
         Debug.Log("Finished");
         flag.SetActive(true);
         finishParticleSystem.Play();
