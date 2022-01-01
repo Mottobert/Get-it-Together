@@ -1,428 +1,154 @@
 Using pre-set license
+Built from '2020.3/staging' branch; Version is '2020.3.14f1 (d0d1bb862f9d) revision 13685179'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Home; OS build 19042.1415; Version 2009; 64bit' Language: 'de' Physical Memory: 65481 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
  COMMAND LINE ARGUMENTS:
-/Applications/Unity/Hub/Editor/2020.3.14f1/Unity.app/Contents/MacOS/Unity
+C:\Program Files\Unity\Hub\Editor\2020.3.14f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker0
 -projectPath
-/Users/maxotto/Documents/GitHub/Get-it-Together/Get-it-Together
+C:/Users/Max/Documents/GitHub/Get it Together/Get-it-Together
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-62225
-Successfully changed project path to: /Users/maxotto/Documents/GitHub/Get-it-Together/Get-it-Together
-/Users/maxotto/Documents/GitHub/Get-it-Together/Get-it-Together
+61296
+Successfully changed project path to: C:/Users/Max/Documents/GitHub/Get it Together/Get-it-Together
+C:/Users/Max/Documents/GitHub/Get it Together/Get-it-Together
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 138.82 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 84.41 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.14f1 (d0d1bb862f9d)
-[Subsystems] Discovering subsystems at path /Applications/Unity/Hub/Editor/2020.3.14f1/Unity.app/Contents/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path /Users/maxotto/Documents/GitHub/Get-it-Together/Get-it-Together/Assets
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.14f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/Max/Documents/GitHub/Get it Together/Get-it-Together/Assets
 GfxDevice: creating device client; threaded=0
-2021-12-30 01:48:45.245 Unity[72351:4373535] Color LCD preferred device: Intel(R) Iris(TM) Plus Graphics 650 (low power)
-2021-12-30 01:48:45.245 Unity[72351:4373535] Metal devices available: 1
-2021-12-30 01:48:45.245 Unity[72351:4373535] 0: Intel(R) Iris(TM) Plus Graphics 650 (low power)
-2021-12-30 01:48:45.245 Unity[72351:4373535] Using device Intel(R) Iris(TM) Plus Graphics 650 (low power)
-Initializing Metal device caps: Intel(R) Iris(TM) Plus Graphics 650
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 3080 (ID=0x2206)
+    Vendor:   
+    VRAM:     10077 MB
+    Driver:   30.0.14.7284
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
 Initialize mono
-Mono path[0] = '/Applications/Unity/Hub/Editor/2020.3.14f1/Unity.app/Contents/Managed'
-Mono path[1] = '/Applications/Unity/Hub/Editor/2020.3.14f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityjit'
-Mono config path = '/Applications/Unity/Hub/Editor/2020.3.14f1/Unity.app/Contents/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56351
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.14f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.14f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.14f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56240
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: /Applications/Unity/Hub/Editor/2020.3.14f1/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
-Register platform support module: /Applications/Unity/Hub/Editor/2020.3.14f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
-Registered in 0.000760 seconds.
-Native extension for OSXStandalone target not found
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.14f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.14f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001829 seconds.
+Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 131.70 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 83.26 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  3.777 seconds
+- Completed reload, in  1.574 seconds
 Domain Reload Profiling:
-	ReloadAssembly (3778ms)
-		BeginReloadAssembly (59ms)
+	ReloadAssembly (1574ms)
+		BeginReloadAssembly (36ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (704ms)
-			LoadAssemblies (58ms)
+			CreateAndSetChildDomain (0ms)
+		EndReloadAssembly (313ms)
+			LoadAssemblies (34ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (225ms)
+			SetupTypeCache (83ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (55ms)
-			SetupLoadedEditorAssemblies (355ms)
+			RebuildScriptCaches (18ms)
+			SetupLoadedEditorAssemblies (165ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (7ms)
+				InitializePlatformSupportModulesInManaged (3ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (132ms)
-				BeforeProcessingInitializeOnLoad (27ms)
-				ProcessInitializeOnLoadAttributes (151ms)
-				ProcessInitializeOnLoadMethodAttributes (37ms)
+				RefreshPlugins (83ms)
+				BeforeProcessingInitializeOnLoad (9ms)
+				ProcessInitializeOnLoadAttributes (52ms)
+				ProcessInitializeOnLoadMethodAttributes (17ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.003696 seconds.
+Registered in 0.005178 seconds.
 Begin MonoManager ReloadAssembly
-Native extension for OSXStandalone target not found
+Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 156.63 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 94.73 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.901 seconds
+- Completed reload, in  0.941 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1902ms)
-		BeginReloadAssembly (210ms)
+	ReloadAssembly (942ms)
+		BeginReloadAssembly (97ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
+			DisableScriptedObjects (3ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (38ms)
-		EndReloadAssembly (1612ms)
-			LoadAssemblies (108ms)
+			CreateAndSetChildDomain (15ms)
+		EndReloadAssembly (802ms)
+			LoadAssemblies (73ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (509ms)
+			SetupTypeCache (222ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (114ms)
-			SetupLoadedEditorAssemblies (711ms)
+			RebuildScriptCaches (53ms)
+			SetupLoadedEditorAssemblies (373ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (8ms)
+				InitializePlatformSupportModulesInManaged (3ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (157ms)
-				BeforeProcessingInitializeOnLoad (138ms)
-				ProcessInitializeOnLoadAttributes (397ms)
-				ProcessInitializeOnLoadMethodAttributes (8ms)
-				AfterProcessingInitializeOnLoad (2ms)
+				RefreshPlugins (95ms)
+				BeforeProcessingInitializeOnLoad (82ms)
+				ProcessInitializeOnLoadAttributes (181ms)
+				ProcessInitializeOnLoadMethodAttributes (6ms)
+				AfterProcessingInitializeOnLoad (6ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (10ms)
+			AwakeInstancesAfterBackupRestoration (4ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Launching external process: /Applications/Unity/Hub/Editor/2020.3.14f1/Unity.app/Contents/Tools/UnityShaderCompiler
-Launched and connected shader compiler UnityShaderCompiler after 0.03 seconds
-Refreshing native plugins compatible for Editor in 1.42 ms, found 3 plugins.
+Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 1.89 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3689 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 274.2 MB.
-System memory in use after: 274.4 MB.
+Unloading 4350 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 286.4 MB.
+System memory in use after: 286.6 MB.
 
-Unloading 32 unused Assets to reduce memory usage. Loaded Objects now: 4117.
-Total: 3.197104 ms (FindLiveObjects: 0.378493 ms CreateObjectMapping: 0.171673 ms MarkObjects: 2.561894 ms  DeleteObjects: 0.083855 ms)
+Unloading 37 unused Assets to reduce memory usage. Loaded Objects now: 4795.
+Total: 2.632800 ms (FindLiveObjects: 0.341000 ms CreateObjectMapping: 0.093600 ms MarkObjects: 2.096600 ms  DeleteObjects: 0.100900 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
   custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/Animation/Daumen Hoch Emoji/DaumenHochEmojiAnimation.controller
-  artifactKey: Guid(0720e27a357684c28a826ec1e2e90aba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/Daumen Hoch Emoji/DaumenHochEmojiAnimation.controller using Guid(0720e27a357684c28a826ec1e2e90aba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1823f6277bfd6e7c84f29a946c06a701') in 1.502120 seconds 
-  Import took 1.509228 seconds .
+  path: Assets/Feel
+  artifactKey: Guid(b43dc25f3c6bb4847a6d1d7d0f3d61df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Feel using Guid(b43dc25f3c6bb4847a6d1d7d0f3d61df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a3b598b621d36fbc451c6872b1e8e0c') in 0.012891 seconds 
+  Import took 0.018601 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000277 seconds.
-  path: Assets/Animation/Daumen Runter Emoji/DaumenRunterEmojiAnimation.anim
-  artifactKey: Guid(0e8dc494ad1b348929bef1f50959c222) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/Daumen Runter Emoji/DaumenRunterEmojiAnimation.anim using Guid(0e8dc494ad1b348929bef1f50959c222) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff3fefba855ffcb7fc01104bea8e1faa') in 0.368178 seconds 
-  Import took 0.375662 seconds .
+  Time since last request: 0.000159 seconds.
+  path: Assets/Feel/readme.txt
+  artifactKey: Guid(a6aa03a6a85f38c43a3bd39d28ee09d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Feel/readme.txt using Guid(a6aa03a6a85f38c43a3bd39d28ee09d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3430eef45b2b878e6532cc20ff0f4bc7') in 0.029947 seconds 
+  Import took 0.036200 seconds .
 
-========================================================================
-Received Import Request.
-  Time since last request: 2.745667 seconds.
-  path: Assets/Animation/Daumen Runter Emoji/Image (2).controller
-  artifactKey: Guid(239d6273dbd904e9a82f7fecc3ee7eb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/Daumen Runter Emoji/Image (2).controller using Guid(239d6273dbd904e9a82f7fecc3ee7eb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f789ab90a4786015c856d0184f0bb5b5') in 0.005195 seconds 
-  Import took 0.014615 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.392361 seconds.
-  path: Assets/Animation/Daumen Runter Emoji/DaumenRunterEmojiAnimation.controller
-  artifactKey: Guid(239d6273dbd904e9a82f7fecc3ee7eb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/Daumen Runter Emoji/DaumenRunterEmojiAnimation.controller using Guid(239d6273dbd904e9a82f7fecc3ee7eb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a02a6680cc0375150d9380e121e860d8') in 0.006405 seconds 
-  Import took 0.017383 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.265445 seconds.
-  path: Assets/Animation/Fire Emoji/FireEmojiAnimation.anim
-  artifactKey: Guid(ab7429ead9d0f441393525e0200d9bfe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/Fire Emoji/FireEmojiAnimation.anim using Guid(ab7429ead9d0f441393525e0200d9bfe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec279eea41bc02eb696e7ba8ee6a0fa4') in 0.004778 seconds 
-  Import took 0.014660 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000491 seconds.
-  path: Assets/Animation/Fire Emoji/FireEmojiAnimation.anim
-  artifactKey: Guid(ab7429ead9d0f441393525e0200d9bfe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/Fire Emoji/FireEmojiAnimation.anim using Guid(ab7429ead9d0f441393525e0200d9bfe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec279eea41bc02eb696e7ba8ee6a0fa4') in 0.004837 seconds 
-  Import took 0.014738 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 5.512534 seconds.
-  path: Assets/Animation/Fire Emoji/Image (10).controller
-  artifactKey: Guid(d16a2ddecc4564aa79ed281e0d0c6e2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/Fire Emoji/Image (10).controller using Guid(d16a2ddecc4564aa79ed281e0d0c6e2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '21a9e6a27c16c51b53dbd07e33bddf95') in 0.004725 seconds 
-  Import took 0.014568 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.406499 seconds.
-  path: Assets/Animation/Fire Emoji/FireEmojiAnimation.controller
-  artifactKey: Guid(d16a2ddecc4564aa79ed281e0d0c6e2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/Fire Emoji/FireEmojiAnimation.controller using Guid(d16a2ddecc4564aa79ed281e0d0c6e2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe178b0afac040958267dc23cdd1fe1e') in 0.006533 seconds 
-  Import took 0.016704 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.056224 seconds.
-  path: Assets/Animation/Fragezeichen Emoji/FragezeichenEmojiAnimation.anim
-  artifactKey: Guid(d61dac80defce48feb3aef8c27d76177) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/Fragezeichen Emoji/FragezeichenEmojiAnimation.anim using Guid(d61dac80defce48feb3aef8c27d76177) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd386c58be991c663d315db2a5e9e9ac5') in 0.004259 seconds 
-  Import took 0.015054 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.002197 seconds.
-  path: Assets/Animation/Fragezeichen Emoji/FragezeichenEmojiAnimation.anim
-  artifactKey: Guid(d61dac80defce48feb3aef8c27d76177) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/Fragezeichen Emoji/FragezeichenEmojiAnimation.anim using Guid(d61dac80defce48feb3aef8c27d76177) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd386c58be991c663d315db2a5e9e9ac5') in 0.005026 seconds 
-  Import took 0.013738 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.877033 seconds.
-  path: Assets/Animation/Fragezeichen Emoji/Image (7).controller
-  artifactKey: Guid(8c6f1445ae65b4bbdb10cc13caa49df9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/Fragezeichen Emoji/Image (7).controller using Guid(8c6f1445ae65b4bbdb10cc13caa49df9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7de39dc7118a8f32020b1cea8a3f8c60') in 0.005117 seconds 
-  Import took 0.016034 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.398530 seconds.
-  path: Assets/Animation/Fragezeichen Emoji/FragezeichenEmojiAnimation.controller
-  artifactKey: Guid(8c6f1445ae65b4bbdb10cc13caa49df9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/Fragezeichen Emoji/FragezeichenEmojiAnimation.controller using Guid(8c6f1445ae65b4bbdb10cc13caa49df9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '83c70cfeda996d9157395bed0a5d8826') in 0.007585 seconds 
-  Import took 0.017286 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.918377 seconds.
-  path: Assets/Animation/Hoch Emoji/HochEmojiAnimation.anim
-  artifactKey: Guid(5297d5cc1d48344fba71c647f04274e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/Hoch Emoji/HochEmojiAnimation.anim using Guid(5297d5cc1d48344fba71c647f04274e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c2cf0ce72f3f915d9724ba157a94078') in 0.004886 seconds 
-  Import took 0.015212 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000463 seconds.
-  path: Assets/Animation/Hoch Emoji/HochEmojiAnimation.anim
-  artifactKey: Guid(5297d5cc1d48344fba71c647f04274e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/Hoch Emoji/HochEmojiAnimation.anim using Guid(5297d5cc1d48344fba71c647f04274e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c2cf0ce72f3f915d9724ba157a94078') in 0.004114 seconds 
-  Import took 0.013748 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.458764 seconds.
-  path: Assets/Animation/Hoch Emoji/Image (5).controller
-  artifactKey: Guid(f79a701b1cc8142e48b16a1f51228817) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/Hoch Emoji/Image (5).controller using Guid(f79a701b1cc8142e48b16a1f51228817) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5545986db7ea52f1fce0ef518fa55e2a') in 0.004808 seconds 
-  Import took 0.014169 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.359338 seconds.
-  path: Assets/Animation/Hoch Emoji/HochEmojiAnimation.controller
-  artifactKey: Guid(f79a701b1cc8142e48b16a1f51228817) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/Hoch Emoji/HochEmojiAnimation.controller using Guid(f79a701b1cc8142e48b16a1f51228817) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7487f9e7479ba0f2c78274033398cdad') in 0.009035 seconds 
-  Import took 0.018388 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.119615 seconds.
-  path: Assets/Animation/Links Emoji/LeftEmojiAnimation.anim
-  artifactKey: Guid(08122052f19fe47878076a838d30c44e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/Links Emoji/LeftEmojiAnimation.anim using Guid(08122052f19fe47878076a838d30c44e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05c5c7b1bdc58788ec116826dd7871a5') in 0.005351 seconds 
-  Import took 0.014492 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.007569 seconds.
-  path: Assets/Animation/Links Emoji/LeftEmojiAnimation.anim
-  artifactKey: Guid(08122052f19fe47878076a838d30c44e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/Links Emoji/LeftEmojiAnimation.anim using Guid(08122052f19fe47878076a838d30c44e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05c5c7b1bdc58788ec116826dd7871a5') in 0.004964 seconds 
-  Import took 0.015653 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.352733 seconds.
-  path: Assets/Animation/Links Emoji/Image (3).controller
-  artifactKey: Guid(cfc8a8108cd34452196423f1b8e46816) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/Links Emoji/Image (3).controller using Guid(cfc8a8108cd34452196423f1b8e46816) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '07c9af4ed97c22601b7c606c430e5388') in 0.004901 seconds 
-  Import took 0.014983 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.369050 seconds.
-  path: Assets/Animation/Links Emoji/LeftEmojiAnimation.controller
-  artifactKey: Guid(cfc8a8108cd34452196423f1b8e46816) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/Links Emoji/LeftEmojiAnimation.controller using Guid(cfc8a8108cd34452196423f1b8e46816) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0151c5cbe343d8e86973c6e1ad74842e') in 0.008030 seconds 
-  Import took 0.018480 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.055847 seconds.
-  path: Assets/Animation/Rechts Emoji/RightEmojiAnimation.anim
-  artifactKey: Guid(c30e0537ed040402bb52c8a9eb39e7db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/Rechts Emoji/RightEmojiAnimation.anim using Guid(c30e0537ed040402bb52c8a9eb39e7db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7727978be9b05f3a3d7e9466f351f2ad') in 0.005314 seconds 
-  Import took 0.014573 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.003657 seconds.
-  path: Assets/Animation/Rechts Emoji/RightEmojiAnimation.anim
-  artifactKey: Guid(c30e0537ed040402bb52c8a9eb39e7db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/Rechts Emoji/RightEmojiAnimation.anim using Guid(c30e0537ed040402bb52c8a9eb39e7db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7727978be9b05f3a3d7e9466f351f2ad') in 0.003439 seconds 
-  Import took 0.014696 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.017518 seconds.
-  path: Assets/Animation/Rechts Emoji/Image (4).controller
-  artifactKey: Guid(9ac70345f1d5c46c3bc449227dc83001) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/Rechts Emoji/Image (4).controller using Guid(9ac70345f1d5c46c3bc449227dc83001) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1669aa5ed2f556a76607f884b0c3a6c9') in 0.005929 seconds 
-  Import took 0.015107 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.004799 seconds.
-  path: Assets/Animation/Rechts Emoji/RightEmojiAnimation.controller
-  artifactKey: Guid(9ac70345f1d5c46c3bc449227dc83001) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/Rechts Emoji/RightEmojiAnimation.controller using Guid(9ac70345f1d5c46c3bc449227dc83001) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f3ac5cdb44a50c470db54b64f8c83098') in 0.005832 seconds 
-  Import took 0.015978 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.859966 seconds.
-  path: Assets/Animation/Runter Emoji/RunterEmojiAnimation.anim
-  artifactKey: Guid(808dba5f5fcbd40e8beb052169e5ec40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/Runter Emoji/RunterEmojiAnimation.anim using Guid(808dba5f5fcbd40e8beb052169e5ec40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '12be2df7623aa65bca2f73609d1586c7') in 0.003556 seconds 
-  Import took 0.016067 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.011086 seconds.
-  path: Assets/Animation/Runter Emoji/RunterEmojiAnimation.anim
-  artifactKey: Guid(808dba5f5fcbd40e8beb052169e5ec40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/Runter Emoji/RunterEmojiAnimation.anim using Guid(808dba5f5fcbd40e8beb052169e5ec40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '12be2df7623aa65bca2f73609d1586c7') in 0.004264 seconds 
-  Import took 0.017016 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 11.546748 seconds.
-  path: Assets/Animation/Runter Emoji/Image (6).controller
-  artifactKey: Guid(09c4c208e6687430f85d1a0d4542ff91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/Runter Emoji/Image (6).controller using Guid(09c4c208e6687430f85d1a0d4542ff91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2df3a9ea32b67668ffcb883f7e7beaee') in 0.005157 seconds 
-  Import took 0.015533 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.508507 seconds.
-  path: Assets/Animation/Runter Emoji/RunterEmojiAnimation.controller
-  artifactKey: Guid(09c4c208e6687430f85d1a0d4542ff91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/Runter Emoji/RunterEmojiAnimation.controller using Guid(09c4c208e6687430f85d1a0d4542ff91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f3ccbba0359f4f276c9703eb28776f4') in 0.005405 seconds 
-  Import took 0.013822 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 5.168468 seconds.
-  path: Assets/Animation/SOS Emoji/SOSEmojiAnimation.anim
-  artifactKey: Guid(1cf1041f38929488f83b2edbddc3c5c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/SOS Emoji/SOSEmojiAnimation.anim using Guid(1cf1041f38929488f83b2edbddc3c5c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6d645d3cb7633155330f51ef943d75f') in 0.003947 seconds 
-  Import took 0.014401 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.005747 seconds.
-  path: Assets/Animation/SOS Emoji/SOSEmojiAnimation.anim
-  artifactKey: Guid(1cf1041f38929488f83b2edbddc3c5c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/SOS Emoji/SOSEmojiAnimation.anim using Guid(1cf1041f38929488f83b2edbddc3c5c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6d645d3cb7633155330f51ef943d75f') in 0.004024 seconds 
-  Import took 0.016617 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.655104 seconds.
-  path: Assets/Animation/SOS Emoji/Image (8).controller
-  artifactKey: Guid(48b16930e544742a6a69d42400f88c93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/SOS Emoji/Image (8).controller using Guid(48b16930e544742a6a69d42400f88c93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d031b268e54dd577c547b02ed26822d') in 0.003655 seconds 
-  Import took 0.014072 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.706953 seconds.
-  path: Assets/Animation/SOS Emoji/SOSEmojiAnimation.controller
-  artifactKey: Guid(48b16930e544742a6a69d42400f88c93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/SOS Emoji/SOSEmojiAnimation.controller using Guid(48b16930e544742a6a69d42400f88c93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '28747e37d2e7b59a6a966f25e5febfd5') in 0.008713 seconds 
-  Import took 0.018071 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 5.419252 seconds.
-  path: Assets/Animation/Trophy Emoji
-  artifactKey: Guid(66b359da88b7a4d929cf3ab7bef2a5f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/Trophy Emoji using Guid(66b359da88b7a4d929cf3ab7bef2a5f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2703d9f57b29ab1e51b16fedda941078') in 0.002512 seconds 
-  Import took 0.012090 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.150508 seconds.
-  path: Assets/Animation/Trophy Emoji/TrophyEmojiAnimation.anim
-  artifactKey: Guid(bd5006c4be3fd4458a13516b166d9e1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/Trophy Emoji/TrophyEmojiAnimation.anim using Guid(bd5006c4be3fd4458a13516b166d9e1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac8493c0a3797eeb340eb1806de21028') in 0.005446 seconds 
-  Import took 0.015443 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000821 seconds.
-  path: Assets/Animation/Trophy Emoji/TrophyEmojiAnimation.anim
-  artifactKey: Guid(bd5006c4be3fd4458a13516b166d9e1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/Trophy Emoji/TrophyEmojiAnimation.anim using Guid(bd5006c4be3fd4458a13516b166d9e1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac8493c0a3797eeb340eb1806de21028') in 0.005364 seconds 
-  Import took 0.014802 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.602208 seconds.
-  path: Assets/Animation/Trophy Emoji/Image (9).controller
-  artifactKey: Guid(a95fa98ef7d644b77ab19b5339ff7a57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/Trophy Emoji/Image (9).controller using Guid(a95fa98ef7d644b77ab19b5339ff7a57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '16b5195fef92927a9b27edc0f7f76631') in 0.004644 seconds 
-  Import took 0.014892 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.212008 seconds.
-  path: Assets/Animation/Trophy Emoji/TrophyEmojiAnimation.controller
-  artifactKey: Guid(a95fa98ef7d644b77ab19b5339ff7a57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/Trophy Emoji/TrophyEmojiAnimation.controller using Guid(a95fa98ef7d644b77ab19b5339ff7a57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09e97c6870bc3cd48e2704d5cec26feb') in 0.008335 seconds 
-  Import took 0.016967 seconds .
-
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
