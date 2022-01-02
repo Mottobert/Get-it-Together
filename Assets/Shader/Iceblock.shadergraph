@@ -304,7 +304,7 @@
     },
     "m_PreviewData": {
         "serializedMesh": {
-            "m_SerializedMesh": "{\"mesh\":{\"fileID\":-5495902117074765545,\"guid\":\"737ce625c5a8b4443abdb61787102a2d\",\"type\":3}}",
+            "m_SerializedMesh": "{\"mesh\":{\"fileID\":10202,\"guid\":\"0000000000000000e000000000000000\",\"type\":0}}",
             "m_Guid": ""
         }
     },
@@ -375,9 +375,9 @@
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
     "m_Value": {
-        "r": 0.8690605163574219,
-        "g": 1.8403325080871583,
-        "b": 2.670156955718994,
+        "r": 0.4941176474094391,
+        "g": 1.0352941751480103,
+        "b": 1.4980392456054688,
         "a": 0.0
     },
     "m_ColorMode": 1
@@ -599,7 +599,7 @@
     "m_StageCapability": 3,
     "m_Value": {
         "x": -0.03999999910593033,
-        "y": 0.699999988079071
+        "y": 0.5799999833106995
     },
     "m_DefaultValue": {
         "x": 0.0,
@@ -982,7 +982,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "Scale",
     "m_StageCapability": 3,
-    "m_Value": 11.199999809265137,
+    "m_Value": 26.280000686645509,
     "m_DefaultValue": 500.0,
     "m_Labels": []
 }
@@ -1199,7 +1199,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "CellDensity",
     "m_StageCapability": 3,
-    "m_Value": 9.5,
+    "m_Value": 6.829999923706055,
     "m_DefaultValue": 5.0,
     "m_Labels": []
 }
@@ -1343,8 +1343,8 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -546.0,
-            "y": 691.0000610351563,
+            "x": -547.5,
+            "y": 654.5,
             "width": 208.0,
             "height": 326.0
         }
@@ -1463,9 +1463,9 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -942.0000610351563,
-            "y": -91.99996948242188,
-            "width": 132.0,
+            "x": -973.5000610351563,
+            "y": 65.5,
+            "width": 131.5,
             "height": 34.0
         }
     },
@@ -1634,7 +1634,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "AngleOffset",
     "m_StageCapability": 3,
-    "m_Value": 33.599998474121097,
+    "m_Value": 30.5,
     "m_DefaultValue": 2.0,
     "m_Labels": []
 }
@@ -1781,7 +1781,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "Power",
     "m_StageCapability": 3,
-    "m_Value": 0.6299999952316284,
+    "m_Value": 0.9800000190734863,
     "m_DefaultValue": 1.0,
     "m_Labels": []
 }
