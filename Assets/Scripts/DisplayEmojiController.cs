@@ -8,6 +8,10 @@ public class DisplayEmojiController : MonoBehaviour
     private GameObject[] emojis;
     [SerializeField]
     private InputController inputController;
+    [SerializeField]
+    private ParticleSystem poofPS;
+    [SerializeField]
+    private GameObject poofAnimation;
 
     private int activeEmojiIndex;
 
@@ -18,6 +22,8 @@ public class DisplayEmojiController : MonoBehaviour
         if (active)
         {
             DisableActiveEmoji();
+            poofPS.Stop();
+            poofAnimation.GetComponent<Animator>().SetBool("activateAnimation", false);
             StopAllCoroutines();
         }
 
@@ -27,6 +33,8 @@ public class DisplayEmojiController : MonoBehaviour
         if (emojis[activeEmojiIndex].GetComponent<Animator>())
         {
             emojis[activeEmojiIndex].GetComponent<Animator>().SetTrigger("activateAnimation");
+            poofPS.Play();
+            poofAnimation.GetComponent<Animator>().SetBool("activateAnimation", true);
         }
 
         inputController.DeactivateKommunikationPanel();
@@ -45,5 +53,7 @@ public class DisplayEmojiController : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         DisableActiveEmoji();
+        poofPS.Stop();
+        poofAnimation.GetComponent<Animator>().SetBool("activateAnimation", false);
     }
 }
