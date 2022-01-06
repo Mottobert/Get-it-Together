@@ -7,9 +7,9 @@ public class Puzzle : MonoBehaviour
     [SerializeField]
     private GameObject[] puzzleObjects;
     [SerializeField]
-    private bool[] puzzleObjectsStatus; // Welchen Zustand sollen die Objekte haben, damit das Puzzle gelöst ist
+    private bool[] puzzleObjectsStatus; // Welchen Zustand sollen die Objekte haben, damit das Puzzle gel?st ist
     [SerializeField]
-    private GameObject solvedObject; // Objekt welches aktiviert werden soll, wenn das Puzzle gelöst wurde
+    private GameObject solvedObject; // Objekt welches aktiviert werden soll, wenn das Puzzle gel?st wurde
 
     private void Start()
     {
@@ -55,12 +55,18 @@ public class Puzzle : MonoBehaviour
     private void PuzzleSloved()
     {
         //Debug.Log("Puzzle Solved");
-        solvedObject.SetActive(false);
+        if (solvedObject)
+        {
+            solvedObject.SetActive(false);
+        }
     }
 
     private void PuzzleUnsolved()
     {
         //Debug.Log("Puzzle Unsolved");
-        solvedObject.SetActive(true);
+        if (solvedObject)
+        {
+            solvedObject.SetActive(true);
+        }
     }
 }

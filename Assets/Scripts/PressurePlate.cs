@@ -14,6 +14,13 @@ public class PressurePlate : MonoBehaviour
     [SerializeField]
     private GameObject puzzleManager;
 
+    [SerializeField]
+    private GameObject indicatorLamp;
+    [SerializeField]
+    private Material lampActiveMat;
+    [SerializeField]
+    private Material lampInactiveMat;
+
     public bool active = false;
 
     public int collisionCounter;
@@ -51,6 +58,8 @@ public class PressurePlate : MonoBehaviour
         plateObject.transform.position = new Vector3(plateObject.transform.position.x, plateObject.transform.position.y - 0.01f, plateObject.transform.position.z);
         active = true;
 
+        indicatorLamp.GetComponent<MeshRenderer>().material = lampActiveMat;
+
         if (movingPlatform)
         {
             movingPlatform.GetComponent<MovingPlatform>().ActivateMovingPlatform();
@@ -66,6 +75,8 @@ public class PressurePlate : MonoBehaviour
     {
         plateObject.transform.position = new Vector3(plateObject.transform.position.x, plateObject.transform.position.y + 0.01f, plateObject.transform.position.z);
         active = false;
+
+        indicatorLamp.GetComponent<MeshRenderer>().material = lampInactiveMat;
 
         collisionCounter--;
 

@@ -44,7 +44,7 @@ public class Finish : MonoBehaviour
 
         if(finishedPlayers == 1)
         {
-            //flag.transform.position = Vector3.Lerp(flag.transform.position, flagMid.position, 0.01f);
+            flag.transform.position = flagMid.position; //Vector3.Lerp(flag.transform.position, flagMid.position, 0.01f);
         }
 
         if (finishedPlayers == 2)
@@ -68,7 +68,7 @@ public class Finish : MonoBehaviour
 
         if (finishedPlayers < 0)
         {
-            //flag.transform.position = Vector3.Lerp(flag.transform.position, flagStart.position, 0.01f);
+            flag.transform.position = flagStart.position; //Vector3.Lerp(flag.transform.position, flagStart.position, 0.01f);
             finishedPlayers = 0;
         }
     }
@@ -87,7 +87,7 @@ public class Finish : MonoBehaviour
 
     public void LevelFinished()
     {
-        //flag.transform.position = Vector3.Lerp(flag.transform.position, flagEnd.position, 0.01f);
+        flag.transform.position = flagEnd.position; //Vector3.Lerp(flag.transform.position, flagEnd.position, 0.01f);
         Debug.Log("Finished");
         flag.SetActive(true);
         finishParticleSystem.Play();
