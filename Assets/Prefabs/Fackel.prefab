@@ -201,8 +201,6 @@ GameObject:
   - component: {fileID: 4901038599050791533}
   - component: {fileID: 2228028433370041940}
   - component: {fileID: 7151939530480124155}
-  - component: {fileID: 260926357801246314}
-  - component: {fileID: 962485995713164512}
   m_Layer: 0
   m_Name: Fire
   m_TagString: Untagged
@@ -273,32 +271,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &260926357801246314
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8038047026874368374}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &962485995713164512
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8038047026874368374}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 864b079721b18487d9aa40d197a89e50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8922669137884158256
 GameObject:
   m_ObjectHideFlags: 0

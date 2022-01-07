@@ -31,11 +31,14 @@ public class Fackel : MonoBehaviour
         {
             //ActivateFlame();
             PVPlayer.RPC("ActivateFackelForAll", RpcTarget.AllBufferedViaServer, gameObject.name);
+            Debug.Log("Activate Fackel for All");
         } 
         else if(other.tag == "water" && !isConnectedFackel && PVPlayer.IsMine)
         {
             //DeactivateFlame();
             PVPlayer.RPC("DeactivateFackelForAll", RpcTarget.AllBufferedViaServer, gameObject.name);
+            Debug.Log("Deactivate Fackel for All");
+
         }
     }
 
@@ -52,6 +55,7 @@ public class Fackel : MonoBehaviour
     public void ActivateFlame()
     {
         flame.SetActive(true);
+        Debug.Log("Activate Flame");
         pointLight.SetActive(true);
         activeFlame = true;
         if (connectedFackel)
@@ -67,6 +71,7 @@ public class Fackel : MonoBehaviour
     public void DeactivateFlame()
     {
         flame.SetActive(false);
+        Debug.Log("Deactivate Flame");
         pointLight.SetActive(false);
         activeFlame = false;
         if (connectedFackel)

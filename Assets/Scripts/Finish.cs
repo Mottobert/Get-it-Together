@@ -42,10 +42,12 @@ public class Finish : MonoBehaviour
             finishedPlayers++;
         }
 
-        if(finishedPlayers == 1)
+        if(finishedPlayers == 1 && CheckFinishRequirements())
         {
             flag.transform.position = flagMid.position; //Vector3.Lerp(flag.transform.position, flagMid.position, 0.01f);
         }
+
+        Debug.Log(finishedPlayers);
 
         if (finishedPlayers == 2)
         {
@@ -61,7 +63,7 @@ public class Finish : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "fire" || other.gameObject.tag == "water")
+        if (other.gameObject.tag == "playerFinishCollider")
         {
             finishedPlayers--;
         }
