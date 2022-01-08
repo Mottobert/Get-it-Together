@@ -42,16 +42,6 @@ public class Fackel : MonoBehaviour
         }
     }
 
-    //private void OnTriggerExit(Collider other)
-    //{
-    //    PhotonView PVPlayer = other.gameObject.GetComponent<PhotonView>();
-    //
-    //    if (movingPlatform && other.tag == "fire" && PVPlayer.IsMine)
-    //    {
-    //        PVPlayer.RPC("DeactivateFackelForAll", RpcTarget.All, gameObject.name);
-    //    }
-    //}
-
     public void ActivateFlame()
     {
         flame.SetActive(true);

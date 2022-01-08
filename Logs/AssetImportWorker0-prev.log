@@ -1,0 +1,616 @@
+Using pre-set license
+
+ COMMAND LINE ARGUMENTS:
+/Applications/Unity/Hub/Editor/2020.3.14f1/Unity.app/Contents/MacOS/Unity
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+/Users/maxotto/Documents/GitHub/Get-it-Together/Get-it-Together
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+52407
+Successfully changed project path to: /Users/maxotto/Documents/GitHub/Get-it-Together/Get-it-Together
+/Users/maxotto/Documents/GitHub/Get-it-Together/Get-it-Together
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 222.59 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.14f1 (d0d1bb862f9d)
+[Subsystems] Discovering subsystems at path /Applications/Unity/Hub/Editor/2020.3.14f1/Unity.app/Contents/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path /Users/maxotto/Documents/GitHub/Get-it-Together/Get-it-Together/Assets
+GfxDevice: creating device client; threaded=0
+2022-01-07 21:32:21.529 Unity[50446:707422] Color LCD preferred device: Intel(R) Iris(TM) Plus Graphics 650 (low power)
+2022-01-07 21:32:21.529 Unity[50446:707422] Metal devices available: 1
+2022-01-07 21:32:21.529 Unity[50446:707422] 0: Intel(R) Iris(TM) Plus Graphics 650 (low power)
+2022-01-07 21:32:21.529 Unity[50446:707422] Using device Intel(R) Iris(TM) Plus Graphics 650 (low power)
+Initializing Metal device caps: Intel(R) Iris(TM) Plus Graphics 650
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
+Initialize mono
+Mono path[0] = '/Applications/Unity/Hub/Editor/2020.3.14f1/Unity.app/Contents/Managed'
+Mono path[1] = '/Applications/Unity/Hub/Editor/2020.3.14f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = '/Applications/Unity/Hub/Editor/2020.3.14f1/Unity.app/Contents/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56446
+Begin MonoManager ReloadAssembly
+Error scanning for extension ivy.xml files: System.UnauthorizedAccessException: Access to the path '/Applications/Unity/Hub/Editor/2020.3.14f1/PlaybackEngines/WebGLSupport/BuildTools/Emscripten_Mac/node' is denied.
+  at System.IO.__Error.WinIOError (System.Int32 errorCode, System.String maybeFullPath) [0x00129] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at System.IO.FileSystemEnumerableIterator`1[TSource].HandleError (System.Int32 hr, System.String path) [0x00006] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at System.IO.FileSystemEnumerableIterator`1[TSource].AddSearchableDirsToStack (System.IO.Directory+SearchData localSearchData) [0x00053] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at System.IO.FileSystemEnumerableIterator`1[TSource].MoveNext () [0x0008e] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at System.Collections.Generic.List`1[T]..ctor (System.Collections.Generic.IEnumerable`1[T] collection) [0x00077] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at System.IO.Directory.InternalGetFileDirectoryNames (System.String path, System.String userPathOriginal, System.String searchPattern, System.Boolean includeFiles, System.Boolean includeDirs, System.IO.SearchOption searchOption, System.Boolean checkHost) [0x0000f] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at System.IO.Directory.InternalGetFiles (System.String path, System.String searchPattern, System.IO.SearchOption searchOption) [0x00000] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at System.IO.Directory.GetFiles (System.String path, System.String searchPattern, System.IO.SearchOption searchOption) [0x00038] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at UnityEditor.Modules.ModuleManager.LoadLegacyExtensionsFromIvyFiles () [0x000a5] in /Users/bokken/buildslave/unity/build/Editor/Mono/Modules/ModuleManager.cs:253 
+Registering precompiled unity dll's ...
+Register platform support module: /Applications/Unity/Hub/Editor/2020.3.14f1/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: /Applications/Unity/Hub/Editor/2020.3.14f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Registered in 0.001173 seconds.
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 339.23 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  8.984 seconds
+Domain Reload Profiling:
+	ReloadAssembly (8985ms)
+		BeginReloadAssembly (67ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (1611ms)
+			LoadAssemblies (65ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (654ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (94ms)
+			SetupLoadedEditorAssemblies (703ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (9ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (339ms)
+				BeforeProcessingInitializeOnLoad (57ms)
+				ProcessInitializeOnLoadAttributes (245ms)
+				ProcessInitializeOnLoadMethodAttributes (52ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.009457 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 233.48 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.588 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2589ms)
+		BeginReloadAssembly (340ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (72ms)
+		EndReloadAssembly (2133ms)
+			LoadAssemblies (173ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (779ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (165ms)
+			SetupLoadedEditorAssemblies (838ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (6ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (234ms)
+				BeforeProcessingInitializeOnLoad (168ms)
+				ProcessInitializeOnLoadAttributes (415ms)
+				ProcessInitializeOnLoadMethodAttributes (13ms)
+				AfterProcessingInitializeOnLoad (2ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (9ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Launching external process: /Applications/Unity/Hub/Editor/2020.3.14f1/Unity.app/Contents/Tools/UnityShaderCompiler
+Launched and connected shader compiler UnityShaderCompiler after 0.01 seconds
+Refreshing native plugins compatible for Editor in 2.07 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4367 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 380.1 MB.
+System memory in use after: 380.4 MB.
+
+Unloading 36 unused Assets to reduce memory usage. Loaded Objects now: 4794.
+Total: 5.218286 ms (FindLiveObjects: 0.779468 ms CreateObjectMapping: 0.317545 ms MarkObjects: 4.014801 ms  DeleteObjects: 0.105164 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  path: Assets/Polygon Arsenal/Polygon Arsenal 2.0 - Documentation.pdf
+  artifactKey: Guid(a7e98eb93b44be44f8c7e98e3505f236) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Polygon Arsenal 2.0 - Documentation.pdf using Guid(a7e98eb93b44be44f8c7e98e3505f236) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69feac075cdb63512726e5e29a41d0df') in 0.858314 seconds 
+  Import took 0.866308 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000238 seconds.
+  path: Assets/Polygon Arsenal
+  artifactKey: Guid(2bc74b4579a547f40b8c05948e10ea78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal using Guid(2bc74b4579a547f40b8c05948e10ea78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd69ccd1ee65e411497aced7b8369bf67') in 0.001153 seconds 
+  Import took 0.008470 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 48.892339 seconds.
+  path: Assets/Polygon Arsenal/Prefabs
+  artifactKey: Guid(0ab7977278e4a704d8b7fe945ceca60e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Prefabs using Guid(0ab7977278e4a704d8b7fe945ceca60e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a2bbabebc632232a5d0f3f33e5c5266') in 0.001959 seconds 
+  Import took 0.016897 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.483568 seconds.
+  path: Assets/Polygon Arsenal/Prefabs/Interactive
+  artifactKey: Guid(f5aa6d521d2f02048843dc787be0feff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Prefabs/Interactive using Guid(f5aa6d521d2f02048843dc787be0feff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f116eac3bde356bc2aa9618303ab8f3b') in 0.002802 seconds 
+  Import took 0.018510 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.470510 seconds.
+  path: Assets/Polygon Arsenal/Prefabs/Interactive/BlackHole
+  artifactKey: Guid(1dc7af75e2cc69a47842f4f88783196d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Prefabs/Interactive/BlackHole using Guid(1dc7af75e2cc69a47842f4f88783196d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e2c85d060b0f2190fe8ce4090324653d') in 0.002345 seconds 
+  Import took 0.015971 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.941506 seconds.
+  path: Assets/Polygon Arsenal/Prefabs/Environment
+  artifactKey: Guid(4b8dac498a38559408d9071420b0cb6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Prefabs/Environment using Guid(4b8dac498a38559408d9071420b0cb6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b09007e32295f7455b81ec406b5c64d2') in 0.002516 seconds 
+  Import took 0.015717 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.583594 seconds.
+  path: Assets/Polygon Arsenal/Prefabs/Environment/Rocks
+  artifactKey: Guid(c21deea63542a6d40ad0dfb375268dd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Prefabs/Environment/Rocks using Guid(c21deea63542a6d40ad0dfb375268dd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a528c4d53fcc98beb875d0930b3fe44') in 0.002654 seconds 
+  Import took 0.018322 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.093477 seconds.
+  path: Assets/Polygon Arsenal/Prefabs/Environment/Rocks/FallingPebbles.prefab
+  artifactKey: Guid(067321353c4bc8a4f990a622fb82d325) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Prefabs/Environment/Rocks/FallingPebbles.prefab using Guid(067321353c4bc8a4f990a622fb82d325) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd661589ca9d59ac3fb113a4614d79a79') in 1.899717 seconds 
+  Import took 1.912528 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000219 seconds.
+  path: Assets/Polygon Arsenal/Prefabs/Environment/Rocks/FallingRock.prefab
+  artifactKey: Guid(dcf67b43d6354ff4aa299ffeaf3524b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Prefabs/Environment/Rocks/FallingRock.prefab using Guid(dcf67b43d6354ff4aa299ffeaf3524b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3bcd7170fdde2a2aa8d5b1f926e9bf89') in 0.017269 seconds 
+  Import took 0.028425 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000229 seconds.
+  path: Assets/Polygon Arsenal/Prefabs/Environment/Rocks/Rockslide.prefab
+  artifactKey: Guid(41b3507608b545449b54c2999411fe46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Prefabs/Environment/Rocks/Rockslide.prefab using Guid(41b3507608b545449b54c2999411fe46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '171a2c782fb62c9baba9a03cdb01d4a9') in 0.014195 seconds 
+  Import took 0.025400 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000241 seconds.
+  path: Assets/Polygon Arsenal/Prefabs/Environment/Rocks/FallingRocks.prefab
+  artifactKey: Guid(9b3a82ef39983f445b4eeb92eacc8157) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Prefabs/Environment/Rocks/FallingRocks.prefab using Guid(9b3a82ef39983f445b4eeb92eacc8157) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b76a7a5671ed34f6b0b40b7225a887a') in 0.024421 seconds 
+  Import took 0.039116 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.471370 seconds.
+  path: Assets/Polygon Arsenal/Models/PolyPebble.FBX
+  artifactKey: Guid(23ffe86fd385df04796f21c583f4a45c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Models/PolyPebble.FBX using Guid(23ffe86fd385df04796f21c583f4a45c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '52b62dea920782699eead36fde7157ba') in 0.557258 seconds 
+  Import took 0.571625 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.449235 seconds.
+  path: Assets/Polygon Arsenal/Shaders
+  artifactKey: Guid(4d98ec11146821d4bbdd413f4d27e9e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Shaders using Guid(4d98ec11146821d4bbdd413f4d27e9e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '133b9731af50332adfe32132f770abfc') in 0.003253 seconds 
+  Import took 0.016139 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.568790 seconds.
+  path: Assets/Polygon Arsenal/Shaders/Standard
+  artifactKey: Guid(bf8639b21e2ee0b42a415e20b664a7aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Shaders/Standard using Guid(bf8639b21e2ee0b42a415e20b664a7aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9cfdb47a44ee100c434f0950f3aba214') in 0.002187 seconds 
+  Import took 0.014788 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.734521 seconds.
+  path: Assets/Polygon Arsenal/Materials
+  artifactKey: Guid(618d373e04013e240af806a28d9106b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Materials using Guid(618d373e04013e240af806a28d9106b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '62cec74e71f5dd4d6d96866adf21485d') in 0.001677 seconds 
+  Import took 0.013187 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.043217 seconds.
+  path: Assets/Polygon Arsenal/Materials/Gradients
+  artifactKey: Guid(277ce93019a4c3e468020168d4475617) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Materials/Gradients using Guid(277ce93019a4c3e468020168d4475617) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd429d6b8115d729a9b440d82f3e0a3b') in 0.002535 seconds 
+  Import took 0.013364 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.084416 seconds.
+  path: Assets/Polygon Arsenal/Materials/Gradients/PolyGradient_ADD.mat
+  artifactKey: Guid(e7f3960fb4b53264a81cd6b6ac0e1a52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Materials/Gradients/PolyGradient_ADD.mat using Guid(e7f3960fb4b53264a81cd6b6ac0e1a52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9012468f6bc4d48bb11bfdd47dab8e66') in 0.206996 seconds 
+  Import took 0.217041 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000279 seconds.
+  path: Assets/Polygon Arsenal/Materials/Gradients/PolyGradientOrbital_ADD.mat
+  artifactKey: Guid(babe89ae5a5b0c7438f2678079569cd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Materials/Gradients/PolyGradientOrbital_ADD.mat using Guid(babe89ae5a5b0c7438f2678079569cd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a009765dc5820a7b09be199632a8705b') in 0.016588 seconds 
+  Import took 0.024002 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000200 seconds.
+  path: Assets/Polygon Arsenal/Materials/Gradients/PolySpriteGlow_ADD.mat
+  artifactKey: Guid(2f3f789aad8546a488298feff43c3082) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Materials/Gradients/PolySpriteGlow_ADD.mat using Guid(2f3f789aad8546a488298feff43c3082) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cfa269de2660de81d8f5155fae28696e') in 0.014044 seconds 
+  Import took 0.021885 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000203 seconds.
+  path: Assets/Polygon Arsenal/Materials/Gradients/PolySpriteGlowDark_M.mat
+  artifactKey: Guid(d89f2a05eba30f94eb2ddf7506b6146c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Materials/Gradients/PolySpriteGlowDark_M.mat using Guid(d89f2a05eba30f94eb2ddf7506b6146c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e0b9ab68e23ce590ceb62eaa77e81bca') in 0.023357 seconds 
+  Import took 0.034975 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000890 seconds.
+  path: Assets/Polygon Arsenal/Materials/Gradients/PolyGradientSoftMirror_ADD.mat
+  artifactKey: Guid(c42047238c6a1ca4280abec89a518fb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Materials/Gradients/PolyGradientSoftMirror_ADD.mat using Guid(c42047238c6a1ca4280abec89a518fb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '28e034f94f39168a7350baa54862b1bd') in 0.016452 seconds 
+  Import took 0.026660 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000202 seconds.
+  path: Assets/Polygon Arsenal/Materials/Gradients/PolyGradientSoft_ADD.mat
+  artifactKey: Guid(db56ded6412dc0648895197a0bc23e31) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Materials/Gradients/PolyGradientSoft_ADD.mat using Guid(db56ded6412dc0648895197a0bc23e31) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'afc92214c45787a6fd07cab57891f585') in 0.016098 seconds 
+  Import took 0.025956 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000264 seconds.
+  path: Assets/Polygon Arsenal/Materials/Gradients/PolySpriteGlow_NS_ADD.mat
+  artifactKey: Guid(f0bfab04a245b004ca5849d8e44e6be7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Materials/Gradients/PolySpriteGlow_NS_ADD.mat using Guid(f0bfab04a245b004ca5849d8e44e6be7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a0b35b173f828f4bb3a8061a75dc4b9') in 0.023965 seconds 
+  Import took 0.036182 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000227 seconds.
+  path: Assets/Polygon Arsenal/Materials/Gradients/PolyGradientMirror_ADD.mat
+  artifactKey: Guid(1b030f1759839064bb75782be1586675) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Materials/Gradients/PolyGradientMirror_ADD.mat using Guid(1b030f1759839064bb75782be1586675) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '61b2b50fbca21dc5a160758c3a899775') in 0.018442 seconds 
+  Import took 0.028938 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.026117 seconds.
+  path: Assets/Polygon Arsenal/Materials/Gradients/PolyGradientMirror_ADD.mat
+  artifactKey: Guid(1b030f1759839064bb75782be1586675) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Materials/Gradients/PolyGradientMirror_ADD.mat using Guid(1b030f1759839064bb75782be1586675) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '61b2b50fbca21dc5a160758c3a899775') in 0.017317 seconds 
+  Import took 0.033360 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 16.322236 seconds.
+  path: Assets/Polygon Arsenal/Materials/Main
+  artifactKey: Guid(21ffa418e45c975459b2ddae22ee6144) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Materials/Main using Guid(21ffa418e45c975459b2ddae22ee6144) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38108b5b9ac01b71aceba8e9f5bd1758') in 0.002841 seconds 
+  Import took 0.015594 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.072712 seconds.
+  path: Assets/Polygon Arsenal/Materials/Main/PolyGlow_ADD.mat
+  artifactKey: Guid(20fbdc32471af924d825be10e0be7cbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Materials/Main/PolyGlow_ADD.mat using Guid(20fbdc32471af924d825be10e0be7cbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c5ac37b29620614ec95d32489c907617') in 0.013516 seconds 
+  Import took 0.026826 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000267 seconds.
+  path: Assets/Polygon Arsenal/Materials/Main/PolySolidIntense.mat
+  artifactKey: Guid(4cad1959e44286842b02291790bb6793) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Materials/Main/PolySolidIntense.mat using Guid(4cad1959e44286842b02291790bb6793) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f4ccaae002060693763ace07da15477') in 0.092453 seconds 
+  Import took 0.102335 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000226 seconds.
+  path: Assets/Polygon Arsenal/Materials/Main/PolySolidGlow.mat
+  artifactKey: Guid(46c46885d5e9e194ba96e80d167e7a05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Materials/Main/PolySolidGlow.mat using Guid(46c46885d5e9e194ba96e80d167e7a05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '43825d46a8970f07078937e9c0785263') in 0.017435 seconds 
+  Import took 0.026757 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000340 seconds.
+  path: Assets/Polygon Arsenal/Materials/Main/PolyLitSurface.mat
+  artifactKey: Guid(be228499b18f1344caf9d8104b8bcd99) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Materials/Main/PolyLitSurface.mat using Guid(be228499b18f1344caf9d8104b8bcd99) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f66618534aae389ff14ccc37dae91962') in 0.014005 seconds 
+  Import took 0.022873 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.832291 seconds.
+  path: Assets/Polygon Arsenal/Materials/Misc
+  artifactKey: Guid(1e01bbbefffa1a44e9153719b8745d3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Materials/Misc using Guid(1e01bbbefffa1a44e9153719b8745d3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6fd112c72b70fcb793babb18a6e5601') in 0.001647 seconds 
+  Import took 0.013552 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.095854 seconds.
+  path: Assets/Polygon Arsenal/Materials/Misc/PolyDollarBill.mat
+  artifactKey: Guid(861b9f2a80cba3843b01969a59a76418) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Materials/Misc/PolyDollarBill.mat using Guid(861b9f2a80cba3843b01969a59a76418) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a95d10bbf87ec7783b566d12b1512da0') in 0.017193 seconds 
+  Import took 0.030112 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000287 seconds.
+  path: Assets/Polygon Arsenal/Materials/Misc/PolyGoreAtlasGreen.mat
+  artifactKey: Guid(8e3176853b348a04a926da479c5bdcdc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Materials/Misc/PolyGoreAtlasGreen.mat using Guid(8e3176853b348a04a926da479c5bdcdc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17572cc311f5b17d9debe53b53a8e1db') in 0.016651 seconds 
+  Import took 0.027984 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000284 seconds.
+  path: Assets/Polygon Arsenal/Materials/Misc/PolyGoreAtlasRed.mat
+  artifactKey: Guid(d2b8cad406ffe9b4eb56e36960c52de6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Materials/Misc/PolyGoreAtlasRed.mat using Guid(d2b8cad406ffe9b4eb56e36960c52de6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '451c63e003948fb2473de1e0d4fe2739') in 0.017269 seconds 
+  Import took 0.028973 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.303117 seconds.
+  path: Assets/Polygon Arsenal/Materials/Misc/Grenades
+  artifactKey: Guid(7107fd8f06af9d5409918964c5e3a82b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Materials/Misc/Grenades using Guid(7107fd8f06af9d5409918964c5e3a82b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46c6d01c2f1a65a31aab6cf92ed698e0') in 0.002568 seconds 
+  Import took 0.015450 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.078659 seconds.
+  path: Assets/Polygon Arsenal/Materials/Misc/Grenades/Grenade-Fire.mat
+  artifactKey: Guid(170dfcc6f5475ee42b98db7c27288eb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Materials/Misc/Grenades/Grenade-Fire.mat using Guid(170dfcc6f5475ee42b98db7c27288eb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f6ba25ea8454aedc34eb359ec49a508') in 0.015899 seconds 
+  Import took 0.028643 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000253 seconds.
+  path: Assets/Polygon Arsenal/Materials/Misc/Grenades/Grenade-Gas.mat
+  artifactKey: Guid(56c3030d544f73d4297d4278799476c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Materials/Misc/Grenades/Grenade-Gas.mat using Guid(56c3030d544f73d4297d4278799476c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4c0c84f680a48f50b0eb8c02b596fb1') in 0.015453 seconds 
+  Import took 0.027400 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000712 seconds.
+  path: Assets/Polygon Arsenal/Materials/Misc/Grenades/GrenadePink.mat
+  artifactKey: Guid(e6c3baf9d13c7374a94f2a3f53a3c3a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Materials/Misc/Grenades/GrenadePink.mat using Guid(e6c3baf9d13c7374a94f2a3f53a3c3a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '97ece635879295398954437f14b8a0eb') in 0.016755 seconds 
+  Import took 0.027335 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000290 seconds.
+  path: Assets/Polygon Arsenal/Materials/Misc/Grenades/Grenade-Flash.mat
+  artifactKey: Guid(e18627256422adb439639bc7bda3100d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Materials/Misc/Grenades/Grenade-Flash.mat using Guid(e18627256422adb439639bc7bda3100d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c97211b450d20998f17bf0b02c0b9725') in 0.022451 seconds 
+  Import took 0.033547 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000237 seconds.
+  path: Assets/Polygon Arsenal/Materials/Misc/Grenades/GrenadeBlue.mat
+  artifactKey: Guid(c453aed48a2d8ca4bb6d4c13ff4f0fb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Materials/Misc/Grenades/GrenadeBlue.mat using Guid(c453aed48a2d8ca4bb6d4c13ff4f0fb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd5dc43aa6e5c69aafe389cd69a261ea') in 0.023498 seconds 
+  Import took 0.034190 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000361 seconds.
+  path: Assets/Polygon Arsenal/Materials/Misc/Grenades/GrenadeRed.mat
+  artifactKey: Guid(ad6aa9a59bea82c4a81e08034460a820) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Materials/Misc/Grenades/GrenadeRed.mat using Guid(ad6aa9a59bea82c4a81e08034460a820) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e40919957d86126fa99e6a17a6f446f0') in 0.013490 seconds 
+  Import took 0.022203 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000283 seconds.
+  path: Assets/Polygon Arsenal/Materials/Misc/Grenades/GrenadeGreen.mat
+  artifactKey: Guid(1f734f719a5753b468e8b9c8e6475a8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Materials/Misc/Grenades/GrenadeGreen.mat using Guid(1f734f719a5753b468e8b9c8e6475a8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8cb62ccf383d62b5d9698ff5140cfd4') in 0.021319 seconds 
+  Import took 0.034692 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000384 seconds.
+  path: Assets/Polygon Arsenal/Materials/Misc/Grenades/Grenade-Smoke.mat
+  artifactKey: Guid(601cc539d9cf3e14b890c426707874ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Materials/Misc/Grenades/Grenade-Smoke.mat using Guid(601cc539d9cf3e14b890c426707874ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da062a9644c0bfe06d1e446b21da32a5') in 0.018865 seconds 
+  Import took 0.031938 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000300 seconds.
+  path: Assets/Polygon Arsenal/Materials/Misc/Grenades/GrenadeYellow.mat
+  artifactKey: Guid(d72f7ab5b6eff7540bcb4a924b30db74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Materials/Misc/Grenades/GrenadeYellow.mat using Guid(d72f7ab5b6eff7540bcb4a924b30db74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '63c2fb6c62275728b703ea471504be4e') in 0.019571 seconds 
+  Import took 0.034346 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002412 seconds.
+  path: Assets/Polygon Arsenal/Materials/Misc/Grenades/GrenadePurple.mat
+  artifactKey: Guid(596a4c2a15b92224f9f938aec4f2762c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Materials/Misc/Grenades/GrenadePurple.mat using Guid(596a4c2a15b92224f9f938aec4f2762c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a00aeebd6e133419759bdbeb894c22d6') in 0.026780 seconds 
+  Import took 0.040673 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000292 seconds.
+  path: Assets/Polygon Arsenal/Materials/Misc/Grenades/GrenadeGreen.mat
+  artifactKey: Guid(1f734f719a5753b468e8b9c8e6475a8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Materials/Misc/Grenades/GrenadeGreen.mat using Guid(1f734f719a5753b468e8b9c8e6475a8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8cb62ccf383d62b5d9698ff5140cfd4') in 0.018618 seconds 
+  Import took 0.028636 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.057262 seconds.
+  path: Assets/Polygon Arsenal/Materials/Rimlight
+  artifactKey: Guid(baf188011e1d8464c8714052d92374be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Materials/Rimlight using Guid(baf188011e1d8464c8714052d92374be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b2a7dfb3700df57876d8b986a7d2f262') in 0.002620 seconds 
+  Import took 0.015968 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.832797 seconds.
+  path: Assets/Polygon Arsenal/Materials/Rimlight/Solid
+  artifactKey: Guid(f51cee27b563e0242a4616f4e2794375) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Materials/Rimlight/Solid using Guid(f51cee27b563e0242a4616f4e2794375) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2904b9a8dcf203888c809e0c3b9f308') in 0.002285 seconds 
+  Import took 0.012322 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001643 seconds.
+  path: Assets/Polygon Arsenal/Materials/Rimlight/Solid
+  artifactKey: Guid(f51cee27b563e0242a4616f4e2794375) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Materials/Rimlight/Solid using Guid(f51cee27b563e0242a4616f4e2794375) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2904b9a8dcf203888c809e0c3b9f308') in 0.001405 seconds 
+  Import took 0.013766 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.114117 seconds.
+  path: Assets/Polygon Arsenal/Materials/Rimlight/Solid/PolyIceSolid.mat
+  artifactKey: Guid(3b16c1a4df23b3f418dd8e0bb1d0378c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Materials/Rimlight/Solid/PolyIceSolid.mat using Guid(3b16c1a4df23b3f418dd8e0bb1d0378c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68532998547810a7fff537c26fca8a88') in 0.016802 seconds 
+  Import took 0.032162 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.775556 seconds.
+  path: Assets/Polygon Arsenal/Materials/Rimlight/Solid/BlackHole
+  artifactKey: Guid(27a57f73d79234a4892237810717b0ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Materials/Rimlight/Solid/BlackHole using Guid(27a57f73d79234a4892237810717b0ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e5225c285a5270f07e3114f840789f49') in 0.002159 seconds 
+  Import took 0.014349 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001242 seconds.
+  path: Assets/Polygon Arsenal/Materials/Rimlight/Solid/BlackHole
+  artifactKey: Guid(27a57f73d79234a4892237810717b0ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Materials/Rimlight/Solid/BlackHole using Guid(27a57f73d79234a4892237810717b0ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e5225c285a5270f07e3114f840789f49') in 0.001322 seconds 
+  Import took 0.016439 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.147751 seconds.
+  path: Assets/Polygon Arsenal/Materials/Rimlight/Solid/BlackHole/PolyBlackHoleBlue.mat
+  artifactKey: Guid(8b67ed1b53a2fd04480c88b532880e84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Materials/Rimlight/Solid/BlackHole/PolyBlackHoleBlue.mat using Guid(8b67ed1b53a2fd04480c88b532880e84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c9c1edfc4cd793663e41bc9fdaf8d11') in 0.012515 seconds 
+  Import took 0.022332 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000231 seconds.
+  path: Assets/Polygon Arsenal/Materials/Rimlight/Solid/BlackHole/PolyBlackHolePink.mat
+  artifactKey: Guid(0f800fa6a92a5364e8219e32ffe7d469) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Materials/Rimlight/Solid/BlackHole/PolyBlackHolePink.mat using Guid(0f800fa6a92a5364e8219e32ffe7d469) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4e224d46af7fa171f415922b362b893') in 0.016175 seconds 
+  Import took 0.025145 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000208 seconds.
+  path: Assets/Polygon Arsenal/Materials/Rimlight/Solid/BlackHole/PolyBlackHolePurple.mat
+  artifactKey: Guid(aa2d87a2bcfbeeb418587b90d46b1d6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Materials/Rimlight/Solid/BlackHole/PolyBlackHolePurple.mat using Guid(aa2d87a2bcfbeeb418587b90d46b1d6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c28ae0556d096d56f3a1b598794f552b') in 0.013478 seconds 
+  Import took 0.024796 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000263 seconds.
+  path: Assets/Polygon Arsenal/Materials/Rimlight/Solid/BlackHole/PolyBlackHoleOuterLayer.mat
+  artifactKey: Guid(214e3b8c22cae79459c9e74027ee3d13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Materials/Rimlight/Solid/BlackHole/PolyBlackHoleOuterLayer.mat using Guid(214e3b8c22cae79459c9e74027ee3d13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9dbecb956991a2648f72f578c914a1dc') in 0.035487 seconds 
+  Import took 0.048879 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000317 seconds.
+  path: Assets/Polygon Arsenal/Materials/Rimlight/Solid/BlackHole/PolyBlackHoleRed.mat
+  artifactKey: Guid(d279c6dedb6e7c84ea5fbffe2a0a9349) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Materials/Rimlight/Solid/BlackHole/PolyBlackHoleRed.mat using Guid(d279c6dedb6e7c84ea5fbffe2a0a9349) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0879db720e45a18af9c14c3f8367c3df') in 0.029394 seconds 
+  Import took 0.039548 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000280 seconds.
+  path: Assets/Polygon Arsenal/Materials/Rimlight/Solid/BlackHole/PolyBlackHoleYellow.mat
+  artifactKey: Guid(771bc9a064f296d46b95a50547cfba67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Materials/Rimlight/Solid/BlackHole/PolyBlackHoleYellow.mat using Guid(771bc9a064f296d46b95a50547cfba67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64385cb45cf3158d0fadf6581e484942') in 0.019829 seconds 
+  Import took 0.030487 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000255 seconds.
+  path: Assets/Polygon Arsenal/Materials/Rimlight/Solid/BlackHole/PolyBlackHoleGreen.mat
+  artifactKey: Guid(9715a63126301c44c802305e5c9ac158) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Polygon Arsenal/Materials/Rimlight/Solid/BlackHole/PolyBlackHoleGreen.mat using Guid(9715a63126301c44c802305e5c9ac158) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce9a9cf0be00a2bd7173a5d5747ed544') in 0.015306 seconds 
+  Import took 0.031050 seconds .
+
