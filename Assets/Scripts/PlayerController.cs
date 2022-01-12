@@ -308,6 +308,14 @@ public class PlayerController : MonoBehaviour
     }
 
 
+    // Reload Level
+    [PunRPC]
+    public void ReloadSceneForAll(string name)
+    {
+        GameObject.Find(name).GetComponent<ChangeScene>().ReloadScene();
+    }
+
+
     // Finish
     [PunRPC]
     public void LevelFinishedForAll(string name)

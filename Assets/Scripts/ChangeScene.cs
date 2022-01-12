@@ -29,6 +29,13 @@ public class ChangeScene : MonoBehaviour
         }
     }
 
+    public void ReloadSceneForAll()
+    {
+        PhotonView PVPlayer = this.gameObject.GetComponentInParent<PhotonView>();
+
+        PVPlayer.RPC("ReloadSceneForAll", RpcTarget.AllBufferedViaServer, gameObject.name);
+    }
+
     public void ReloadScene()
     {
         SceneManager.LoadScene(sceneBuildIndex: SceneManager.GetActiveScene().buildIndex);

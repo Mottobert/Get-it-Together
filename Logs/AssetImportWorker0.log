@@ -1013,3 +1013,333 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007304 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 3.50 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.297 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2300ms)
+		BeginReloadAssembly (365ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (20ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (223ms)
+		EndReloadAssembly (1800ms)
+			LoadAssemblies (157ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (733ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (93ms)
+			SetupLoadedEditorAssemblies (576ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (10ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (4ms)
+				BeforeProcessingInitializeOnLoad (137ms)
+				ProcessInitializeOnLoadAttributes (405ms)
+				ProcessInitializeOnLoadMethodAttributes (16ms)
+				AfterProcessingInitializeOnLoad (2ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (24ms)
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
+Refreshing native plugins compatible for Editor in 3.38 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4186 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 464.1 MB.
+System memory in use after: 464.3 MB.
+
+Unloading 28 unused Assets to reduce memory usage. Loaded Objects now: 4966.
+Total: 5.282692 ms (FindLiveObjects: 0.892516 ms CreateObjectMapping: 0.527606 ms MarkObjects: 3.832164 ms  DeleteObjects: 0.029294 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006357 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 3.42 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.263 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2264ms)
+		BeginReloadAssembly (232ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (120ms)
+		EndReloadAssembly (1887ms)
+			LoadAssemblies (202ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (731ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (104ms)
+			SetupLoadedEditorAssemblies (607ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (9ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (3ms)
+				BeforeProcessingInitializeOnLoad (154ms)
+				ProcessInitializeOnLoadAttributes (425ms)
+				ProcessInitializeOnLoadMethodAttributes (12ms)
+				AfterProcessingInitializeOnLoad (2ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (28ms)
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
+Refreshing native plugins compatible for Editor in 2.21 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4186 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 464.7 MB.
+System memory in use after: 465.0 MB.
+
+Unloading 28 unused Assets to reduce memory usage. Loaded Objects now: 4969.
+Total: 4.699744 ms (FindLiveObjects: 0.755109 ms CreateObjectMapping: 0.310560 ms MarkObjects: 3.604565 ms  DeleteObjects: 0.028060 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 1016.359994 seconds.
+  path: Assets/Resources/PhotonPrefabs/FeuerSpieler.prefab
+  artifactKey: Guid(a5521eaf5d44149e0bc7c2f0dd2e9bad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/PhotonPrefabs/FeuerSpieler.prefab using Guid(a5521eaf5d44149e0bc7c2f0dd2e9bad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f26512fc5177db9354b6bdadb11f5a54') in 0.409588 seconds 
+  Import took 0.423807 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.010884 seconds.
+  path: Assets/Resources/PhotonPrefabs/WasserSpieler.prefab
+  artifactKey: Guid(2ad15c84b7a9b4486a188c3a9149eb88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/PhotonPrefabs/WasserSpieler.prefab using Guid(2ad15c84b7a9b4486a188c3a9149eb88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2334bfbff3437c02815c8ae19a8a1a8d') in 0.066831 seconds 
+  Import took 0.078091 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 106.687291 seconds.
+  path: Assets/Resources/PhotonPrefabs/FeuerSpieler.prefab
+  artifactKey: Guid(a5521eaf5d44149e0bc7c2f0dd2e9bad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/PhotonPrefabs/FeuerSpieler.prefab using Guid(a5521eaf5d44149e0bc7c2f0dd2e9bad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c49adc7ff505c9c29232ae6768a269da') in 0.075650 seconds 
+  Import took 0.092019 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.758728 seconds.
+  path: Assets/Resources/PhotonPrefabs/FeuerSpieler.prefab
+  artifactKey: Guid(a5521eaf5d44149e0bc7c2f0dd2e9bad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/PhotonPrefabs/FeuerSpieler.prefab using Guid(a5521eaf5d44149e0bc7c2f0dd2e9bad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6120907adef861266762b2f6a9b02f3a') in 0.070734 seconds 
+  Import took 0.081751 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.449355 seconds.
+  path: Assets/Resources/PhotonPrefabs/FeuerSpieler.prefab
+  artifactKey: Guid(a5521eaf5d44149e0bc7c2f0dd2e9bad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/PhotonPrefabs/FeuerSpieler.prefab using Guid(a5521eaf5d44149e0bc7c2f0dd2e9bad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '446ddbca9b1b83f1fed968ca8a4cb221') in 0.062530 seconds 
+  Import took 0.076596 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.013487 seconds.
+  path: Assets/Resources/PhotonPrefabs/FeuerSpieler.prefab
+  artifactKey: Guid(a5521eaf5d44149e0bc7c2f0dd2e9bad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/PhotonPrefabs/FeuerSpieler.prefab using Guid(a5521eaf5d44149e0bc7c2f0dd2e9bad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5bce69b8316d7af2190c25eef62332a7') in 0.068674 seconds 
+  Import took 0.082474 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 22.892240 seconds.
+  path: Assets/Resources/PhotonPrefabs/FeuerSpieler.prefab
+  artifactKey: Guid(a5521eaf5d44149e0bc7c2f0dd2e9bad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/PhotonPrefabs/FeuerSpieler.prefab using Guid(a5521eaf5d44149e0bc7c2f0dd2e9bad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e811d17e5cd1d43c0743ed7fd418d98f') in 0.063183 seconds 
+  Import took 0.076731 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.254126 seconds.
+  path: Assets/Resources/PhotonPrefabs/FeuerSpieler.prefab
+  artifactKey: Guid(a5521eaf5d44149e0bc7c2f0dd2e9bad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/PhotonPrefabs/FeuerSpieler.prefab using Guid(a5521eaf5d44149e0bc7c2f0dd2e9bad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9eeb25756eb39e3acc308fa060f59e9f') in 0.069137 seconds 
+  Import took 0.083502 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.853287 seconds.
+  path: Assets/Resources/PhotonPrefabs/FeuerSpieler.prefab
+  artifactKey: Guid(a5521eaf5d44149e0bc7c2f0dd2e9bad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/PhotonPrefabs/FeuerSpieler.prefab using Guid(a5521eaf5d44149e0bc7c2f0dd2e9bad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '272966b4810ac2bacef425924957c164') in 0.078302 seconds 
+  Import took 0.092228 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.233084 seconds.
+  path: Assets/Resources/PhotonPrefabs/FeuerSpieler.prefab
+  artifactKey: Guid(a5521eaf5d44149e0bc7c2f0dd2e9bad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/PhotonPrefabs/FeuerSpieler.prefab using Guid(a5521eaf5d44149e0bc7c2f0dd2e9bad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f124b99c67d4e38ed32e9f5965a6cf5') in 0.069607 seconds 
+  Import took 0.082279 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.649578 seconds.
+  path: Assets/Resources/PhotonPrefabs/FeuerSpieler.prefab
+  artifactKey: Guid(a5521eaf5d44149e0bc7c2f0dd2e9bad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/PhotonPrefabs/FeuerSpieler.prefab using Guid(a5521eaf5d44149e0bc7c2f0dd2e9bad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8576624465d901d90fc0fb7f09c100b3') in 0.075906 seconds 
+  Import took 0.089554 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.236671 seconds.
+  path: Assets/Resources/PhotonPrefabs/FeuerSpieler.prefab
+  artifactKey: Guid(a5521eaf5d44149e0bc7c2f0dd2e9bad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/PhotonPrefabs/FeuerSpieler.prefab using Guid(a5521eaf5d44149e0bc7c2f0dd2e9bad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c5b89cd2185209efcd535c34cc45efcb') in 0.077121 seconds 
+  Import took 0.088768 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006915 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 3.46 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.465 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2465ms)
+		BeginReloadAssembly (265ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (15ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (158ms)
+		EndReloadAssembly (2065ms)
+			LoadAssemblies (164ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (786ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (112ms)
+			SetupLoadedEditorAssemblies (705ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (9ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (4ms)
+				BeforeProcessingInitializeOnLoad (169ms)
+				ProcessInitializeOnLoadAttributes (498ms)
+				ProcessInitializeOnLoadMethodAttributes (20ms)
+				AfterProcessingInitializeOnLoad (3ms)
+				EditorAssembliesLoaded (1ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (39ms)
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Shader 'MoreMountains/MMRipple': fallback shader 'Particle/AlphaBlended' not found
+Refreshing native plugins compatible for Editor in 3.33 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4186 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 465.9 MB.
+System memory in use after: 466.2 MB.
+
+Unloading 29 unused Assets to reduce memory usage. Loaded Objects now: 5008.
+Total: 4.257509 ms (FindLiveObjects: 0.539729 ms CreateObjectMapping: 0.350494 ms MarkObjects: 3.331695 ms  DeleteObjects: 0.034767 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 46.705482 seconds.
+  path: Assets/Resources/PhotonPrefabs/WasserSpieler.prefab
+  artifactKey: Guid(2ad15c84b7a9b4486a188c3a9149eb88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/PhotonPrefabs/WasserSpieler.prefab using Guid(2ad15c84b7a9b4486a188c3a9149eb88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6759c35d77544483afecef48fd85462') in 0.365320 seconds 
+  Import took 0.375379 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.499154 seconds.
+  path: Assets/Resources/PhotonPrefabs/WasserSpieler.prefab
+  artifactKey: Guid(2ad15c84b7a9b4486a188c3a9149eb88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/PhotonPrefabs/WasserSpieler.prefab using Guid(2ad15c84b7a9b4486a188c3a9149eb88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7deec92dda13e353f6482ed7cb40c67c') in 0.065820 seconds 
+  Import took 0.078312 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.938325 seconds.
+  path: Assets/Resources/PhotonPrefabs/WasserSpieler.prefab
+  artifactKey: Guid(2ad15c84b7a9b4486a188c3a9149eb88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/PhotonPrefabs/WasserSpieler.prefab using Guid(2ad15c84b7a9b4486a188c3a9149eb88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a49967e6de037360042954d0658f377') in 0.052107 seconds 
+  Import took 0.064125 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.528186 seconds.
+  path: Assets/Resources/PhotonPrefabs/WasserSpieler.prefab
+  artifactKey: Guid(2ad15c84b7a9b4486a188c3a9149eb88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/PhotonPrefabs/WasserSpieler.prefab using Guid(2ad15c84b7a9b4486a188c3a9149eb88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ec794af74d48895d05a81db10d2d3cb') in 0.067913 seconds 
+  Import took 0.078082 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.607366 seconds.
+  path: Assets/Resources/PhotonPrefabs/WasserSpieler.prefab
+  artifactKey: Guid(2ad15c84b7a9b4486a188c3a9149eb88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/PhotonPrefabs/WasserSpieler.prefab using Guid(2ad15c84b7a9b4486a188c3a9149eb88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8dd0c2ac6353128a351641020ea03a6d') in 0.054385 seconds 
+  Import took 0.066041 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.859855 seconds.
+  path: Assets/Resources/PhotonPrefabs/WasserSpieler.prefab
+  artifactKey: Guid(2ad15c84b7a9b4486a188c3a9149eb88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/PhotonPrefabs/WasserSpieler.prefab using Guid(2ad15c84b7a9b4486a188c3a9149eb88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78af6a1baffb7d7d3de35776536dc1ca') in 0.079265 seconds 
+  Import took 0.091588 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.481286 seconds.
+  path: Assets/Resources/PhotonPrefabs/WasserSpieler.prefab
+  artifactKey: Guid(2ad15c84b7a9b4486a188c3a9149eb88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/PhotonPrefabs/WasserSpieler.prefab using Guid(2ad15c84b7a9b4486a188c3a9149eb88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe51be0c4fc9c27b4528c253f47530aa') in 0.080200 seconds 
+  Import took 0.092890 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
