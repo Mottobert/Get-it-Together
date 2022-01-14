@@ -19,6 +19,11 @@ public class Waterfall : MonoBehaviour
     private GameObject activeIceblock;
 
     [SerializeField]
+    private ParticleSystem dripParticleSystem;
+    [SerializeField]
+    private ParticleSystem flowParticleSystem;
+
+    [SerializeField]
     private bool spawnIceblock;
 
     public bool activeWaterfall = false;
@@ -31,6 +36,8 @@ public class Waterfall : MonoBehaviour
     private void Awake()
     {
         //gameObject.name = GetInstanceID().ToString(); // Sollte aktiviert werden, wenn das Spiel final gebuilded wird
+        dripParticleSystem.Pause();
+        flowParticleSystem.Pause();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -65,6 +72,9 @@ public class Waterfall : MonoBehaviour
     public void ActivateWaterfall()
     {
         waterfallObject.GetComponent<MeshRenderer>().material = waterfallFlowingMaterial;
+        dripParticleSystem.Stop();
+        flowParticleSystem.Play();
+
         activeWaterfall = true;
         if (puzzleManager)
         {
@@ -80,6 +90,9 @@ public class Waterfall : MonoBehaviour
     public void DeactivateWaterfall()
     {
         waterfallObject.GetComponent<MeshRenderer>().material = waterfallEmptyMaterial;
+        dripParticleSystem.Play();
+        flowParticleSystem.Stop();
+
         activeWaterfall = false;
         if (puzzleManager)
         {

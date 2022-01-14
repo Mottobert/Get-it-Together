@@ -2,6 +2,7 @@ using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelSelectionPoll : MonoBehaviour
 {
@@ -26,7 +27,21 @@ public class LevelSelectionPoll : MonoBehaviour
 
     private void OpenLevel()
     {
-        PhotonNetwork.LoadLevel(votedButton.GetComponent<LevelSelectionButton>().sceneIndex);
+        if (votedButton.GetComponent<LevelSelectionButton>().nextLevel)
+        {
+            if(SceneManager.GetSceneByBuildIndex(SceneManager.GetActiveScene().buildIndex + 1) != null)
+            {
+                PhotonNetwork.LoadLevel(SceneManager.GetActiveScene().buildIndex + 1);
+            }
+            else
+            {
+                PhotonNetwork.LoadLevel(4);
+            }
+        }
+        else
+        {
+            PhotonNetwork.LoadLevel(votedButton.GetComponent<LevelSelectionButton>().sceneIndex);
+        }
     }
 
     public void LastButtonVoteDown()

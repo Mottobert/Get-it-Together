@@ -282,19 +282,19 @@ public class PlayerController : MonoBehaviour
 
     // Vote Poll
     [PunRPC]
-    public void VoteUpForAll(string name)
+    public void VoteUpForAll(string name, bool masterClient)
     {
         //Debug.Log("Activate Flower For All received");
         //Debug.Log(name);
-        GameObject.Find(name).GetComponent<LevelSelectionButton>().VoteUp();
+        GameObject.Find(name).GetComponent<LevelSelectionButton>().VoteUp(masterClient);
     }
 
     [PunRPC]
-    public void VoteDownForAll(string name)
+    public void VoteDownForAll(string name, bool masterClient)
     {
         //Debug.Log("Activate Flower For All received");
         //Debug.Log(name);
-        GameObject.Find(name).GetComponent<LevelSelectionButton>().VoteDown();
+        GameObject.Find(name).GetComponent<LevelSelectionButton>().VoteDown(masterClient);
     }
 
 

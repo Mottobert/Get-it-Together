@@ -828,6 +828,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneIndex: 0
   disconnectOnSceneChange: 1
+  nextLevel: 0
 --- !u!1 &250752282
 GameObject:
   m_ObjectHideFlags: 0
@@ -3848,7 +3849,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e76a1f757e2ed14683286ece4389dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  multiplayerSceneIndex: 7
+  multiplayerSceneIndex: 3
   lobbyPanel: {fileID: 1298894566}
   roomPanel: {fileID: 628186801}
   startButton: {fileID: 635002465}

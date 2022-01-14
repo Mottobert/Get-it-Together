@@ -321,6 +321,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7493596028755563170, guid: 1c55a455a33934757a0b2a0b2255456a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 29.508348
+      objectReference: {fileID: 0}
+    - target: {fileID: -7493596028755563170, guid: 1c55a455a33934757a0b2a0b2255456a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 29.508343
+      objectReference: {fileID: 0}
+    - target: {fileID: -7493596028755563170, guid: 1c55a455a33934757a0b2a0b2255456a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 29.50835
+      objectReference: {fileID: 0}
+    - target: {fileID: -7493596028755563170, guid: 1c55a455a33934757a0b2a0b2255456a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.007
+      objectReference: {fileID: 0}
+    - target: {fileID: -7493596028755563170, guid: 1c55a455a33934757a0b2a0b2255456a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.476
+      objectReference: {fileID: 0}
+    - target: {fileID: -7493596028755563170, guid: 1c55a455a33934757a0b2a0b2255456a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.393
+      objectReference: {fileID: 0}
+    - target: {fileID: -1538112130698044685, guid: 1c55a455a33934757a0b2a0b2255456a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.471
+      objectReference: {fileID: 0}
+    - target: {fileID: -1538112130698044685, guid: 1c55a455a33934757a0b2a0b2255456a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.377
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1c55a455a33934757a0b2a0b2255456a, type: 3}
       propertyPath: m_Name
       value: Blume

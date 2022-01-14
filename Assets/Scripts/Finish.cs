@@ -1,3 +1,4 @@
+using MoreMountains.Feedbacks;
 using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
@@ -18,6 +19,9 @@ public class Finish : MonoBehaviour
 
     [SerializeField]
     private ParticleSystem finishParticleSystem;
+
+    [SerializeField]
+    private MMFeedbacks finishParticleEffects;
 
     [SerializeField]
     private GameObject[] finishRequirements;
@@ -92,6 +96,7 @@ public class Finish : MonoBehaviour
         flag.transform.position = flagEnd.position; //Vector3.Lerp(flag.transform.position, flagEnd.position, 0.01f);
         Debug.Log("Finished");
         flag.SetActive(true);
-        finishParticleSystem.Play();
+        finishParticleEffects.PlayFeedbacks();
+        //finishParticleSystem.Play();
     }
 }
