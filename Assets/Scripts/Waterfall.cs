@@ -36,7 +36,7 @@ public class Waterfall : MonoBehaviour
     private void Awake()
     {
         //gameObject.name = GetInstanceID().ToString(); // Sollte aktiviert werden, wenn das Spiel final gebuilded wird
-        dripParticleSystem.Pause();
+        dripParticleSystem.Play();
         flowParticleSystem.Pause();
     }
 

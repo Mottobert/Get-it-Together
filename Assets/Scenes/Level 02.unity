@@ -41166,6 +41166,7 @@ GameObject:
   - component: {fileID: 7150271391086491523}
   - component: {fileID: 8912049514251178073}
   - component: {fileID: 4923027834950500957}
+  - component: {fileID: 4974984520323092002}
   m_Layer: 0
   m_Name: Point.001
   m_TagString: Untagged
@@ -41173,6 +41174,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!114 &4974984520323092002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4974984520323092001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bede47e1d8c5e4846bfb8389a4e5a95a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flickerLight: {fileID: 8912049514251178073}
+  flickerMin: 10
+  flickerMax: 70
 --- !u!33 &4979726250099245732
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -41692,6 +41708,7 @@ GameObject:
   - component: {fileID: 7800219919300158778}
   - component: {fileID: 5958438921311365473}
   - component: {fileID: 6717117998453961054}
+  - component: {fileID: 5050422053925819607}
   m_Layer: 0
   m_Name: Point
   m_TagString: Untagged
@@ -41699,6 +41716,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
+--- !u!114 &5050422053925819607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5050422053925819606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bede47e1d8c5e4846bfb8389a4e5a95a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flickerLight: {fileID: 5958438921311365473}
+  flickerMin: 10
+  flickerMax: 70
 --- !u!1 &5052642680107682744
 GameObject:
   m_ObjectHideFlags: 0
@@ -68015,7 +68047,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.0052951127, g: 1, b: 0.48959777, a: 1}
-  m_Intensity: 60.2
+  m_Intensity: 70
   m_Range: 21.8
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208

@@ -11,9 +11,13 @@ public class Wood : MonoBehaviour
     [SerializeField]
     private new Collider collider;
 
+    [SerializeField]
+    private ParticleSystem fireParticleSystem;
+
     private void Awake()
     {
         //gameObject.name = GetInstanceID().ToString();
+        //fireParticleSystem.Pause();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -35,12 +39,14 @@ public class Wood : MonoBehaviour
     public void ActivateWood()
     {
         fire.SetActive(false);
+        //fireParticleSystem.Play();
         collider.enabled = true;
     }
 
     public void DeactivateWood()
     {
         fire.SetActive(true);
+        //fireParticleSystem.Pause();
         collider.enabled = false;
     }
 }
