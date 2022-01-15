@@ -16,6 +16,8 @@ public class Finish : MonoBehaviour
     [SerializeField]
     private Transform flagEnd;
 
+    private bool levelFinished = false;
+
 
     [SerializeField]
     private ParticleSystem finishParticleSystem;
@@ -38,28 +40,31 @@ public class Finish : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        PhotonView PVPlayer = other.gameObject.transform.GetComponentInParent<PhotonView>();
-
-        if (other.gameObject.tag == "playerFinishCollider")
+        if (!levelFinished)
         {
-            playersInFinish[finishedPlayers] = other.gameObject;
-            finishedPlayers++;
-        }
+            PhotonView PVPlayer = other.gameObject.transform.GetComponentInParent<PhotonView>();
 
-        if(finishedPlayers == 1 && CheckFinishRequirements())
-        {
-            flag.transform.position = flagMid.position; //Vector3.Lerp(flag.transform.position, flagMid.position, 0.01f);
-        }
+            if (other.gameObject.tag == "playerFinishCollider")
+            {
+                playersInFinish[finishedPlayers] = other.gameObject;
+                finishedPlayers++;
+            }
 
-        Debug.Log(finishedPlayers);
+            if (finishedPlayers == 1 && CheckFinishRequirements())
+            {
+                flag.transform.position = flagMid.position; //Vector3.Lerp(flag.transform.position, flagMid.position, 0.01f);
+            }
 
-        if (finishedPlayers == 2)
-        {
-            if (CheckFinishRequirements() && PVPlayer.IsMine)
-            {   
-                foreach(GameObject p in playersInFinish)
+            Debug.Log(finishedPlayers);
+
+            if (finishedPlayers == 2)
+            {
+                if (CheckFinishRequirements() && PVPlayer.IsMine)
                 {
-                    p.GetComponentInParent<PhotonView>().RPC("LevelFinishedForAll", RpcTarget.AllBufferedViaServer, gameObject.name);
+                    foreach (GameObject p in playersInFinish)
+                    {
+                        p.GetComponentInParent<PhotonView>().RPC("LevelFinishedForAll", RpcTarget.AllBufferedViaServer, gameObject.name);
+                    }
                 }
             }
         }
@@ -67,15 +72,18 @@ public class Finish : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "playerFinishCollider")
+        if (!levelFinished)
         {
-            finishedPlayers--;
-        }
+            if (other.gameObject.tag == "playerFinishCollider")
+            {
+                finishedPlayers--;
+            }
 
-        if (finishedPlayers < 0)
-        {
-            flag.transform.position = flagStart.position; //Vector3.Lerp(flag.transform.position, flagStart.position, 0.01f);
-            finishedPlayers = 0;
+            if (finishedPlayers < 0)
+            {
+                flag.transform.position = flagStart.position; //Vector3.Lerp(flag.transform.position, flagStart.position, 0.01f);
+                finishedPlayers = 0;
+            }
         }
     }
 
@@ -93,6 +101,7 @@ public class Finish : MonoBehaviour
 
     public void LevelFinished()
     {
+        levelFinished = true;
         flag.transform.position = flagEnd.position; //Vector3.Lerp(flag.transform.position, flagEnd.position, 0.01f);
         Debug.Log("Finished");
         flag.SetActive(true);

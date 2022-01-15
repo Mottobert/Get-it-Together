@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -23,6 +24,11 @@ public class InputController : MonoBehaviour
     private GameObject kommunikationPanel;
     [SerializeField]
     private GameObject menuePanel;
+    [SerializeField]
+    private GameObject finishedPanel;
+
+    [SerializeField]
+    private TextMeshProUGUI finishedPanelTimeLabel;
 
     private bool mobileInput = true;
 
@@ -40,6 +46,7 @@ public class InputController : MonoBehaviour
             DeactivateLevelauswahlPanel();
             DeactivateKommunikationPanel();
             DeactivateMenuePanel();
+            DeactivateFinishedPanel();
             kommunikationsButton.SetActive(true);
         }
         else
@@ -47,6 +54,7 @@ public class InputController : MonoBehaviour
             ActivateKeyboardInput();
             DeactivateKommunikationPanel();
             DeactivateMenuePanel();
+            DeactivateFinishedPanel();
             ActivateLevelauswahlPanel();
             kommunikationsButton.SetActive(false);
         }
@@ -205,5 +213,52 @@ public class InputController : MonoBehaviour
         menuePanel.GetComponent<CanvasGroup>().alpha = 0;
         menuePanel.GetComponent<CanvasGroup>().interactable = false;
         menuePanel.GetComponent<CanvasGroup>().blocksRaycasts = false;
+    }
+
+
+    public void ActivateFinishedPanel()
+    {
+        finishedPanel.GetComponent<CanvasGroup>().alpha = 1;
+        finishedPanel.GetComponent<CanvasGroup>().interactable = true;
+        finishedPanel.GetComponent<CanvasGroup>().blocksRaycasts = true;
+        DeactivateKommunikationPanel();
+        DeactivateMenuePanel();
+
+        finishedPanelTimeLabel.text = "Ihr habt das Ziel in " + ConvertSecondsToMinutes(Time.timeSinceLevelLoad) + " Minuten erreicht.";
+    }
+
+    public void DeactivateFinishedPanel()
+    {
+        finishedPanel.GetComponent<CanvasGroup>().alpha = 0;
+        finishedPanel.GetComponent<CanvasGroup>().interactable = false;
+        finishedPanel.GetComponent<CanvasGroup>().blocksRaycasts = false;
+    }
+
+    private string ConvertSecondsToMinutes(float timer)
+    {
+        float minutes = Mathf.Floor(timer / 60);
+        float seconds = Mathf.RoundToInt(timer % 60);
+
+        string newMinutes = "";
+        string newSeconds = "";
+
+        if (minutes < 10)
+        {
+            newMinutes = "0" + minutes.ToString();
+        }
+        else
+        {
+            newMinutes = minutes.ToString();
+        }
+        if (seconds < 10)
+        {
+            newSeconds = "0" + Mathf.RoundToInt(seconds).ToString();
+        }
+        else
+        {
+            newSeconds = Mathf.RoundToInt(seconds).ToString();
+        }
+
+        return newMinutes + ":" + newSeconds;
     }
 }

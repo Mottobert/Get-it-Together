@@ -42,6 +42,8 @@ public class PlayerController : MonoBehaviour
     private Material activeMaterial;
     [SerializeField]
     private Material inactiveMaterial;
+    [SerializeField]
+    private ParticleSystem playerParticleSystem;
 
     [SerializeField]
     private GameObject pointLightFirePlayer;
@@ -100,6 +102,7 @@ public class PlayerController : MonoBehaviour
 
         direction.x = hInput * speed;
         controller.Move(direction * Time.deltaTime);
+        controller.transform.position = new Vector3(controller.transform.position.x, controller.transform.position.y, 0);
 
         if (inputController.supressInput && abilityActive && PV.IsMine)
         {
@@ -123,6 +126,7 @@ public class PlayerController : MonoBehaviour
     {
         ChangeTag(playerTag);
         visualObject.GetComponent<MeshRenderer>().material = activeMaterial;
+        playerParticleSystem.Play();
         triggerCollider.enabled = true;
         abilityActive = true;
         if (pointLightFirePlayer)
@@ -135,6 +139,7 @@ public class PlayerController : MonoBehaviour
     {
         ChangeTag("Untagged");
         visualObject.GetComponent<MeshRenderer>().material = inactiveMaterial;
+        playerParticleSystem.Stop();
         triggerCollider.enabled = false;
         abilityActive = false;
         if (pointLightFirePlayer)
@@ -324,6 +329,13 @@ public class PlayerController : MonoBehaviour
         //Debug.Log(name);
         GameObject.Find(name).GetComponent<Finish>().LevelFinished();
 
+        StartCoroutine("FinishedPanel");
+    }
+
+    IEnumerator FinishedPanel()
+    {
+        yield return new WaitForSeconds(1.8f);
         inputController.ActivateLevelauswahlPanel();
+        inputController.ActivateFinishedPanel();
     }
 }

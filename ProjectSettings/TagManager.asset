@@ -10,6 +10,7 @@ TagManager:
   - playerFinishCollider
   - platformMovable
   - iceblock
+  - resetBox
   layers:
   - Default
   - TransparentFX

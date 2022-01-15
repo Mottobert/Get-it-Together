@@ -194,7 +194,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 5, y: 2.5, z: 2}
-  m_Center: {x: 1.6, y: 1.25, z: 0}
+  m_Center: {x: 0, y: 1.25, z: 0}
 --- !u!114 &2994454922975212974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5926,6 +5926,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2740719408900813437, guid: 0a9192254fc7d32438b6c4ef5ac41b71, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3221616636201604787, guid: 0a9192254fc7d32438b6c4ef5ac41b71, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -5982,9 +5986,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6186137796917366776, guid: 0a9192254fc7d32438b6c4ef5ac41b71, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7711949702769651735, guid: 0a9192254fc7d32438b6c4ef5ac41b71, type: 3}
       propertyPath: m_Name
       value: FireworksBlue
+      objectReference: {fileID: 0}
+    - target: {fileID: 8232674816746358025, guid: 0a9192254fc7d32438b6c4ef5ac41b71, type: 3}
+      propertyPath: playOnAwake
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8362240055795975274, guid: 0a9192254fc7d32438b6c4ef5ac41b71, type: 3}
       propertyPath: m_Materials.Array.size
@@ -6012,6 +6024,10 @@ PrefabInstance:
     - target: {fileID: 931180668871678145, guid: fc94b69fd85e8244cbd4bd102eac954e, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2424506933103213627, guid: fc94b69fd85e8244cbd4bd102eac954e, type: 3}
+      propertyPath: playOnAwake
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3105252553694288117, guid: fc94b69fd85e8244cbd4bd102eac954e, type: 3}
       propertyPath: m_RootOrder
@@ -6069,6 +6085,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5941649172577583550, guid: fc94b69fd85e8244cbd4bd102eac954e, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7830405810077843025, guid: fc94b69fd85e8244cbd4bd102eac954e, type: 3}
       propertyPath: m_Name
       value: FireworksRainbow
@@ -6076,6 +6096,10 @@ PrefabInstance:
     - target: {fileID: 8332166165629012524, guid: fc94b69fd85e8244cbd4bd102eac954e, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8497518291829590863, guid: fc94b69fd85e8244cbd4bd102eac954e, type: 3}
+      propertyPath: playOnAwake
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc94b69fd85e8244cbd4bd102eac954e, type: 3}
@@ -6154,6 +6178,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4035348569666898, guid: 504bc11969e143249975cacca01d426a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198377756825280190, guid: 504bc11969e143249975cacca01d426a, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198423447789890770, guid: 504bc11969e143249975cacca01d426a, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198448814348252534, guid: 504bc11969e143249975cacca01d426a, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198892057475978020, guid: 504bc11969e143249975cacca01d426a, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198904942609383418, guid: 504bc11969e143249975cacca01d426a, type: 3}
+      propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 199427215885806360, guid: 504bc11969e143249975cacca01d426a, type: 3}
@@ -6237,6 +6281,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4425889617865176, guid: 9e045a0c133562f4e8bfa2863d2e8cf1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198663464102074498, guid: 9e045a0c133562f4e8bfa2863d2e8cf1, type: 3}
+      propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 199503193392066750, guid: 9e045a0c133562f4e8bfa2863d2e8cf1, type: 3}

@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Waterplayer
-  m_Shader: {fileID: -6465566751694194690, guid: c34ac467d35e5b94e953ddc0ea49f199, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 80c066610e4724f0e82892030ec56a59, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -77,11 +77,17 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Vector1_3b9db358d260478895bd912575aa646f: 2.2
+    - Vector1_46cfcb2a3a2645c89764a5b26724dee6: 0
     - Vector1_4b9f7fcebbed4f3bb14fe3b0c7d210cf: 5
+    - Vector1_5c0066de9e6f41959a0c251779b680e0: 1.29
+    - Vector1_74f7beeb34964f26a3e654f3de345343: 3
     - Vector1_bb1856c15e9b4559889acff4c8d342c3: 1
+    - Vector1_d90da2571e444b4e8a54d32912f7b46c: 5
     - Vector1_de8299f8d682438e940310e7630eed6e: 2
     - Vector1_e1ad7c40fb444983b161231d38258826: 1
     - Vector1_e2b4424273f146298153d7fedea1a274: 2
+    - Vector1_f2765721f1a64d6eac2d9725c4cea8d6: 2
+    - Vector1_ff4941bd6597464ba0d9a3050492e1b4: 1
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -109,8 +115,11 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
+    - Color_2114f141f57143ec9b5493cb9b100ee8: {r: 0, g: 1.6020947, b: 2.0000005, a: 1}
     - Color_698a24eb899a4837bfa0f29d51cc8a7e: {r: 0, g: 3.2, b: 4, a: 1}
     - Vector2_04200e829ee6445d8bcfa69c193aed0d: {r: 0.31, g: 1, b: 0, a: 0}
+    - Vector2_8e98bfe44c0843f29be166aaf2dfee7b: {r: 0, g: -0.2, b: 0, a: 0}
+    - Vector2_968150263d46490eaf8a4dfeefecdf86: {r: 0.56, g: 1, b: 0, a: 0}
     - Vector2_f923a3999f8144c89bfb65ae8597381d: {r: 0, g: 0.6, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
