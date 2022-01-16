@@ -26,6 +26,8 @@ public class InputController : MonoBehaviour
     private GameObject menuePanel;
     [SerializeField]
     private GameObject finishedPanel;
+    [SerializeField]
+    private GameObject soundPanel;
 
     [SerializeField]
     private TextMeshProUGUI finishedPanelTimeLabel;
@@ -47,6 +49,7 @@ public class InputController : MonoBehaviour
             DeactivateKommunikationPanel();
             DeactivateMenuePanel();
             DeactivateFinishedPanel();
+            DeactivateSoundPanel();
             kommunikationsButton.SetActive(true);
         }
         else
@@ -55,6 +58,7 @@ public class InputController : MonoBehaviour
             DeactivateKommunikationPanel();
             DeactivateMenuePanel();
             DeactivateFinishedPanel();
+            DeactivateSoundPanel();
             ActivateLevelauswahlPanel();
             kommunikationsButton.SetActive(false);
         }
@@ -260,5 +264,24 @@ public class InputController : MonoBehaviour
         }
 
         return newMinutes + ":" + newSeconds;
+    }
+
+    // Sound Panel
+    public void ActivateSoundPanel()
+    {
+        soundPanel.GetComponent<CanvasGroup>().alpha = 1;
+        soundPanel.GetComponent<CanvasGroup>().interactable = true;
+        soundPanel.GetComponent<CanvasGroup>().blocksRaycasts = true;
+        DeactivateLevelauswahlPanel();
+        DeactivateMenuePanel();
+        DeactivateKommunikationPanel();
+    }
+
+    public void DeactivateSoundPanel()
+    {
+        soundPanel.GetComponent<CanvasGroup>().alpha = 0;
+        soundPanel.GetComponent<CanvasGroup>().interactable = false;
+        soundPanel.GetComponent<CanvasGroup>().blocksRaycasts = false;
+        //ActivateMenuePanel();
     }
 }
