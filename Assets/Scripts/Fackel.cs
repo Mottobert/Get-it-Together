@@ -48,6 +48,12 @@ public class Fackel : MonoBehaviour
         Debug.Log("Activate Flame");
         pointLight.SetActive(true);
         activeFlame = true;
+
+        if (this.gameObject.GetComponent<AudioSource>())
+        {
+            this.gameObject.GetComponent<AudioSource>().Play();
+        }
+
         if (connectedFackel)
         {
             connectedFackel.GetComponent<Fackel>().ActivateConnectedFlame();
@@ -64,6 +70,12 @@ public class Fackel : MonoBehaviour
         Debug.Log("Deactivate Flame");
         pointLight.SetActive(false);
         activeFlame = false;
+
+        if (this.gameObject.GetComponent<AudioSource>())
+        {
+            this.gameObject.GetComponent<AudioSource>().Stop();
+        }
+
         if (connectedFackel)
         {
             connectedFackel.GetComponent<Fackel>().DeactivateConnectedFlame();

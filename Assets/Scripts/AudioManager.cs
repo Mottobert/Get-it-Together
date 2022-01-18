@@ -27,11 +27,16 @@ public class AudioManager : MonoBehaviour
 
     private AudioClip GetNewRandomAudioClip(List<AudioClip> audioClips)
     {
-        int newTrackIndex = Random.Range(0, audioClips.Count - 1);
+        int newTrackIndex = Random.Range(0, audioClips.Count);
         Debug.Log(newTrackIndex);
         AudioClip newTrack = audioClips[newTrackIndex];
 
         audioClips.RemoveAt(newTrackIndex);
+
+        if(audioClips.Count == 0)
+        {
+            CopyAudioClips(musicClips, musicClipsToPlay);
+        }
 
         return newTrack;
     }

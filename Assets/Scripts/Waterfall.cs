@@ -24,6 +24,11 @@ public class Waterfall : MonoBehaviour
     private ParticleSystem flowParticleSystem;
 
     [SerializeField]
+    private AudioClip dripAudioClip;
+    [SerializeField]
+    private AudioClip flowAudioClip;
+
+    [SerializeField]
     private bool spawnIceblock;
 
     public bool activeWaterfall = false;
@@ -38,6 +43,12 @@ public class Waterfall : MonoBehaviour
         //gameObject.name = GetInstanceID().ToString(); // Sollte aktiviert werden, wenn das Spiel final gebuilded wird
         dripParticleSystem.Play();
         flowParticleSystem.Pause();
+
+        if (dripAudioClip)
+        {
+            this.gameObject.GetComponent<AudioSource>().clip = dripAudioClip;
+            this.gameObject.GetComponent<AudioSource>().Play();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -76,6 +87,17 @@ public class Waterfall : MonoBehaviour
         flowParticleSystem.Play();
 
         activeWaterfall = true;
+
+        if (flowAudioClip)
+        {
+            this.gameObject.GetComponent<AudioSource>().clip = flowAudioClip;
+            this.gameObject.GetComponent<AudioSource>().Play();
+        }
+        else
+        {
+            this.gameObject.GetComponent<AudioSource>().Stop();
+        }
+
         if (puzzleManager)
         {
             puzzleManager.GetComponent<Puzzle>().CheckPuzzleObjects();
@@ -94,6 +116,17 @@ public class Waterfall : MonoBehaviour
         flowParticleSystem.Stop();
 
         activeWaterfall = false;
+
+        if (dripAudioClip)
+        {
+            this.gameObject.GetComponent<AudioSource>().clip = dripAudioClip;
+            this.gameObject.GetComponent<AudioSource>().Play();
+        }
+        else
+        {
+            this.gameObject.GetComponent<AudioSource>().Stop();
+        }
+
         if (puzzleManager)
         {
             puzzleManager.GetComponent<Puzzle>().CheckPuzzleObjects();

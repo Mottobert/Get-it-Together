@@ -24,6 +24,7 @@ public class DisplayEmojiController : MonoBehaviour
             DisableActiveEmoji();
             poofPS.Stop();
             poofAnimation.GetComponent<Animator>().SetBool("activateAnimation", false);
+            this.gameObject.GetComponent<AudioSource>().Play();
             StopAllCoroutines();
         }
 

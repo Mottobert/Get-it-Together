@@ -18,7 +18,6 @@ public class Finish : MonoBehaviour
 
     private bool levelFinished = false;
 
-
     [SerializeField]
     private ParticleSystem finishParticleSystem;
 

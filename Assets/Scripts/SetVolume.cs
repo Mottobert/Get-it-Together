@@ -19,22 +19,27 @@ public class SetVolume : MonoBehaviour
         if (sliderValue == 0)
         {
             mixer.SetFloat("MusicVolume", -80);
+            PlayerPrefs.SetFloat("MusikFloat", sliderValue);
         }
         else
         {
             mixer.SetFloat("MusicVolume", Mathf.Log10(sliderValue) * 20);
+            PlayerPrefs.SetFloat("MusikFloat", sliderValue);
         }
+        Debug.Log(PlayerPrefs.GetFloat("MusikFloat"));
     }
 
     public void SetLevelSoundeffect(float sliderValue)
     {
         if(sliderValue == 0)
         {
-            mixer.SetFloat("SfxVolume", Mathf.Log10(sliderValue) * 20);
+            mixer.SetFloat("SfxVolume", -80);
+            PlayerPrefs.SetFloat("SoundEffectsFloat", sliderValue);
         }
         else
         {
-            mixer.SetFloat("SfxVolume", -80);
+            mixer.SetFloat("SfxVolume", Mathf.Log10(sliderValue) * 20);
+            PlayerPrefs.SetFloat("SoundEffectsFloat", sliderValue);
         }
     }
 
@@ -56,8 +61,10 @@ public class SetVolume : MonoBehaviour
         {
             musikFloat = PlayerPrefs.GetFloat("MusikFloat");
             musikSlider.value = musikFloat;
+            SetLevelMusic(musikFloat);
             soundeffectsFloat = PlayerPrefs.GetFloat("SoundEffectsFloat");
             soundeffectsSlider.value = soundeffectsFloat;
+            SetLevelSoundeffect(soundeffectsFloat);
         }
     }
 
@@ -77,14 +84,15 @@ public class SetVolume : MonoBehaviour
 
     public void ToggleMuteMusic()
     {
-        if(musikFloat > 0)
+        if(musikSlider.value > 0)
         {
             musikFloatReset = musikSlider.value;
             musikFloat = 0f;
             musikSlider.value = musikFloat;
             SetLevelMusic(musikFloat);
+            
         }
-        else if(musikFloat == 0)
+        else if(musikSlider.value == 0)
         {
             musikFloat = musikFloatReset;
             musikSlider.value = musikFloat;
@@ -94,14 +102,14 @@ public class SetVolume : MonoBehaviour
 
     public void ToggleMuteSfx()
     {
-        if (soundeffectsFloat > 0)
+        if (soundeffectsSlider.value > 0)
         {
             soundeffectsFloatReset = soundeffectsSlider.value;
             soundeffectsFloat = 0f;
             soundeffectsSlider.value = soundeffectsFloat;
             SetLevelSoundeffect(soundeffectsFloat);
         }
-        else if (soundeffectsFloat == 0)
+        else if (soundeffectsSlider.value == 0)
         {
             soundeffectsFloat = soundeffectsFloatReset;
             soundeffectsSlider.value = soundeffectsFloat;
