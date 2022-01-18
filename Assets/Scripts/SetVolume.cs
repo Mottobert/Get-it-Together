@@ -18,6 +18,11 @@ public class SetVolume : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI sfxPercentageLabel;
 
+    [SerializeField]
+    private GameObject muteCrossMusic;
+    [SerializeField]
+    private GameObject muteCrossSfx;
+
     private float musikFloatReset, soundeffectsFloatReset;
 
     public void SetLevelMusic(float sliderValue)
@@ -25,12 +30,14 @@ public class SetVolume : MonoBehaviour
         if (sliderValue == 0)
         {
             mixer.SetFloat("MusicVolume", -80);
+            muteCrossMusic.SetActive(true);
             //musikPercentageLabel.text = "" + Mathf.RoundToInt(sliderValue * 100);
             //PlayerPrefs.SetFloat("MusikFloat", sliderValue);
         }
         else
         {
             mixer.SetFloat("MusicVolume", Mathf.Log10(sliderValue) * 20);
+            muteCrossMusic.SetActive(false);
         }
 
         musikPercentageLabel.text = "" + Mathf.RoundToInt(sliderValue * 100);
@@ -42,12 +49,14 @@ public class SetVolume : MonoBehaviour
         if(sliderValue == 0)
         {
             mixer.SetFloat("SfxVolume", -80);
+            muteCrossSfx.SetActive(true);
             //sfxPercentageLabel.text = "" + Mathf.RoundToInt(sliderValue * 100);
             //PlayerPrefs.SetFloat("SoundEffectsFloat", sliderValue);
         }
         else
         {
             mixer.SetFloat("SfxVolume", Mathf.Log10(sliderValue) * 20);
+            muteCrossSfx.SetActive(false);
         }
 
         sfxPercentageLabel.text = "" + Mathf.RoundToInt(sliderValue * 100);
