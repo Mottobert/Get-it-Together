@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
@@ -12,6 +13,11 @@ public class SetVolume : MonoBehaviour
     public Slider musikSlider, soundeffectsSlider; 
     private float musikFloat, soundeffectsFloat;
 
+    [SerializeField]
+    private TextMeshProUGUI musikPercentageLabel;
+    [SerializeField]
+    private TextMeshProUGUI sfxPercentageLabel;
+
     private float musikFloatReset, soundeffectsFloatReset;
 
     public void SetLevelMusic(float sliderValue)
@@ -19,14 +25,16 @@ public class SetVolume : MonoBehaviour
         if (sliderValue == 0)
         {
             mixer.SetFloat("MusicVolume", -80);
-            PlayerPrefs.SetFloat("MusikFloat", sliderValue);
+            //musikPercentageLabel.text = "" + Mathf.RoundToInt(sliderValue * 100);
+            //PlayerPrefs.SetFloat("MusikFloat", sliderValue);
         }
         else
         {
             mixer.SetFloat("MusicVolume", Mathf.Log10(sliderValue) * 20);
-            PlayerPrefs.SetFloat("MusikFloat", sliderValue);
         }
-        Debug.Log(PlayerPrefs.GetFloat("MusikFloat"));
+
+        musikPercentageLabel.text = "" + Mathf.RoundToInt(sliderValue * 100);
+        PlayerPrefs.SetFloat("MusikFloat", sliderValue);
     }
 
     public void SetLevelSoundeffect(float sliderValue)
@@ -34,13 +42,16 @@ public class SetVolume : MonoBehaviour
         if(sliderValue == 0)
         {
             mixer.SetFloat("SfxVolume", -80);
-            PlayerPrefs.SetFloat("SoundEffectsFloat", sliderValue);
+            //sfxPercentageLabel.text = "" + Mathf.RoundToInt(sliderValue * 100);
+            //PlayerPrefs.SetFloat("SoundEffectsFloat", sliderValue);
         }
         else
         {
             mixer.SetFloat("SfxVolume", Mathf.Log10(sliderValue) * 20);
-            PlayerPrefs.SetFloat("SoundEffectsFloat", sliderValue);
         }
+
+        sfxPercentageLabel.text = "" + Mathf.RoundToInt(sliderValue * 100);
+        PlayerPrefs.SetFloat("SoundEffectsFloat", sliderValue);
     }
 
     private void Start()

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using MoreMountains.Feedbacks;
 using UnityEngine;
 
 public class DisplayEmojiController : MonoBehaviour
@@ -8,10 +9,13 @@ public class DisplayEmojiController : MonoBehaviour
     private GameObject[] emojis;
     [SerializeField]
     private InputController inputController;
+    //[SerializeField]
+    //private ParticleSystem poofPS;
+    //[SerializeField]
+    //private GameObject poofAnimation;
+
     [SerializeField]
-    private ParticleSystem poofPS;
-    [SerializeField]
-    private GameObject poofAnimation;
+    private MMFeedbacks emojiFeedback;
 
     private int activeEmojiIndex;
 
@@ -22,20 +26,23 @@ public class DisplayEmojiController : MonoBehaviour
         if (active)
         {
             DisableActiveEmoji();
-            poofPS.Stop();
-            poofAnimation.GetComponent<Animator>().SetBool("activateAnimation", false);
-            this.gameObject.GetComponent<AudioSource>().Play();
+            //poofPS.Stop();
+            emojiFeedback.StopFeedbacks();
+            //poofAnimation.GetComponent<Animator>().SetBool("activateAnimation", false);
+            //this.gameObject.GetComponent<AudioSource>().Play();
             StopAllCoroutines();
         }
 
         active = true;
         activeEmojiIndex = index;
         emojis[activeEmojiIndex].SetActive(true);
+
         if (emojis[activeEmojiIndex].GetComponent<Animator>())
         {
             emojis[activeEmojiIndex].GetComponent<Animator>().SetTrigger("activateAnimation");
-            poofPS.Play();
-            poofAnimation.GetComponent<Animator>().SetBool("activateAnimation", true);
+            //poofPS.Play();
+            emojiFeedback.PlayFeedbacks();
+            //poofAnimation.GetComponent<Animator>().SetBool("activateAnimation", true);
         }
 
         inputController.DeactivateKommunikationPanel();
@@ -54,7 +61,7 @@ public class DisplayEmojiController : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         DisableActiveEmoji();
-        poofPS.Stop();
-        poofAnimation.GetComponent<Animator>().SetBool("activateAnimation", false);
+        //poofPS.Stop();
+        //poofAnimation.GetComponent<Animator>().SetBool("activateAnimation", false);
     }
 }
