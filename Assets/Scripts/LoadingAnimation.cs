@@ -20,22 +20,31 @@ public class LoadingAnimation : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(Time.frameCount % 10 == 0)
+        if(Time.frameCount % 20 == 0)
         {
-            if(iteration < 3)
+            if (iteration == 0)
             {
-                iteration++;
+                dots = "";    
             }
-            else if(iteration >= 3)
+            else if (iteration == 1)
             {
-                iteration = 0;
+                dots = ".";
+            }
+            else if (iteration == 2)
+            {
+                dots = "..";
+            }
+            else if (iteration == 3)
+            {
+                dots = "...";
+            }
+            else if (iteration >= 4)
+            {
+                iteration = -1;
             }
 
-            for(int i = 0; i < iteration; i++)
-            {
-                dots += ".";
-            }
-            
+            iteration++;
+
             animatedText.text = "Laden" + dots;
         }
     }

@@ -5,15 +5,15 @@ using UnityEngine;
 public class TutorialHint : MonoBehaviour
 {
     [SerializeField]
-    private GameObject hintObject;
+    private GameObject hintPanel;
 
     public void ShowHint()
     {
-        hintObject.SetActive(true);
+        hintPanel.GetComponent<Animator>().SetBool("activate", true);
     }
 
     public void HideHint()
     {
-        hintObject.SetActive(false);
+        hintPanel.GetComponent<Animator>().SetBool("activate", false);
     }
 }
