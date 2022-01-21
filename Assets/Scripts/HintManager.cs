@@ -11,7 +11,14 @@ public class HintManager : MonoBehaviour
     {
         foreach(GameObject h in hintObjects)
         {
-            h.GetComponent<Fackel>().ActivateFlame();
+            if (h.GetComponent<Fackel>())
+            {
+                h.GetComponent<Fackel>().ActivateFlame();
+            }
+            else
+            {
+                h.SetActive(true);
+            }
         }
     }
 
@@ -19,7 +26,14 @@ public class HintManager : MonoBehaviour
     {
         foreach (GameObject h in hintObjects)
         {
-            h.GetComponent<Fackel>().DeactivateFlame();
+            if (h.GetComponent<Fackel>())
+            {
+                h.GetComponent<Fackel>().DeactivateFlame();
+            }
+            else
+            {
+                h.SetActive(false);
+            }
         }
     }
 }
