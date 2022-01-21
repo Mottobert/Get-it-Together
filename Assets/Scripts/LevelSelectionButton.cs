@@ -41,7 +41,6 @@ public class LevelSelectionButton : MonoBehaviour
     public void VoteUp(bool masterClient)
     {
         votes++;
-        //votesText.text = "" + votes + "/2";
 
         if (masterClient)
         {
@@ -63,7 +62,6 @@ public class LevelSelectionButton : MonoBehaviour
     public void VoteDown(bool masterClient)
     {
         votes--;
-        //votesText.text = "" + votes + "/2";
 
         if (masterClient)
         {
@@ -82,7 +80,6 @@ public class LevelSelectionButton : MonoBehaviour
         if (SceneManager.GetSceneByBuildIndex(nextLevel) != null)
         {
             PhotonNetwork.LoadLevel(SceneManager.GetActiveScene().buildIndex + 1);
-            //.LoadScene(sceneBuildIndex: SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }

@@ -19,6 +19,9 @@ public class Waterfall : MonoBehaviour
     private GameObject activeIceblock;
 
     [SerializeField]
+    private GameObject waterfallPlane;
+
+    [SerializeField]
     private ParticleSystem dripParticleSystem;
     [SerializeField]
     private ParticleSystem flowParticleSystem;
@@ -70,19 +73,11 @@ public class Waterfall : MonoBehaviour
         }
     }
 
-    //private void OnTriggerExit(Collider other)
-    //{
-    //    PhotonView PVPlayer = other.gameObject.GetComponent<PhotonView>();
-    //
-    //    if (movingPlatform && other.tag == "water" && PVPlayer.IsMine)
-    //    {
-    //        PVPlayer.RPC("DeactivateWaterfallForAll", RpcTarget.All, gameObject.name);
-    //    }
-    //}
-
     public void ActivateWaterfall()
     {
         waterfallObject.GetComponent<MeshRenderer>().material = waterfallFlowingMaterial;
+        waterfallPlane.SetActive(true);
+
         dripParticleSystem.Stop();
         flowParticleSystem.Play();
 
@@ -112,6 +107,8 @@ public class Waterfall : MonoBehaviour
     public void DeactivateWaterfall()
     {
         waterfallObject.GetComponent<MeshRenderer>().material = waterfallEmptyMaterial;
+        waterfallPlane.SetActive(false);
+
         dripParticleSystem.Play();
         flowParticleSystem.Stop();
 

@@ -73,7 +73,12 @@ public class InputController : MonoBehaviour
             {
                 ActivateKeyboardInput();
             }
-        } 
+        }
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            ToogleKommunikationPanel();
+        }
         
         if ((Input.touchCount != 0 || Input.GetMouseButton(0)) && activeSceneName != "Levelauswahl")
         {

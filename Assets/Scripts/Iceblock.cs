@@ -5,6 +5,12 @@ using UnityEngine;
 
 public class Iceblock : MonoBehaviour
 {
+    private void Update()
+    {
+        this.gameObject.transform.rotation = Quaternion.identity;
+        this.gameObject.transform.position = new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 0);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "fire")
