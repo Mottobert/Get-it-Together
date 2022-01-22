@@ -80,6 +80,10 @@ public class LevelSelectionButton : MonoBehaviour
         if (SceneManager.GetSceneByBuildIndex(nextLevel) != null)
         {
             PhotonNetwork.LoadLevel(SceneManager.GetActiveScene().buildIndex + 1);
+        } 
+        else if(SceneManager.GetSceneByBuildIndex(nextLevel) == null)
+        {
+            PhotonNetwork.LoadLevel(3);
         }
     }
 }
