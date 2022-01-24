@@ -7378,7 +7378,7 @@ PrefabInstance:
       objectReference: {fileID: 8880305961379952468}
     - target: {fileID: 2370585462454398055, guid: 9d6ebeb5f77ea412fa661e62aeaaad9f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ActivateFinishedPanel
+      value: ToogleKommunikationPanel
       objectReference: {fileID: 0}
     - target: {fileID: 3323525636278306437, guid: 9d6ebeb5f77ea412fa661e62aeaaad9f, type: 3}
       propertyPath: emojiController

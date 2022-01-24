@@ -9,6 +9,14 @@ public class FinishedController : MonoBehaviour
     private TextMeshProUGUI timeLabel;
     [SerializeField]
     private TextMeshProUGUI commentLabel;
+
+    [SerializeField]
+    private GameObject nextLevelButton;
+    [SerializeField]
+    private GameObject levelButtons;
+    [SerializeField]
+    private GameObject levelauswahlPanel;
+
     [SerializeField]
     private GameObject[] stars;
 
@@ -31,16 +39,34 @@ public class FinishedController : MonoBehaviour
             if (usedTime <= timeLimitData.timeLimits[i])
             {
                 commentLabel.text = timeLimitData.comments[i];
-                timeLabel.text = "Ihr habt das Ziel in " + ConvertSecondsToMinutes(usedTime) + " Minuten erreicht.";
 
                 for (int j = 2; j > i - 1; j--)
                 {
                     stars[j].SetActive(true);
                 }
 
-                return;
+                break;
+            }
+            else
+            {
+                commentLabel.text = timeLimitData.comments[3];
             }
         }
+
+        if (usedTime < 60)
+        {
+            timeLabel.text = "Ihr habt das Ziel in " + (int)usedTime + " Sekunden erreicht.";
+        }
+        else
+        {
+            timeLabel.text = "Ihr habt das Ziel in " + ConvertSecondsToMinutes(usedTime) + " Minuten erreicht.";
+        }
+
+        levelauswahlPanel.GetComponent<CanvasGroup>().alpha = 1;
+        levelauswahlPanel.GetComponent<CanvasGroup>().interactable = true;
+        levelauswahlPanel.GetComponent<CanvasGroup>().blocksRaycasts = true;
+        levelButtons.SetActive(false);
+        nextLevelButton.SetActive(true);
     }
 
     private string ConvertSecondsToMinutes(float timer)

@@ -9238,6 +9238,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeLabel: {fileID: 8902482515948393924}
   commentLabel: {fileID: 793192172085455535}
+  nextLevelButton: {fileID: 7062498494821539190}
+  levelButtons: {fileID: 726609499369036409}
+  levelauswahlPanel: {fileID: 4600695888786338306}
   stars:
   - {fileID: 8930811891795429317}
   - {fileID: 2089938614774259308}
