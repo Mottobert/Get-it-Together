@@ -233,7 +233,7 @@ public class InputController : MonoBehaviour
         DeactivateKommunikationPanel();
         DeactivateMenuePanel();
 
-        finishedPanelTimeLabel.text = "Ihr habt das Ziel in " + ConvertSecondsToMinutes(Time.timeSinceLevelLoad) + " Minuten erreicht.";
+        finishedPanel.GetComponent<FinishedController>().ShowFinishedCard();
     }
 
     public void DeactivateFinishedPanel()
@@ -241,34 +241,6 @@ public class InputController : MonoBehaviour
         finishedPanel.GetComponent<CanvasGroup>().alpha = 0;
         finishedPanel.GetComponent<CanvasGroup>().interactable = false;
         finishedPanel.GetComponent<CanvasGroup>().blocksRaycasts = false;
-    }
-
-    private string ConvertSecondsToMinutes(float timer)
-    {
-        float minutes = Mathf.Floor(timer / 60);
-        float seconds = Mathf.RoundToInt(timer % 60);
-
-        string newMinutes = "";
-        string newSeconds = "";
-
-        if (minutes < 10)
-        {
-            newMinutes = "0" + minutes.ToString();
-        }
-        else
-        {
-            newMinutes = minutes.ToString();
-        }
-        if (seconds < 10)
-        {
-            newSeconds = "0" + Mathf.RoundToInt(seconds).ToString();
-        }
-        else
-        {
-            newSeconds = Mathf.RoundToInt(seconds).ToString();
-        }
-
-        return newMinutes + ":" + newSeconds;
     }
 
     // Sound Panel
