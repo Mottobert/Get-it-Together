@@ -25,7 +25,7 @@ public class InputController : MonoBehaviour
     [SerializeField]
     private GameObject menuePanel;
     [SerializeField]
-    private GameObject finishedPanel;
+    public GameObject finishedPanel;
     [SerializeField]
     private GameObject soundPanel;
 
@@ -196,6 +196,7 @@ public class InputController : MonoBehaviour
         kommunikationPanel.GetComponent<CanvasGroup>().blocksRaycasts = true;
         DeactivateLevelauswahlPanel();
         DeactivateMenuePanel();
+        DeactivateFinishedPanel();
     }
 
     public void DeactivateKommunikationPanel()
@@ -214,6 +215,7 @@ public class InputController : MonoBehaviour
         menuePanel.GetComponent<CanvasGroup>().blocksRaycasts = true;
         DeactivateLevelauswahlPanel();
         DeactivateKommunikationPanel();
+        DeactivateFinishedPanel();
     }
 
     public void DeactivateMenuePanel()
@@ -233,7 +235,7 @@ public class InputController : MonoBehaviour
         DeactivateKommunikationPanel();
         DeactivateMenuePanel();
 
-        finishedPanel.GetComponent<FinishedController>().ShowFinishedCard();
+        //finishedPanel.GetComponent<FinishedController>().ShowFinishedCard();
     }
 
     public void DeactivateFinishedPanel()

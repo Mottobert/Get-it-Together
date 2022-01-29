@@ -83,7 +83,7 @@ public class LevelSelectionButton : MonoBehaviour
         } 
         else if(SceneManager.GetSceneByBuildIndex(nextLevel) == null)
         {
-            PhotonNetwork.LoadLevel(3);
+            PhotonNetwork.LoadLevel(0);
         }
     }
 }

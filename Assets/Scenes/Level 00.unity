@@ -847,6 +847,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2994454922953856070, guid: 00aabe5b4279b3c4683f10b6e4950efc, type: 3}
   m_PrefabInstance: {fileID: 352956750}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &352956752 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2994454922975212972, guid: 00aabe5b4279b3c4683f10b6e4950efc, type: 3}
+  m_PrefabInstance: {fileID: 352956750}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &373765662
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1053,6 +1058,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4743769287138986882, guid: 3f3369505266d6741b9f678a410ab867, type: 3}
+      propertyPath: finish
+      value: 
+      objectReference: {fileID: 352956752}
     - target: {fileID: 4743769287138986882, guid: 3f3369505266d6741b9f678a410ab867, type: 3}
       propertyPath: hintManager
       value: 
@@ -2626,6 +2635,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1231122191607111586, guid: 0580d8ec51afae941843f25f805d213b, type: 3}
+      propertyPath: finish
+      value: 
+      objectReference: {fileID: 352956752}
     - target: {fileID: 2419315222851051927, guid: 0580d8ec51afae941843f25f805d213b, type: 3}
       propertyPath: m_RootOrder
       value: 32

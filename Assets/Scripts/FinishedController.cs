@@ -12,9 +12,9 @@ public class FinishedController : MonoBehaviour
     private TextMeshProUGUI commentLabel;
 
     [SerializeField]
-    private GameObject nextLevelButton;
+    public GameObject nextLevelButton;
     [SerializeField]
-    private GameObject levelButtons;
+    public GameObject levelButtons;
     [SerializeField]
     private GameObject levelauswahlPanel;
 
@@ -25,6 +25,8 @@ public class FinishedController : MonoBehaviour
     private float usedTime;
 
     private PhotonView PV;
+
+    private int starCount;
     
 
     // Start is called before the first frame update
@@ -34,7 +36,7 @@ public class FinishedController : MonoBehaviour
         PV = gameObject.GetComponentInParent<PhotonView>();
     }
 
-    public void ShowFinishedCard()
+    public void UpdateFinishedCard()
     {
         if (!PhotonNetwork.IsMasterClient)
         {
@@ -50,7 +52,8 @@ public class FinishedController : MonoBehaviour
             {
                 commentLabel.text = timeLimitData.comments[i];
 
-                StartCoroutine("ActivateStars", i);
+                starCount = i;
+                //StartCoroutine("ActivateStars", i);
 
                 //for (int j = 2; j > i - 1; j--)
                 //{
@@ -74,6 +77,16 @@ public class FinishedController : MonoBehaviour
             timeLabel.text = "Ihr habt das Ziel in " + ConvertSecondsToMinutes(usedTime) + " Minuten erreicht.";
         }
 
+        //levelauswahlPanel.GetComponent<CanvasGroup>().alpha = 1;
+        //levelauswahlPanel.GetComponent<CanvasGroup>().interactable = true;
+        //levelauswahlPanel.GetComponent<CanvasGroup>().blocksRaycasts = true;
+        //levelButtons.SetActive(false);
+        //nextLevelButton.SetActive(true);
+    }
+
+    public void ShowFinishedCard()
+    {
+        StartCoroutine("ActivateStars", starCount);
         levelauswahlPanel.GetComponent<CanvasGroup>().alpha = 1;
         levelauswahlPanel.GetComponent<CanvasGroup>().interactable = true;
         levelauswahlPanel.GetComponent<CanvasGroup>().blocksRaycasts = true;
@@ -130,6 +143,6 @@ public class FinishedController : MonoBehaviour
     {
         Debug.Log(usedTimeOther);
         usedTime = usedTimeOther;
-        ShowFinishedCard();
+        UpdateFinishedCard();
     }
 }

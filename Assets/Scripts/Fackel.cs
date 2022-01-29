@@ -16,6 +16,9 @@ public class Fackel : MonoBehaviour
     [SerializeField]
     private bool isConnectedFackel;
 
+    [SerializeField]
+    private GameObject finish;
+
     public GameObject puzzleManager;
 
     private void Awake()
@@ -58,9 +61,15 @@ public class Fackel : MonoBehaviour
         {
             connectedFackel.GetComponent<Fackel>().ActivateConnectedFlame();
         }
+
         if (puzzleManager)
         {
             puzzleManager.GetComponent<Puzzle>().CheckPuzzleObjects();
+        }
+
+        if (finish)
+        {
+            finish.GetComponent<Finish>().CheckFinishRequirements();
         }
     }
 

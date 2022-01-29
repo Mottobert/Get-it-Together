@@ -17,7 +17,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     private string playerTag;
-    
+
+    private bool finished = false;
 
     private CharacterController controller;
     private Vector3 direction;
@@ -334,17 +335,25 @@ public class PlayerController : MonoBehaviour
     [PunRPC]
     public void LevelFinishedForAll(string name)
     {
-        //Debug.Log("Activate Flower For All received");
-        //Debug.Log(name);
-        GameObject.Find(name).GetComponent<Finish>().LevelFinished();
+        if (!finished)
+        {
+            finished = true;
+            GameObject.Find(name).GetComponent<Finish>().LevelFinished();
 
-        StartCoroutine("FinishedPanel");
+            inputController.finishedPanel.GetComponent<FinishedController>().UpdateFinishedCard();
+
+            StartCoroutine("FinishedPanel");
+        }
     }
 
     IEnumerator FinishedPanel()
     {
         yield return new WaitForSeconds(1.8f);
-        inputController.ActivateLevelauswahlPanel();
+        //inputController.ActivateLevelauswahlPanel();
         inputController.ActivateFinishedPanel();
+        inputController.finishedPanel.GetComponent<FinishedController>().ShowFinishedCard();
+        //inputController.finishedPanel.GetComponent<FinishedController>().levelButtons.SetActive(false);
+        //inputController.finishedPanel.GetComponent<FinishedController>().nextLevelButton.SetActive(true);
+        //inputController.finishedPanel.GetComponent<FinishedController>().StartCoroutine("ActivateStars");
     }
 }

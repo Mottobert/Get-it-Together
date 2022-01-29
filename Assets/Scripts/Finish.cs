@@ -63,8 +63,6 @@ public class Finish : MonoBehaviour
             {
                 if (CheckFinishRequirements() && PVPlayer.IsMine)
                 {
-                    finishInfoText.SetBool("ShowInfoText", false);
-
                     foreach (GameObject p in playersInFinish)
                     {
                         p.GetComponentInParent<PhotonView>().RPC("LevelFinishedForAll", RpcTarget.AllBufferedViaServer, gameObject.name);
@@ -93,34 +91,32 @@ public class Finish : MonoBehaviour
         }
     }
 
-    private bool CheckFinishRequirements()
+    public bool CheckFinishRequirements()
     {
         foreach(GameObject g in finishRequirements)
         {
             if (g.GetComponent<Fackel>() && !g.GetComponent<Fackel>().activeFlame || g.GetComponent<Waterfall>() && !g.GetComponent<Waterfall>().activeWaterfall)
             {
-                //StopCoroutine("HideInfoText");
                 finishInfoText.SetBool("ShowInfoText", true);
-                //StartCoroutine("HideInfoText");
+
                 return false;
             }
         }
-        return true;
-    }
-
-    IEnumerator HideInfoText()
-    {
-        yield return new WaitForSeconds(5f);
         finishInfoText.SetBool("ShowInfoText", false);
+
+        return true;
     }
 
     public void LevelFinished()
     {
-        levelFinished = true;
-        flag.transform.position = flagEnd.position; //Vector3.Lerp(flag.transform.position, flagEnd.position, 0.01f);
-        Debug.Log("Finished");
-        flag.SetActive(true);
-        finishParticleEffects.PlayFeedbacks();
-        //finishParticleSystem.Play();
+        if (!levelFinished)
+        {
+            levelFinished = true;
+            flag.transform.position = flagEnd.position; //Vector3.Lerp(flag.transform.position, flagEnd.position, 0.01f);
+            Debug.Log("Finished");
+            flag.SetActive(true);
+            finishParticleEffects.PlayFeedbacks();
+            //finishParticleSystem.Play();
+        }
     }
 }

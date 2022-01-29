@@ -41,6 +41,9 @@ public class Waterfall : MonoBehaviour
     [SerializeField]
     private HintManager hintManager;
 
+    [SerializeField]
+    private GameObject finish;
+
     private void Awake()
     {
         //gameObject.name = GetInstanceID().ToString(); // Sollte aktiviert werden, wenn das Spiel final gebuilded wird
@@ -101,6 +104,11 @@ public class Waterfall : MonoBehaviour
         if (hintManager)
         {
             hintManager.ActivateHintObjects();
+        }
+
+        if (finish)
+        {
+            finish.GetComponent<Finish>().CheckFinishRequirements();
         }
     }
 
