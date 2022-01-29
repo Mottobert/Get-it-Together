@@ -24,7 +24,15 @@ public class MovingCloud : MonoBehaviour
         //Debug.Log("Reset");
         if(other.tag == "resetBox")
         {
-            this.gameObject.transform.position = new Vector3(resetPos.position.x, this.gameObject.transform.position.y, this.gameObject.transform.position.z);
+            StartCoroutine("ResetCloud");
         }
+    }
+
+    IEnumerator ResetCloud()
+    {
+        this.gameObject.GetComponent<Animator>().SetBool("Hide", true);
+        yield return new WaitForSeconds(1f);
+        this.gameObject.transform.position = new Vector3(resetPos.position.x, this.gameObject.transform.position.y, this.gameObject.transform.position.z);
+        this.gameObject.GetComponent<Animator>().SetBool("Hide", false);
     }
 }

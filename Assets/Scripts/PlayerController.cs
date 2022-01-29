@@ -321,6 +321,15 @@ public class PlayerController : MonoBehaviour
     }
 
 
+    // Used Time
+    [PunRPC]
+    public void SendUsedTimeForOther(string name, float usedTime)
+    {
+        Debug.Log(usedTime);
+        GameObject.Find(name).GetComponent<FinishedController>().SetUsedTime(usedTime);
+    }
+
+
     // Finish
     [PunRPC]
     public void LevelFinishedForAll(string name)

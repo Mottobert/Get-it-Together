@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using TMPro;
 using UnityEngine;
 
@@ -20,30 +21,41 @@ public class FinishedController : MonoBehaviour
     [SerializeField]
     private GameObject[] stars;
 
-    private TimeLimit timeLimitData;
+    public TimeLimit timeLimitData;
     private float usedTime;
+
+    private PhotonView PV;
     
 
     // Start is called before the first frame update
     void Start()
     {
         timeLimitData = GameObject.Find("TimeLimit").GetComponent<TimeLimit>();
+        PV = gameObject.GetComponentInParent<PhotonView>();
     }
 
     public void ShowFinishedCard()
     {
-        usedTime = Time.timeSinceLevelLoad;
+        if (!PhotonNetwork.IsMasterClient)
+        {
+            usedTime = Time.timeSinceLevelLoad;
+            Debug.Log("Send Used Time");
+            SendUsedTime();
+        }
 
         for (int i = 0; i < 4; i++)
         {
+            //Debug.Log(timeLimitData);
             if (usedTime <= timeLimitData.timeLimits[i])
             {
                 commentLabel.text = timeLimitData.comments[i];
 
-                for (int j = 2; j > i - 1; j--)
-                {
-                    stars[j].SetActive(true);
-                }
+                StartCoroutine("ActivateStars", i);
+
+                //for (int j = 2; j > i - 1; j--)
+                //{
+                //    stars[j].SetActive(true);
+                //}
 
                 break;
             }
@@ -67,6 +79,16 @@ public class FinishedController : MonoBehaviour
         levelauswahlPanel.GetComponent<CanvasGroup>().blocksRaycasts = true;
         levelButtons.SetActive(false);
         nextLevelButton.SetActive(true);
+    }
+
+    IEnumerator ActivateStars(int i)
+    {
+        for (int j = 2; j > i - 1; j--)
+        {
+            yield return new WaitForSeconds(0.3f);
+            stars[j].SetActive(true);
+            stars[j].GetComponent<Animator>().SetTrigger("StartAnimation");
+        }
     }
 
     private string ConvertSecondsToMinutes(float timer)
@@ -95,5 +117,19 @@ public class FinishedController : MonoBehaviour
         }
 
         return newMinutes + ":" + newSeconds;
+    }
+
+
+    private void SendUsedTime()
+    {
+        Debug.Log(usedTime);
+        PV.RPC("SendUsedTimeForOther", RpcTarget.OthersBuffered, gameObject.name, usedTime);
+    }
+
+    public void SetUsedTime(float usedTimeOther)
+    {
+        Debug.Log(usedTimeOther);
+        usedTime = usedTimeOther;
+        ShowFinishedCard();
     }
 }

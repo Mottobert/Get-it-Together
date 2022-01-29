@@ -16,6 +16,9 @@ public class Finish : MonoBehaviour
     [SerializeField]
     private Transform flagEnd;
 
+    [SerializeField]
+    private Animator finishInfoText;
+
     private bool levelFinished = false;
 
     [SerializeField]
@@ -54,12 +57,14 @@ public class Finish : MonoBehaviour
                 flag.transform.position = flagMid.position; //Vector3.Lerp(flag.transform.position, flagMid.position, 0.01f);
             }
 
-            Debug.Log(finishedPlayers);
+            //Debug.Log(finishedPlayers);
 
             if (finishedPlayers == 2)
             {
                 if (CheckFinishRequirements() && PVPlayer.IsMine)
                 {
+                    finishInfoText.SetBool("ShowInfoText", false);
+
                     foreach (GameObject p in playersInFinish)
                     {
                         p.GetComponentInParent<PhotonView>().RPC("LevelFinishedForAll", RpcTarget.AllBufferedViaServer, gameObject.name);
@@ -83,6 +88,8 @@ public class Finish : MonoBehaviour
                 flag.transform.position = flagStart.position; //Vector3.Lerp(flag.transform.position, flagStart.position, 0.01f);
                 finishedPlayers = 0;
             }
+
+            finishInfoText.SetBool("ShowInfoText", false);
         }
     }
 
@@ -92,10 +99,19 @@ public class Finish : MonoBehaviour
         {
             if (g.GetComponent<Fackel>() && !g.GetComponent<Fackel>().activeFlame || g.GetComponent<Waterfall>() && !g.GetComponent<Waterfall>().activeWaterfall)
             {
+                //StopCoroutine("HideInfoText");
+                finishInfoText.SetBool("ShowInfoText", true);
+                //StartCoroutine("HideInfoText");
                 return false;
             }
         }
         return true;
+    }
+
+    IEnumerator HideInfoText()
+    {
+        yield return new WaitForSeconds(5f);
+        finishInfoText.SetBool("ShowInfoText", false);
     }
 
     public void LevelFinished()
