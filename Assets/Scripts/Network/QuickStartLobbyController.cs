@@ -58,5 +58,6 @@ public class QuickStartLobbyController : MonoBehaviourPunCallbacks
         quickCancelButton.SetActive(false);
         quickStartButton.SetActive(true);
         PhotonNetwork.LeaveRoom();
+        PhotonNetwork.Disconnect();
     }
 }

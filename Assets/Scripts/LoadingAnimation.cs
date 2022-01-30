@@ -11,12 +11,6 @@ public class LoadingAnimation : MonoBehaviour
     private string dots = "";
     private int iteration = 0;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void FixedUpdate()
     {
