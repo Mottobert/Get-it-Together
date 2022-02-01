@@ -6,7 +6,7 @@ using UnityEngine;
 public class Flower : MonoBehaviour
 {
     [SerializeField]
-    private GameObject[] flowerObjects;
+    private GameObject flowerObject;
     [SerializeField]
     private GameObject[] ladderObjects;
 
@@ -41,13 +41,51 @@ public class Flower : MonoBehaviour
 
     public void ActivateLadder()
     {
-        ChangeObjectStatus(flowerObjects, false);
-        ChangeObjectStatus(ladderObjects, true);
+        AnimateBlume(ladderObjects, true);
     }
 
     public void DeactivateLadder()
     {
-        ChangeObjectStatus(flowerObjects, true);
-        ChangeObjectStatus(ladderObjects, false);
+        AnimateBlume(ladderObjects, false);
+    }
+
+    private void AnimateBlume(GameObject[] objects, bool status)
+    {
+        if (status)
+        {
+            StartCoroutine("ActivateBlume", objects);
+        } 
+        else if (!status)
+        {
+            StartCoroutine("DeactivateBlume", objects);
+        }
+    }
+
+    IEnumerator ActivateBlume(GameObject[] objects)
+    {
+        flowerObject.GetComponent<Animator>().SetBool("active", false);
+        yield return new WaitForSeconds(1f);
+        //flowerObject.SetActive(false);
+
+        foreach (GameObject g in objects)
+        {
+            g.SetActive(true);
+            g.GetComponentInChildren<Animator>().SetBool("active", true);
+            yield return new WaitForSeconds(1f);
+        }
+    }
+
+    IEnumerator DeactivateBlume(GameObject[] objects)
+    {
+        for(int i = objects.Length - 1; i > -1; i--)
+        {
+            objects[i].GetComponentInChildren<Animator>().SetBool("active", false);
+            yield return new WaitForSeconds(1.5f);
+            objects[i].SetActive(false);
+        }
+
+        //flowerObject.SetActive(true);
+        flowerObject.GetComponent<Animator>().SetBool("active", true);
+        //yield return new WaitForSeconds(1f);
     }
 }

@@ -25,13 +25,20 @@ public class PressurePlate : MonoBehaviour
 
     public int collisionCounter;
 
+    private Transform resetPosition;
+
+    private PhotonView PVPlayer;
+
+    private void Start()
+    {
+        resetPosition = this.gameObject.transform;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "water" || other.tag == "fire" || other.tag == "iceblock")
+        if(other.tag == "platformMovable")
         {
-            PhotonView PVPlayer = other.gameObject.GetComponentInParent<PhotonView>();
-
-            collisionCounter++;
+            PVPlayer = other.gameObject.GetComponentInParent<PhotonView>();
 
             //ActivatePressurePlate();
             PVPlayer.RPC("ActivatePressurePlateForAll", RpcTarget.AllBufferedViaServer, gameObject.name);
@@ -40,23 +47,24 @@ public class PressurePlate : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if ((other.tag == "water" || other.tag == "fire" || other.tag == "iceblock") && collisionCounter == 2)
+        if (other.tag == "platformMovable")
         {
-            PhotonView PVPlayer = other.gameObject.GetComponentInParent<PhotonView>();
+            PVPlayer = other.gameObject.GetComponentInParent<PhotonView>();
 
             //DeactivatePressurePlate();
-            PVPlayer.RPC("DeactivatePressurePlateForAll", RpcTarget.AllBufferedViaServer, gameObject.name);
-        }
-        else if(other.tag == "water" || other.tag == "fire" || other.tag == "iceblock" && collisionCounter > 2)
-        {
-            collisionCounter--;
+            PVPlayer.RPC("CheckCollisionCounterForMaster", RpcTarget.MasterClient, gameObject.name);
         }
     }
 
     public void ActivatePressurePlate()
     {
-        plateObject.transform.position = new Vector3(plateObject.transform.position.x, plateObject.transform.position.y - 0.01f, plateObject.transform.position.z);
+        plateObject.transform.position = new Vector3(plateObject.transform.position.x, resetPosition.position.y - 0.05f, plateObject.transform.position.z);
         active = true;
+
+        if (PhotonNetwork.IsMasterClient)
+        {
+            collisionCounter++;
+        }
 
         indicatorLamp.GetComponent<MeshRenderer>().material = lampActiveMat;
 
@@ -73,12 +81,15 @@ public class PressurePlate : MonoBehaviour
 
     public void DeactivatePressurePlate()
     {
-        plateObject.transform.position = new Vector3(plateObject.transform.position.x, plateObject.transform.position.y + 0.01f, plateObject.transform.position.z);
+        plateObject.transform.position = resetPosition.position;
         active = false;
 
-        indicatorLamp.GetComponent<MeshRenderer>().material = lampInactiveMat;
+        if (PhotonNetwork.IsMasterClient)
+        {
+            collisionCounter--;
+        }
 
-        collisionCounter--;
+        indicatorLamp.GetComponent<MeshRenderer>().material = lampInactiveMat;
 
         if (movingPlatform)
         {
@@ -88,6 +99,18 @@ public class PressurePlate : MonoBehaviour
         if (puzzleManager)
         {
             puzzleManager.GetComponent<Puzzle>().CheckPuzzleObjects();
+        }
+    }
+
+    public void CheckCollisionCounter()
+    {
+        if (collisionCounter < 3)
+        {
+            PVPlayer.RPC("DeactivatePressurePlateForAll", RpcTarget.AllBufferedViaServer, gameObject.name);
+        } 
+        else
+        {
+            collisionCounter--;
         }
     }
 }

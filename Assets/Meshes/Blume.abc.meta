@@ -1,0 +1,38 @@
+fileFormatVersion: 2
+guid: bfab43e454bac8f4e9e747fe11d3f919
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: f53f5fc499d31e44b9deee84d28a9ee8, type: 3}
+  rootGameObjectId: Blume
+  rootGameObjectName: Blume
+  streamSettings:
+    normals: 1
+    tangents: 1
+    cameraAspectRatio: 2
+    importVisibility: 1
+    scaleFactor: 1
+    swapHandedness: 1
+    flipFaces: 0
+    interpolateSamples: 1
+    importPointPolygon: 1
+    importLinePolygon: 1
+    importTrianglePolygon: 1
+    importXform: 1
+    importCameras: 1
+    importMeshes: 1
+    importPoints: 0
+  abcStartTime: 0
+  abcEndTime: 1.0416666666666665
+  startTime: 0
+  endTime: 1.0416666666666665
+  importWarning: 
+  varyingTopologyMeshNames:
+  - BezierCurve_001
+  - BezierCurve_001
+  splittingMeshNames: []
+  firstImport: 0

@@ -27,11 +27,11 @@ public class PhotonPlayer : MonoBehaviour
 
         if (PV.IsMine && PhotonNetwork.IsMasterClient)
         {
-            Invoke("SpawnPlayerFire", 0.3f);
+            Invoke("SpawnPlayerFire", 0.1f);
         }
         else if(PV.IsMine && !PhotonNetwork.IsMasterClient)
         {
-            Invoke("SpawnPlayerWater", 0.3f);
+            Invoke("SpawnPlayerWater", 0.1f);
         }
     }
 

@@ -76,20 +76,11 @@ public class FinishedController : MonoBehaviour
         {
             timeLabel.text = "Ihr habt das Ziel in " + ConvertSecondsToMinutes(usedTime) + " Minuten erreicht.";
         }
-
-        //levelauswahlPanel.GetComponent<CanvasGroup>().alpha = 1;
-        //levelauswahlPanel.GetComponent<CanvasGroup>().interactable = true;
-        //levelauswahlPanel.GetComponent<CanvasGroup>().blocksRaycasts = true;
-        //levelButtons.SetActive(false);
-        //nextLevelButton.SetActive(true);
     }
 
     public void ShowFinishedCard()
     {
         StartCoroutine("ActivateStars", starCount);
-        levelauswahlPanel.GetComponent<CanvasGroup>().alpha = 1;
-        levelauswahlPanel.GetComponent<CanvasGroup>().interactable = true;
-        levelauswahlPanel.GetComponent<CanvasGroup>().blocksRaycasts = true;
         levelButtons.SetActive(false);
         nextLevelButton.SetActive(true);
     }

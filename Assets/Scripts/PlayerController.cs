@@ -285,6 +285,14 @@ public class PlayerController : MonoBehaviour
         GameObject.Find(name).GetComponent<PressurePlate>().DeactivatePressurePlate();
     }
 
+    [PunRPC]
+    public void CheckCollisionCounterForMaster(string name)
+    {
+        //Debug.Log("Deactivate Flower For All received");
+        //Debug.Log(name);
+        GameObject.Find(name).GetComponent<PressurePlate>().CheckCollisionCounter();
+    }
+
 
     // Vote Poll
     [PunRPC]
