@@ -57,7 +57,12 @@ public class Puzzle : MonoBehaviour
         //Debug.Log("Puzzle Solved");
         if (solvedObject)
         {
-            solvedObject.SetActive(false);
+            solvedObject.GetComponent<OneWayObstacle>().mesh.SetActive(false);
+            solvedObject.GetComponent<OneWayObstacle>().emojiAnimation.SetActive(true);
+            solvedObject.GetComponent<OneWayObstacle>().emojiAnimation.GetComponent<Animator>().SetBool("activate", true);
+            solvedObject.GetComponent<OneWayObstacle>().poofParticleSystem.Play();
+
+            solvedObject.GetComponent<OneWayObstacle>().gameObject.GetComponent<BoxCollider>().enabled = false;
         }
     }
 
@@ -66,7 +71,10 @@ public class Puzzle : MonoBehaviour
         //Debug.Log("Puzzle Unsolved");
         if (solvedObject)
         {
-            solvedObject.SetActive(true);
+            solvedObject.GetComponent<OneWayObstacle>().mesh.SetActive(true);
+            solvedObject.GetComponent<OneWayObstacle>().emojiAnimation.GetComponent<Animator>().SetBool("activate", false);
+
+            solvedObject.GetComponent<OneWayObstacle>().gameObject.GetComponent<BoxCollider>().enabled = true;
         }
     }
 }

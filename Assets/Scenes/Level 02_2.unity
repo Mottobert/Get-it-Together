@@ -2428,6 +2428,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hindernis (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3332131046602487302, guid: 5595d038d1695284bad9a93cfc4346cb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5595d038d1695284bad9a93cfc4346cb, type: 3}
 --- !u!1 &1109149389 stripped

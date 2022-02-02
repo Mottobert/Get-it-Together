@@ -9,6 +9,12 @@ public class OneWayObstacle : MonoBehaviour
 
     private BoxCollider obstacleCollider;
 
+    public GameObject emojiAnimation;
+
+    public ParticleSystem poofParticleSystem;
+
+    public GameObject mesh;
+
     private void DisableCollider(string tag)
     {
         if(tag == "fire")

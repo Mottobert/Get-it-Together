@@ -18,6 +18,11 @@ public class MovingPlatform : MonoBehaviour
 
     private List<GameObject> playersOnPlatform = new List<GameObject>();
 
+    [SerializeField]
+    private GameObject activeEmoji;
+    [SerializeField]
+    private GameObject inactiveEmoji;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,11 +34,32 @@ public class MovingPlatform : MonoBehaviour
     {
         if (active)
         {
-            MovePlatform(endPoint);
+            if(Vector3.Distance(platform.transform.position, endPoint.position) > 0.1f)
+            {
+                MovePlatform(endPoint);
+                activeEmoji.SetActive(true);
+                inactiveEmoji.SetActive(false);
+            }
+            else
+            {
+                platform.transform.position = endPoint.position;
+                activeEmoji.SetActive(false);
+            }
+            
         }
         else if (!active)
         {
-            MovePlatform(startPoint);
+            if (Vector3.Distance(platform.transform.position, startPoint.position) > 0.1f)
+            {
+                MovePlatform(startPoint);
+                inactiveEmoji.SetActive(true);
+                activeEmoji.SetActive(false);
+            }
+            else
+            {
+                platform.transform.position = startPoint.position;
+                inactiveEmoji.SetActive(false);
+            }
         }
     }
 
