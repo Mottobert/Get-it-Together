@@ -34,10 +34,16 @@ public class Finish : MonoBehaviour
 
     public LayerMask playerLayer;
 
+    [SerializeField]
+    private GameObject finishEmoji;
+    [SerializeField]
+    private GameObject partyEmoji;
+    [SerializeField]
+    private ParticleSystem emojiParticleSystem;
+
     private void Start()
     {
         flag.SetActive(true);
-        flag.transform.position = flagStart.position;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -54,7 +60,9 @@ public class Finish : MonoBehaviour
 
             if (finishedPlayers == 1 && CheckFinishRequirements())
             {
-                flag.transform.position = flagMid.position; //Vector3.Lerp(flag.transform.position, flagMid.position, 0.01f);
+                //flag.transform.position = flagMid.position; //Vector3.Lerp(flag.transform.position, flagMid.position, 0.01f);
+                flag.GetComponent<Animator>().SetBool("halb", true);
+                flag.GetComponent<Animator>().SetBool("start", false);
             }
 
             //Debug.Log(finishedPlayers);
@@ -81,9 +89,11 @@ public class Finish : MonoBehaviour
                 finishedPlayers--;
             }
 
-            if (finishedPlayers < 0)
+            if (finishedPlayers < 1)
             {
-                flag.transform.position = flagStart.position; //Vector3.Lerp(flag.transform.position, flagStart.position, 0.01f);
+                //flag.transform.position = flagStart.position; //Vector3.Lerp(flag.transform.position, flagStart.position, 0.01f);
+                flag.GetComponent<Animator>().SetBool("start", true);
+                flag.GetComponent<Animator>().SetBool("halb", false);
                 finishedPlayers = 0;
             }
 
@@ -104,6 +114,10 @@ public class Finish : MonoBehaviour
         }
         finishInfoText.SetBool("ShowInfoText", false);
 
+        finishEmoji.SetActive(true);
+        finishEmoji.GetComponent<Animator>().SetTrigger("activateAnimation");
+        //StartCoroutine("DeactivateEmoji", finishEmoji);
+
         return true;
     }
 
@@ -112,11 +126,29 @@ public class Finish : MonoBehaviour
         if (!levelFinished)
         {
             levelFinished = true;
-            flag.transform.position = flagEnd.position; //Vector3.Lerp(flag.transform.position, flagEnd.position, 0.01f);
+            //flag.transform.position = flagEnd.position; //Vector3.Lerp(flag.transform.position, flagEnd.position, 0.01f);
+            flag.GetComponent<Animator>().SetBool("oben", true);
             Debug.Log("Finished");
             flag.SetActive(true);
             finishParticleEffects.PlayFeedbacks();
+
+            DisableActiveEmoji(finishEmoji);
+            partyEmoji.SetActive(true);
+            partyEmoji.GetComponent<Animator>().SetTrigger("activateAnimation");
+            emojiParticleSystem.Play();
+
             //finishParticleSystem.Play();
         }
+    }
+
+    private void DisableActiveEmoji(GameObject emoji)
+    {
+        emoji.SetActive(false);
+    }
+
+    IEnumerator DeactivateEmoji(GameObject emoji)
+    {
+        yield return new WaitForSeconds(3);
+        DisableActiveEmoji(emoji);
     }
 }

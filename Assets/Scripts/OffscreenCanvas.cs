@@ -16,11 +16,10 @@ public class OffscreenCanvas : MonoBehaviour
 
     public Vector3 indicatorPosition;
 
-
     // Update is called once per frame
     void Update()
     {
-        if(mainCamera == null)
+        if (mainCamera == null)
         {
             mainCamera = GetActiveCamera();
         }
@@ -45,13 +44,13 @@ public class OffscreenCanvas : MonoBehaviour
 
         //  
         if (!PV.IsMine && mainCamera != null && targetPlayer != null && currentPlayer != null)
-            {
+        {
             //Debug.Log(indicatorPosition);
-            if(targetPlayer.transform.position.x < currentPlayer.transform.position.x && indicatorPosition.x < 100)
+            if (targetPlayer.transform.position.x < currentPlayer.transform.position.x && indicatorPosition.x < 100)
             {
                 SetCanvasToLeftSide();
             }
-            else if(targetPlayer.transform.position.x > currentPlayer.transform.position.x && indicatorPosition.x > Screen.width - 100)
+            else if (targetPlayer.transform.position.x > currentPlayer.transform.position.x && indicatorPosition.x > Screen.width - 100)
             {
                 SetCanvasToRightSide();
             }
@@ -68,7 +67,7 @@ public class OffscreenCanvas : MonoBehaviour
 
         //Debug.Log(players);
 
-        foreach(PlayerController p in players)
+        foreach (PlayerController p in players)
         {
             if (!p.gameObject.GetComponent<PhotonView>().IsMine)
             {
@@ -110,7 +109,7 @@ public class OffscreenCanvas : MonoBehaviour
     {
         Camera[] cameras = GameObject.FindObjectsOfType<Camera>();
 
-        foreach(Camera c in cameras)
+        foreach (Camera c in cameras)
         {
             if (c.isActiveAndEnabled)
             {
@@ -122,14 +121,14 @@ public class OffscreenCanvas : MonoBehaviour
 
     private void SetCanvasToRightSide()
     {
-        Vector3 newPosition = mainCamera.ScreenToWorldPoint(new Vector3(Screen.width-120, Screen.height/2, 8));
+        Vector3 newPosition = mainCamera.ScreenToWorldPoint(new Vector3(Screen.width - 120, Screen.height / 2, 8));
         //Debug.Log(newPosition);
         this.gameObject.transform.position = newPosition;
     }
 
     private void SetCanvasToLeftSide()
     {
-        Vector3 newPosition = mainCamera.ScreenToWorldPoint(new Vector3(80, Screen.height/2, 8));
+        Vector3 newPosition = mainCamera.ScreenToWorldPoint(new Vector3(80, Screen.height / 2, 8));
         //Debug.Log(newPosition);
         this.gameObject.transform.position = newPosition;
     }

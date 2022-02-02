@@ -16,6 +16,8 @@ public class FinishedController : MonoBehaviour
     [SerializeField]
     public GameObject levelButtons;
     [SerializeField]
+    public GameObject finishedPanelButton;
+    [SerializeField]
     private GameObject levelauswahlPanel;
 
     [SerializeField]
@@ -34,6 +36,7 @@ public class FinishedController : MonoBehaviour
     {
         timeLimitData = GameObject.Find("TimeLimit").GetComponent<TimeLimit>();
         PV = gameObject.GetComponentInParent<PhotonView>();
+        finishedPanelButton.SetActive(false);
     }
 
     public void UpdateFinishedCard()
@@ -81,8 +84,9 @@ public class FinishedController : MonoBehaviour
     public void ShowFinishedCard()
     {
         StartCoroutine("ActivateStars", starCount);
-        levelButtons.SetActive(false);
+        //levelButtons.SetActive(false);
         nextLevelButton.SetActive(true);
+        finishedPanelButton.SetActive(true);
     }
 
     IEnumerator ActivateStars(int i)

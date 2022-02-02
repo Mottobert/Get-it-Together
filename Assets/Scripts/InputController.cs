@@ -188,6 +188,18 @@ public class InputController : MonoBehaviour
         }
     }
 
+    public void ToogleFinishedPanel()
+    {
+        if (finishedPanel.GetComponent<CanvasGroup>().interactable)
+        {
+            DeactivateFinishedPanel();
+        }
+        else
+        {
+            ActivateFinishedPanel();
+        }
+    }
+
     public void ActivateKommunikationPanel()
     {
         //kommunikationPanel.SetActive(true);
@@ -207,6 +219,7 @@ public class InputController : MonoBehaviour
         kommunikationPanel.GetComponent<CanvasGroup>().blocksRaycasts = false;
     }
 
+    // Menu Panel
     public void ActivateMenuePanel()
     {
         //kommunikationPanel.SetActive(true);
@@ -226,7 +239,7 @@ public class InputController : MonoBehaviour
         menuePanel.GetComponent<CanvasGroup>().blocksRaycasts = false;
     }
 
-
+    // Finished Panel
     public void ActivateFinishedPanel()
     {
         finishedPanel.GetComponent<CanvasGroup>().alpha = 1;
@@ -234,8 +247,6 @@ public class InputController : MonoBehaviour
         finishedPanel.GetComponent<CanvasGroup>().blocksRaycasts = true;
         DeactivateKommunikationPanel();
         DeactivateMenuePanel();
-
-        //finishedPanel.GetComponent<FinishedController>().ShowFinishedCard();
     }
 
     public void DeactivateFinishedPanel()

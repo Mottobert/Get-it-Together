@@ -7412,6 +7412,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4444959384765690159, guid: 9d6ebeb5f77ea412fa661e62aeaaad9f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8880305961379952468}
+    - target: {fileID: 4444959384765690159, guid: 9d6ebeb5f77ea412fa661e62aeaaad9f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToogleFinishedPanel
+      objectReference: {fileID: 0}
     - target: {fileID: 4477239284283042863, guid: 9d6ebeb5f77ea412fa661e62aeaaad9f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
