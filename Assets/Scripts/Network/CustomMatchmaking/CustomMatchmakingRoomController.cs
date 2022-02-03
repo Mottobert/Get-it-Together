@@ -5,6 +5,7 @@ using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine.UI;
 using TMPro;
+using MoreMountains.Feedbacks;
 
 public class CustomMatchmakingRoomController : MonoBehaviourPunCallbacks
 {
@@ -26,6 +27,16 @@ public class CustomMatchmakingRoomController : MonoBehaviourPunCallbacks
 
     [SerializeField]
     private TextMeshProUGUI roomNameDisplay;
+
+    [SerializeField]
+    private bool playSound = true;
+
+    private GameObject uiAudioManager;
+
+    private void Start()
+    {
+        uiAudioManager = GameObject.FindGameObjectWithTag("music");
+    }
 
     void ClearPlayerListings()
     {
@@ -81,6 +92,10 @@ public class CustomMatchmakingRoomController : MonoBehaviourPunCallbacks
 
     public void StartGame()
     {
+        if (playSound)
+        {
+            uiAudioManager.GetComponent<MMFeedbacks>().PlayFeedbacks();
+        }
         if (PhotonNetwork.IsMasterClient)
         {
             PhotonNetwork.CurrentRoom.IsOpen = false;
@@ -96,6 +111,10 @@ IEnumerator rejoinLobby()
 
     public void BackOnClick()
     {
+        if (playSound)
+        {
+            uiAudioManager.GetComponent<MMFeedbacks>().PlayFeedbacks();
+        }
         lobbyPanel.SetActive(true);
         roomPanel.SetActive(false);
         PhotonNetwork.LeaveRoom();

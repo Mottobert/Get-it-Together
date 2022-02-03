@@ -1,3 +1,4 @@
+using MoreMountains.Feedbacks;
 using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
@@ -25,9 +26,22 @@ public class LevelSelectionButton : MonoBehaviour
 
     public int votes = 0;
 
+    [SerializeField]
+    private bool playSound = true;
+
+    private GameObject uiAudioManager;
+
+    private void Start()
+    {
+        uiAudioManager = GameObject.FindGameObjectWithTag("music");
+    }
 
     public void ButtonClicked()
     {
+        if (playSound)
+        {
+            uiAudioManager.GetComponent<MMFeedbacks>().PlayFeedbacks();
+        }
         if (levelSelectionPoll.lastButton)
         {
             levelSelectionPoll.LastButtonVoteDown();

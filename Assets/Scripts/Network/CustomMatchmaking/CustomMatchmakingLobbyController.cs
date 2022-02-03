@@ -5,6 +5,7 @@ using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine.UI;
 using TMPro;
+using MoreMountains.Feedbacks;
 
 public class CustomMatchmakingLobbyController : MonoBehaviourPunCallbacks
 {
@@ -26,6 +27,15 @@ public class CustomMatchmakingLobbyController : MonoBehaviourPunCallbacks
     [SerializeField]
     private GameObject roomListingPrefab;
 
+    [SerializeField]
+    private bool playSound = true;
+
+    private GameObject uiAudioManager;
+
+    private void Start()
+    {
+        uiAudioManager = GameObject.FindGameObjectWithTag("music");
+    }
 
     public override void OnConnectedToMaster()
     {
@@ -63,6 +73,10 @@ public class CustomMatchmakingLobbyController : MonoBehaviourPunCallbacks
 
     public void JoinLobbyOnClick()
     {
+        if (playSound)
+        {
+            uiAudioManager.GetComponent<MMFeedbacks>().PlayFeedbacks();
+        }
         mainPanel.SetActive(false);
         lobbyPanel.SetActive(true);
         PhotonNetwork.JoinLobby();
@@ -125,6 +139,10 @@ public class CustomMatchmakingLobbyController : MonoBehaviourPunCallbacks
 
     public void CreateRoom()
     {
+        if (playSound)
+        {
+            uiAudioManager.GetComponent<MMFeedbacks>().PlayFeedbacks();
+        }
         Debug.Log("Creating Room now");
         //Debug.Log(roomName);
         if (roomName == null || roomName == "")
@@ -144,6 +162,10 @@ public class CustomMatchmakingLobbyController : MonoBehaviourPunCallbacks
 
     public void MatchmakingCancel()
     {
+        if (playSound)
+        {
+            uiAudioManager.GetComponent<MMFeedbacks>().PlayFeedbacks();
+        }
         mainPanel.SetActive(true);
         lobbyPanel.SetActive(false);
         PhotonNetwork.LeaveLobby();

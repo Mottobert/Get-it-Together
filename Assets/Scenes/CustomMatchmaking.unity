@@ -829,6 +829,7 @@ MonoBehaviour:
   sceneIndex: 0
   disconnectOnSceneChange: 1
   nextLevel: 0
+  playSound: 1
 --- !u!1 &250752282
 GameObject:
   m_ObjectHideFlags: 0

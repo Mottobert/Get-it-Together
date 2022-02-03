@@ -1,3 +1,4 @@
+using MoreMountains.Feedbacks;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -39,9 +40,17 @@ public class InputController : MonoBehaviour
     [SerializeField]
     private GameObject kommunikationsButton;
 
+    [SerializeField]
+    private bool playSound = true;
+
+    private GameObject uiAudioManager;
+
     private void Start()
     {
+        uiAudioManager = GameObject.FindGameObjectWithTag("music");
         activeSceneName = SceneManager.GetActiveScene().name;
+
+        playSound = false;
 
         if (activeSceneName != "Levelauswahl")
         {
@@ -62,6 +71,8 @@ public class InputController : MonoBehaviour
             ActivateLevelauswahlPanel();
             kommunikationsButton.SetActive(false);
         }
+
+        playSound = true;
     }
 
     // Update is called once per frame
@@ -131,6 +142,10 @@ public class InputController : MonoBehaviour
 
     public void ActivateLevelauswahlPanel()
     {
+        if (playSound)
+        {
+            uiAudioManager.GetComponent<MMFeedbacks>().PlayFeedbacks();
+        }
         //levelauswahlPanel.SetActive(true);
         levelauswahlPanel.GetComponent<CanvasGroup>().alpha = 1;
         levelauswahlPanel.GetComponent<CanvasGroup>().interactable = true;
@@ -142,6 +157,10 @@ public class InputController : MonoBehaviour
 
     public void DeactivateLevelauswahlPanel()
     {
+        if (playSound)
+        {
+            uiAudioManager.GetComponent<MMFeedbacks>().PlayFeedbacks();
+        }
         //levelauswahlPanel.SetActive(false);
         //levelauswahlPanel.GetComponent<RectTransform>().offsetMax = new Vector2(0, -450);
         //levelauswahlPanel.GetComponent<RectTransform>().offsetMin = new Vector2(0, 450);
@@ -154,6 +173,10 @@ public class InputController : MonoBehaviour
 
     public void ToogleLevelauswahlPanel()
     {
+        if (playSound)
+        {
+            uiAudioManager.GetComponent<MMFeedbacks>().PlayFeedbacks();
+        }
         if (levelauswahlPanel.GetComponent<CanvasGroup>().interactable)
         {
             DeactivateLevelauswahlPanel();
@@ -166,6 +189,10 @@ public class InputController : MonoBehaviour
 
     public void ToogleKommunikationPanel()
     {
+        if (playSound)
+        {
+            uiAudioManager.GetComponent<MMFeedbacks>().PlayFeedbacks();
+        }
         if (kommunikationPanel.GetComponent<CanvasGroup>().interactable)
         {
             DeactivateKommunikationPanel();
@@ -178,6 +205,10 @@ public class InputController : MonoBehaviour
 
     public void ToogleMenuePanel()
     {
+        if (playSound)
+        {
+            uiAudioManager.GetComponent<MMFeedbacks>().PlayFeedbacks();
+        }
         if (menuePanel.GetComponent<CanvasGroup>().interactable)
         {
             DeactivateMenuePanel();
@@ -190,6 +221,10 @@ public class InputController : MonoBehaviour
 
     public void ToogleFinishedPanel()
     {
+        if (playSound)
+        {
+            uiAudioManager.GetComponent<MMFeedbacks>().PlayFeedbacks();
+        }
         if (finishedPanel.GetComponent<CanvasGroup>().interactable)
         {
             DeactivateFinishedPanel();
@@ -213,6 +248,10 @@ public class InputController : MonoBehaviour
 
     public void DeactivateKommunikationPanel()
     {
+        if (playSound)
+        {
+            uiAudioManager.GetComponent<MMFeedbacks>().PlayFeedbacks();
+        }
         //kommunikationPanel.SetActive(false);
         kommunikationPanel.GetComponent<CanvasGroup>().alpha = 0;
         kommunikationPanel.GetComponent<CanvasGroup>().interactable = false;
@@ -233,6 +272,10 @@ public class InputController : MonoBehaviour
 
     public void DeactivateMenuePanel()
     {
+        if (playSound)
+        {
+            uiAudioManager.GetComponent<MMFeedbacks>().PlayFeedbacks();
+        }
         //kommunikationPanel.SetActive(false);
         menuePanel.GetComponent<CanvasGroup>().alpha = 0;
         menuePanel.GetComponent<CanvasGroup>().interactable = false;
@@ -251,6 +294,10 @@ public class InputController : MonoBehaviour
 
     public void DeactivateFinishedPanel()
     {
+        if (playSound)
+        {
+            uiAudioManager.GetComponent<MMFeedbacks>().PlayFeedbacks();
+        }
         finishedPanel.GetComponent<CanvasGroup>().alpha = 0;
         finishedPanel.GetComponent<CanvasGroup>().interactable = false;
         finishedPanel.GetComponent<CanvasGroup>().blocksRaycasts = false;
@@ -259,6 +306,10 @@ public class InputController : MonoBehaviour
     // Sound Panel
     public void ActivateSoundPanel()
     {
+        if (playSound)
+        {
+            uiAudioManager.GetComponent<MMFeedbacks>().PlayFeedbacks();
+        }
         soundPanel.GetComponent<CanvasGroup>().alpha = 1;
         soundPanel.GetComponent<CanvasGroup>().interactable = true;
         soundPanel.GetComponent<CanvasGroup>().blocksRaycasts = true;
@@ -269,6 +320,10 @@ public class InputController : MonoBehaviour
 
     public void DeactivateSoundPanel()
     {
+        if (playSound)
+        {
+            uiAudioManager.GetComponent<MMFeedbacks>().PlayFeedbacks();
+        }
         soundPanel.GetComponent<CanvasGroup>().alpha = 0;
         soundPanel.GetComponent<CanvasGroup>().interactable = false;
         soundPanel.GetComponent<CanvasGroup>().blocksRaycasts = false;

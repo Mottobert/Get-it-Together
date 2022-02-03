@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Photon.Pun;
+using MoreMountains.Feedbacks;
 
 public class ChangeScene : MonoBehaviour
 {
@@ -13,8 +14,23 @@ public class ChangeScene : MonoBehaviour
     [SerializeField]
     private bool nextLevel;
 
+    [SerializeField]
+    private bool playSound = true;
+
+    private GameObject uiAudioManager;
+
+    private void Start()
+    {
+        uiAudioManager = GameObject.FindGameObjectWithTag("music");
+    }
+
     public void ChangeSceneOnClick()
     {
+        if (playSound)
+        {
+            uiAudioManager.GetComponent<MMFeedbacks>().PlayFeedbacks();
+        }
+
         if (PhotonNetwork.IsConnected && disconnectOnSceneChange)
         {
             PhotonNetwork.Disconnect();

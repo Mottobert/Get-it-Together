@@ -1,4 +1,5 @@
-﻿using Photon.Pun;
+﻿using MoreMountains.Feedbacks;
+using Photon.Pun;
 using Photon.Realtime;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,7 +14,17 @@ public class QuickStartLobbyController : MonoBehaviourPunCallbacks
     [SerializeField]
     private int roomSize;
 
+    [SerializeField]
+    private bool playSound = true;
+
+    private GameObject uiAudioManager;
+
     //private int quickStartSpawnMode = 1;
+
+    private void Start()
+    {
+        uiAudioManager = GameObject.FindGameObjectWithTag("music");
+    }
 
     public override void OnConnectedToMaster()
     {
@@ -25,6 +36,10 @@ public class QuickStartLobbyController : MonoBehaviourPunCallbacks
 
     public void QuickStart()
     {
+        if (playSound)
+        {
+            uiAudioManager.GetComponent<MMFeedbacks>().PlayFeedbacks();
+        }
         //PlayerPrefs.SetInt("SpawnMode", quickStartSpawnMode);
         quickStartButton.SetActive(false);
         quickCancelButton.SetActive(true);
@@ -55,6 +70,10 @@ public class QuickStartLobbyController : MonoBehaviourPunCallbacks
 
     public void QuickCancel()
     {
+        if (playSound)
+        {
+            uiAudioManager.GetComponent<MMFeedbacks>().PlayFeedbacks();
+        }
         quickCancelButton.SetActive(false);
         quickStartButton.SetActive(true);
         PhotonNetwork.LeaveRoom();

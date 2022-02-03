@@ -11,6 +11,8 @@ TagManager:
   - platformMovable
   - iceblock
   - resetBox
+  - Bullet
+  - music
   layers:
   - Default
   - TransparentFX
