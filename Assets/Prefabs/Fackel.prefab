@@ -50,7 +50,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 1
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -326,6 +326,7 @@ MonoBehaviour:
   activeFlame: 0
   connectedFackel: {fileID: 0}
   isConnectedFackel: 0
+  finish: {fileID: 0}
   puzzleManager: {fileID: 0}
 --- !u!65 &373336472
 BoxCollider:

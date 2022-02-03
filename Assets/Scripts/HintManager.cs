@@ -7,6 +7,9 @@ public class HintManager : MonoBehaviour
     [SerializeField]
     private GameObject[] hintObjects;
 
+    [SerializeField]
+    private float deactivateDelay;
+
     public void ActivateHintObjects()
     {
         foreach(GameObject h in hintObjects)
@@ -20,6 +23,7 @@ public class HintManager : MonoBehaviour
                 h.SetActive(true);
             }
         }
+        Invoke("DeactivateHintObjects", deactivateDelay);
     }
 
     public void DeactivateHintObjects()

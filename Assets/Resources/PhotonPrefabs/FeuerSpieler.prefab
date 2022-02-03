@@ -5832,7 +5832,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flickerLight: {fileID: 4108569645955865854}
   flickerMin: 0.2
-  flickerMax: 2
+  flickerMax: 5
 --- !u!1 &4108569647358891658
 GameObject:
   m_ObjectHideFlags: 0
@@ -6205,6 +6205,7 @@ MonoBehaviour:
   soundPanel: {fileID: 788393326797620712}
   finishedPanelTimeLabel: {fileID: 429687344808909652}
   kommunikationsButton: {fileID: 5845573326607545774}
+  playSound: 1
 --- !u!1 &6073566582906285169
 GameObject:
   m_ObjectHideFlags: 0
