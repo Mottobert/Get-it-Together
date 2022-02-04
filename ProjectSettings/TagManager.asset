@@ -13,6 +13,7 @@ TagManager:
   - resetBox
   - Bullet
   - music
+  - finish
   layers:
   - Default
   - TransparentFX

@@ -5,7 +5,7 @@ using UnityEngine;
 public class OneWayObstacle : MonoBehaviour
 {
     [SerializeField]
-    private bool rightSided;
+    private bool rightSideOpen;
 
     private BoxCollider obstacleCollider;
 
@@ -34,19 +34,19 @@ public class OneWayObstacle : MonoBehaviour
 
     public void CheckRelease(bool right, string tag)
     {
-        if (rightSided && right)
+        if (rightSideOpen && right)
         {
             DisableCollider(tag);
         }
-        else if(rightSided && !right)
+        else if(rightSideOpen && !right)
         {
             EnableCollider();
         }
-        else if (!rightSided && !right)
+        else if (!rightSideOpen && !right)
         {
             DisableCollider(tag);
         }
-        else if (!rightSided && right)
+        else if (!rightSideOpen && right)
         {
             EnableCollider();
         }

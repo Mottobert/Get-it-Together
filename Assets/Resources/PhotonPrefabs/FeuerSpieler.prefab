@@ -7341,6 +7341,10 @@ PrefabInstance:
       propertyPath: emojiController
       value: 
       objectReference: {fileID: 1569259739993858594}
+    - target: {fileID: 251280872389125687, guid: 9d6ebeb5f77ea412fa661e62aeaaad9f, type: 3}
+      propertyPath: playerPV
+      value: 
+      objectReference: {fileID: 2992962766756869570}
     - target: {fileID: 527263662618004571, guid: 9d6ebeb5f77ea412fa661e62aeaaad9f, type: 3}
       propertyPath: emojiController
       value: 
@@ -7389,6 +7393,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ToogleKommunikationPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 3208254509109943333, guid: 9d6ebeb5f77ea412fa661e62aeaaad9f, type: 3}
+      propertyPath: playerPV
+      value: 
+      objectReference: {fileID: 2992962766756869570}
     - target: {fileID: 3323525636278306437, guid: 9d6ebeb5f77ea412fa661e62aeaaad9f, type: 3}
       propertyPath: emojiController
       value: 
@@ -7445,6 +7453,10 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 8880305961379952468}
+    - target: {fileID: 5069037717405420218, guid: 9d6ebeb5f77ea412fa661e62aeaaad9f, type: 3}
+      propertyPath: playerPV
+      value: 
+      objectReference: {fileID: 2992962766756869570}
     - target: {fileID: 5081448208754420054, guid: 9d6ebeb5f77ea412fa661e62aeaaad9f, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -7557,6 +7569,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: DeactivateKommunikationPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 8025970921301824799, guid: 9d6ebeb5f77ea412fa661e62aeaaad9f, type: 3}
+      propertyPath: playerPV
+      value: 
+      objectReference: {fileID: 2992962766756869570}
     - target: {fileID: 8026229018499384880, guid: 9d6ebeb5f77ea412fa661e62aeaaad9f, type: 3}
       propertyPath: emojiController
       value: 

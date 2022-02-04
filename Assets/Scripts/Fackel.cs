@@ -16,14 +16,20 @@ public class Fackel : MonoBehaviour
     [SerializeField]
     private bool isConnectedFackel;
 
-    [SerializeField]
     private GameObject finish;
 
     public GameObject puzzleManager;
 
+    [SerializeField]
+    private HintManager hintManager;
+
+    [SerializeField]
+    private float deactivateDelay;
+
     private void Awake()
     {
         //gameObject.name = GetInstanceID().ToString(); // Sollte aktiviert werden, wenn das Spiel final gebuilded wird
+        finish = GameObject.FindGameObjectWithTag("finish");
     }
 
     private void OnTriggerEnter(Collider other)
@@ -67,9 +73,19 @@ public class Fackel : MonoBehaviour
             puzzleManager.GetComponent<Puzzle>().CheckPuzzleObjects();
         }
 
+        if (hintManager)
+        {
+            hintManager.ActivateHintObjects();
+        }
+
         if (finish)
         {
             finish.GetComponent<Finish>().CheckFinishRequirements();
+        }
+
+        if (deactivateDelay != 0)
+        {
+            Invoke("DeactivateFlame", deactivateDelay);
         }
     }
 
@@ -92,6 +108,10 @@ public class Fackel : MonoBehaviour
         if (puzzleManager)
         {
             puzzleManager.GetComponent<Puzzle>().CheckPuzzleObjects();
+        }
+        if (hintManager)
+        {
+            hintManager.DeactivateHintObjects();
         }
     }
 

@@ -11,8 +11,14 @@ public class Puzzle : MonoBehaviour
     [SerializeField]
     private GameObject solvedObject; // Objekt welches aktiviert werden soll, wenn das Puzzle gel?st wurde
 
+    private GameObject finish;
+
+    public bool solved = false;
+
     private void Start()
     {
+        finish = GameObject.FindGameObjectWithTag("finish");
+
         foreach(GameObject p in puzzleObjects)
         {
             if (p.GetComponent<Fackel>())
@@ -63,6 +69,12 @@ public class Puzzle : MonoBehaviour
             solvedObject.GetComponent<OneWayObstacle>().poofParticleSystem.Play();
 
             solvedObject.GetComponent<OneWayObstacle>().gameObject.GetComponent<BoxCollider>().enabled = false;
+            solved = true;
+
+            if (finish)
+            {
+                finish.GetComponent<Finish>().CheckFinishRequirements();
+            }
         }
     }
 
@@ -75,6 +87,12 @@ public class Puzzle : MonoBehaviour
             solvedObject.GetComponent<OneWayObstacle>().emojiAnimation.GetComponent<Animator>().SetBool("activate", false);
 
             solvedObject.GetComponent<OneWayObstacle>().gameObject.GetComponent<BoxCollider>().enabled = true;
+            solved = false;
+
+            if (finish)
+            {
+                finish.GetComponent<Finish>().CheckFinishRequirements();
+            }
         }
     }
 }

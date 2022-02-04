@@ -41,11 +41,14 @@ public class Waterfall : MonoBehaviour
     [SerializeField]
     private HintManager hintManager;
 
-    [SerializeField]
     private GameObject finish;
+
+    [SerializeField]
+    private float deactivateDelay;
 
     private void Awake()
     {
+        finish = GameObject.FindGameObjectWithTag("finish");
         //gameObject.name = GetInstanceID().ToString(); // Sollte aktiviert werden, wenn das Spiel final gebuilded wird
         dripParticleSystem.Play();
         flowParticleSystem.Pause();
@@ -109,6 +112,11 @@ public class Waterfall : MonoBehaviour
         if (finish)
         {
             finish.GetComponent<Finish>().CheckFinishRequirements();
+        }
+
+        if (deactivateDelay != 0)
+        {
+            Invoke("DeactivateWaterfall", deactivateDelay);
         }
     }
 

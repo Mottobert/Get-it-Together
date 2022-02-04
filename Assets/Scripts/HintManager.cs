@@ -8,7 +8,9 @@ public class HintManager : MonoBehaviour
     private GameObject[] hintObjects;
 
     [SerializeField]
-    private float deactivateDelay;
+    private GameObject activeEmoji;
+    [SerializeField]
+    private ParticleSystem emojiParticleSystem;
 
     public void ActivateHintObjects()
     {
@@ -22,8 +24,11 @@ public class HintManager : MonoBehaviour
             {
                 h.SetActive(true);
             }
+
+            activeEmoji.SetActive(true);
+            activeEmoji.GetComponent<Animator>().SetTrigger("activateAnimation");
+            emojiParticleSystem.Play();
         }
-        Invoke("DeactivateHintObjects", deactivateDelay);
     }
 
     public void DeactivateHintObjects()
@@ -39,5 +44,8 @@ public class HintManager : MonoBehaviour
                 h.SetActive(false);
             }
         }
+
+        activeEmoji.SetActive(false);
+        activeEmoji.GetComponent<Animator>().SetTrigger("activateAnimation");
     }
 }

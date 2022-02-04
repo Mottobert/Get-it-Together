@@ -356,6 +356,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   emojiIndex: 6
   emojiController: {fileID: 6285450389216539547}
+  playSound: 1
 --- !u!1 &277758070178705655
 GameObject:
   m_ObjectHideFlags: 0
@@ -1838,6 +1839,7 @@ MonoBehaviour:
   soundPanel: {fileID: 2678912398003071134}
   finishedPanelTimeLabel: {fileID: 3038532756129953314}
   kommunikationsButton: {fileID: 9133901290213185752}
+  playSound: 1
 --- !u!1 &1519970323622736813
 GameObject:
   m_ObjectHideFlags: 0
@@ -2052,10 +2054,14 @@ MonoBehaviour:
   mixer: {fileID: 24100000, guid: 7e984f512e89b60468e829489e8883e3, type: 2}
   musikSlider: {fileID: 8063747611182229027}
   soundeffectsSlider: {fileID: 5485130193419486609}
+  uiSlider: {fileID: 0}
   musikPercentageLabel: {fileID: 1531539154141701227}
   sfxPercentageLabel: {fileID: 4223588719260404887}
+  uiPercentageLabel: {fileID: 0}
   muteCrossMusic: {fileID: 0}
   muteCrossSfx: {fileID: 0}
+  muteCrossUI: {fileID: 0}
+  playSound: 1
 --- !u!1 &1598079841572056302
 GameObject:
   m_ObjectHideFlags: 0
@@ -2451,6 +2457,7 @@ MonoBehaviour:
   sceneIndex: 5
   disconnectOnSceneChange: 0
   nextLevel: 0
+  playSound: 1
 --- !u!114 &2044266799927945355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2471,6 +2478,7 @@ MonoBehaviour:
   fireIcon: {fileID: 4894535614680915458}
   nextLevel: 0
   votes: 0
+  playSound: 1
 --- !u!1 &1814608616418680993
 GameObject:
   m_ObjectHideFlags: 0
@@ -2618,6 +2626,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   emojiIndex: 3
   emojiController: {fileID: 6285450389216539547}
+  playSound: 1
 --- !u!1 &1984032541501377298
 GameObject:
   m_ObjectHideFlags: 0
@@ -2921,6 +2930,7 @@ MonoBehaviour:
   sceneIndex: 6
   disconnectOnSceneChange: 0
   nextLevel: 0
+  playSound: 1
 --- !u!114 &5475973985783076849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2941,6 +2951,7 @@ MonoBehaviour:
   fireIcon: {fileID: 1984032541501377298}
   nextLevel: 0
   votes: 0
+  playSound: 1
 --- !u!1 &2420075494887827799
 GameObject:
   m_ObjectHideFlags: 0
@@ -3228,6 +3239,7 @@ MonoBehaviour:
   sceneIndex: 4
   disconnectOnSceneChange: 0
   nextLevel: 0
+  playSound: 1
 --- !u!114 &7751126703901175790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3248,6 +3260,7 @@ MonoBehaviour:
   fireIcon: {fileID: 4672436383017966528}
   nextLevel: 0
   votes: 0
+  playSound: 1
 --- !u!1 &2615645704835494996
 GameObject:
   m_ObjectHideFlags: 0
@@ -4127,6 +4140,7 @@ MonoBehaviour:
   sceneIndex: 0
   disconnectOnSceneChange: 0
   nextLevel: 0
+  playSound: 1
 --- !u!1 &2873119187114309458
 GameObject:
   m_ObjectHideFlags: 0
@@ -4526,6 +4540,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   emojiIndex: 0
   emojiController: {fileID: 6285450389216539547}
+  playSound: 1
 --- !u!1 &3530935941366710175
 GameObject:
   m_ObjectHideFlags: 0
@@ -4717,6 +4732,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   emojiIndex: 7
   emojiController: {fileID: 6285450389216539547}
+  playSound: 1
 --- !u!1 &4018127760747312928
 GameObject:
   m_ObjectHideFlags: 0
@@ -5249,6 +5265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   emojiIndex: 8
   emojiController: {fileID: 6285450389216539547}
+  playSound: 1
 --- !u!1 &4311928688242236402
 GameObject:
   m_ObjectHideFlags: 0
@@ -5664,6 +5681,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   emojiIndex: 9
   emojiController: {fileID: 6285450389216539547}
+  playSound: 1
 --- !u!1 &4672436383017966528
 GameObject:
   m_ObjectHideFlags: 0
@@ -6399,6 +6417,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   emojiIndex: 10
   emojiController: {fileID: 6285450389216539547}
+  playSound: 1
 --- !u!1 &5043927236060338262
 GameObject:
   m_ObjectHideFlags: 0
@@ -7348,6 +7367,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   emojiIndex: 5
   emojiController: {fileID: 6285450389216539547}
+  playSound: 1
 --- !u!1 &6196828337474376896
 GameObject:
   m_ObjectHideFlags: 0
@@ -7889,6 +7909,7 @@ MonoBehaviour:
   sceneIndex: 3
   disconnectOnSceneChange: 0
   nextLevel: 0
+  playSound: 1
 --- !u!114 &6709975316339017450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7909,6 +7930,7 @@ MonoBehaviour:
   fireIcon: {fileID: 6824933502868230159}
   nextLevel: 0
   votes: 0
+  playSound: 1
 --- !u!1 &6749178354869712519
 GameObject:
   m_ObjectHideFlags: 0
@@ -9010,6 +9032,7 @@ MonoBehaviour:
   sceneIndex: 0
   disconnectOnSceneChange: 1
   nextLevel: 0
+  playSound: 1
 --- !u!1 &7543304103653396334
 GameObject:
   m_ObjectHideFlags: 0
@@ -9229,6 +9252,7 @@ MonoBehaviour:
   sceneIndex: 6
   disconnectOnSceneChange: 0
   nextLevel: 1
+  playSound: 1
 --- !u!114 &8759810799565066335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9249,6 +9273,7 @@ MonoBehaviour:
   fireIcon: {fileID: 4844089548691750111}
   nextLevel: 1
   votes: 0
+  playSound: 1
 --- !u!1 &7781763650503119460
 GameObject:
   m_ObjectHideFlags: 0
@@ -9935,6 +9960,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   emojiIndex: 2
   emojiController: {fileID: 6285450389216539547}
+  playSound: 1
 --- !u!1 &8044672961320346442
 GameObject:
   m_ObjectHideFlags: 0
@@ -10477,6 +10503,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   emojiIndex: 1
   emojiController: {fileID: 6285450389216539547}
+  playSound: 1
 --- !u!1 &8341100316042446825
 GameObject:
   m_ObjectHideFlags: 0
@@ -10966,6 +10993,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   emojiIndex: 11
   emojiController: {fileID: 6285450389216539547}
+  playSound: 1
 --- !u!1 &8524562846780484528
 GameObject:
   m_ObjectHideFlags: 0
@@ -11646,6 +11674,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   emojiIndex: 4
   emojiController: {fileID: 6285450389216539547}
+  playSound: 1
 --- !u!1 &8981080330040816677
 GameObject:
   m_ObjectHideFlags: 0
@@ -11933,6 +11962,7 @@ MonoBehaviour:
   sceneIndex: 3
   disconnectOnSceneChange: 0
   nextLevel: 0
+  playSound: 1
 --- !u!114 &7583571763880675584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11953,6 +11983,7 @@ MonoBehaviour:
   fireIcon: {fileID: 3156742630438266701}
   nextLevel: 0
   votes: 0
+  playSound: 1
 --- !u!1 &9086485956272569703
 GameObject:
   m_ObjectHideFlags: 0
@@ -17494,6 +17525,10 @@ PrefabInstance:
       propertyPath: emojiController
       value: 
       objectReference: {fileID: 6285450389216539547}
+    - target: {fileID: 251280872389125687, guid: 9d6ebeb5f77ea412fa661e62aeaaad9f, type: 3}
+      propertyPath: playerPV
+      value: 
+      objectReference: {fileID: 6890826907260334978}
     - target: {fileID: 527263662618004571, guid: 9d6ebeb5f77ea412fa661e62aeaaad9f, type: 3}
       propertyPath: emojiController
       value: 
@@ -17570,6 +17605,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ToogleKommunikationPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 3208254509109943333, guid: 9d6ebeb5f77ea412fa661e62aeaaad9f, type: 3}
+      propertyPath: playerPV
+      value: 
+      objectReference: {fileID: 6890826907260334978}
     - target: {fileID: 3323525636278306437, guid: 9d6ebeb5f77ea412fa661e62aeaaad9f, type: 3}
       propertyPath: emojiController
       value: 
@@ -17638,6 +17677,10 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ButtonPressed
       objectReference: {fileID: 0}
+    - target: {fileID: 5069037717405420218, guid: 9d6ebeb5f77ea412fa661e62aeaaad9f, type: 3}
+      propertyPath: playerPV
+      value: 
+      objectReference: {fileID: 6890826907260334978}
     - target: {fileID: 5081448208754420054, guid: 9d6ebeb5f77ea412fa661e62aeaaad9f, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -17754,6 +17797,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8025970921301824799, guid: 9d6ebeb5f77ea412fa661e62aeaaad9f, type: 3}
+      propertyPath: playerPV
+      value: 
+      objectReference: {fileID: 6890826907260334978}
     - target: {fileID: 8026229018499384880, guid: 9d6ebeb5f77ea412fa661e62aeaaad9f, type: 3}
       propertyPath: emojiController
       value: 
