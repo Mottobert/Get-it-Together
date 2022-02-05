@@ -52,7 +52,8 @@ public class PressurePlate : MonoBehaviour
             PVPlayer = other.gameObject.GetComponentInParent<PhotonView>();
 
             //DeactivatePressurePlate();
-            PVPlayer.RPC("CheckCollisionCounterForMaster", RpcTarget.MasterClient, gameObject.name);
+            Debug.Log("Trigger Exit Druckplatte");
+            PVPlayer.RPC("CheckCollisionCounterForMaster", RpcTarget.AllBufferedViaServer, gameObject.name);
         }
     }
 
@@ -104,8 +105,10 @@ public class PressurePlate : MonoBehaviour
 
     public void CheckCollisionCounter()
     {
+        Debug.Log("Checking Druckplatte");
         if (collisionCounter < 3)
         {
+            Debug.Log("Deaktiviere Druckplatte für alle after Check");
             PVPlayer.RPC("DeactivatePressurePlateForAll", RpcTarget.AllBufferedViaServer, gameObject.name);
         } 
         else

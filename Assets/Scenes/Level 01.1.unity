@@ -2578,6 +2578,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimeLimit
       objectReference: {fileID: 0}
+    - target: {fileID: 9218355886187466107, guid: dbded325c88d545d98af0b033cf31bd4, type: 3}
+      propertyPath: timeLimits.Array.data[0]
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 9218355886187466107, guid: dbded325c88d545d98af0b033cf31bd4, type: 3}
+      propertyPath: timeLimits.Array.data[1]
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 9218355886187466107, guid: dbded325c88d545d98af0b033cf31bd4, type: 3}
+      propertyPath: timeLimits.Array.data[2]
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 9218355886187466107, guid: dbded325c88d545d98af0b033cf31bd4, type: 3}
+      propertyPath: timeLimits.Array.data[3]
+      value: 120
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbded325c88d545d98af0b033cf31bd4, type: 3}
 --- !u!1001 &1324358342
@@ -3732,11 +3748,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4433235364332220185, guid: 664620bcea88340f28ea816da903fb9e, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -7.95
+      value: -7.64
       objectReference: {fileID: 0}
     - target: {fileID: 4433235364332220185, guid: 664620bcea88340f28ea816da903fb9e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 3.8
+      value: 4.54
       objectReference: {fileID: 0}
     - target: {fileID: 4433235364614959584, guid: 664620bcea88340f28ea816da903fb9e, type: 3}
       propertyPath: m_text

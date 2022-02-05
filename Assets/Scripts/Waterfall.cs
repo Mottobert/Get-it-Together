@@ -69,13 +69,13 @@ public class Waterfall : MonoBehaviour
             //ActivateWaterfall();
             PVPlayer.RPC("ActivateWaterfallForAll", RpcTarget.AllBufferedViaServer, gameObject.name);
         }
-        else if (other.tag == "water" && activeWaterfall && !activeIceblock && spawnIceblock && PVPlayer.IsMine)
-        {
-            activeIceblock = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Eisblock"), iceblockSpawnPoint.position, Quaternion.identity); //Instantiate(iceblockObject, iceblockSpawnPoint.position, Quaternion.identity);
-        }
         else if(other.tag == "fire" && PVPlayer.IsMine) {
             //DeactivateWaterfall();
             PVPlayer.RPC("DeactivateWaterfallForAll", RpcTarget.AllBufferedViaServer, gameObject.name);
+        }
+        if (other.tag == "water" && !activeIceblock && spawnIceblock && PVPlayer.IsMine)
+        {
+            activeIceblock = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "Eisblock"), iceblockSpawnPoint.position, Quaternion.identity); //Instantiate(iceblockObject, iceblockSpawnPoint.position, Quaternion.identity);
         }
     }
 

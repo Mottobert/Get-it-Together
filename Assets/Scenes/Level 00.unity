@@ -1026,7 +1026,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4743769287138986881, guid: 3f3369505266d6741b9f678a410ab867, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.3528
+      value: 1.1653831
       objectReference: {fileID: 0}
     - target: {fileID: 4743769287138986881, guid: 3f3369505266d6741b9f678a410ab867, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1038,7 +1038,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4743769287138986881, guid: 3f3369505266d6741b9f678a410ab867, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.084
       objectReference: {fileID: 0}
     - target: {fileID: 4743769287138986881, guid: 3f3369505266d6741b9f678a410ab867, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4899,6 +4899,22 @@ PrefabInstance:
     - target: {fileID: 9218355886187466106, guid: dbded325c88d545d98af0b033cf31bd4, type: 3}
       propertyPath: m_Name
       value: TimeLimit
+      objectReference: {fileID: 0}
+    - target: {fileID: 9218355886187466107, guid: dbded325c88d545d98af0b033cf31bd4, type: 3}
+      propertyPath: timeLimits.Array.data[0]
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 9218355886187466107, guid: dbded325c88d545d98af0b033cf31bd4, type: 3}
+      propertyPath: timeLimits.Array.data[1]
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 9218355886187466107, guid: dbded325c88d545d98af0b033cf31bd4, type: 3}
+      propertyPath: timeLimits.Array.data[2]
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 9218355886187466107, guid: dbded325c88d545d98af0b033cf31bd4, type: 3}
+      propertyPath: timeLimits.Array.data[3]
+      value: 120
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbded325c88d545d98af0b033cf31bd4, type: 3}

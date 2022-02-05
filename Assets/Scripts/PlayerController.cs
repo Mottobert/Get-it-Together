@@ -290,7 +290,10 @@ public class PlayerController : MonoBehaviour
     {
         //Debug.Log("Deactivate Flower For All received");
         //Debug.Log(name);
-        GameObject.Find(name).GetComponent<PressurePlate>().CheckCollisionCounter();
+        if (PhotonNetwork.IsMasterClient)
+        {
+            GameObject.Find(name).GetComponent<PressurePlate>().CheckCollisionCounter();
+        }
     }
 
 
@@ -356,7 +359,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator FinishedPanel()
     {
-        yield return new WaitForSeconds(1.8f);
+        yield return new WaitForSeconds(1.3f);
         //inputController.ActivateLevelauswahlPanel();
         inputController.ActivateFinishedPanel();
         inputController.finishedPanel.GetComponent<FinishedController>().ShowFinishedCard();

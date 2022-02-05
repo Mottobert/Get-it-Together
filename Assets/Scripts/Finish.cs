@@ -108,6 +108,7 @@ public class Finish : MonoBehaviour
             if (g.GetComponent<Fackel>() && !g.GetComponent<Fackel>().activeFlame || g.GetComponent<Waterfall>() && !g.GetComponent<Waterfall>().activeWaterfall || g.GetComponent<Puzzle>() && !g.GetComponent<Puzzle>().solved)
             {
                 finishInfoText.SetBool("ShowInfoText", true);
+                finishEmoji.SetActive(false);
 
                 return false;
             }
