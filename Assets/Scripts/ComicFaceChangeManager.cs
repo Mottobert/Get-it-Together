@@ -1,118 +1,84 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class ComicFaceChangeManager : MonoBehaviour
 {
-    [SerializeField]
-    private Sprite[] leftLooking;
-    [SerializeField]
-    private Sprite[] rightLooking;
+    private GameObject otherPlayer;
+    private GameObject currentPlayer;
+    private int player;
+    private int fire = 0;
+    private int water = 1;
 
     [SerializeField]
-    private Sprite[] upLooking;
-    [SerializeField]
-    private Sprite[] downLooking;
+    private ComicFaceChangeController faceChangeController;
 
-    [SerializeField]
-    private Sprite[] happyLooking;
-    [SerializeField]
-    private Sprite[] sadLooking;
-
-    [SerializeField]
-    private Image image;
-
-    private Sprite[] activeSprites;
-
-    private int spriteIndex = 0;
-
-    private void Start()
+    // Start is called before the first frame update
+    void Start()
     {
-        StartLeftLooking();
-        Invoke("StartRightLooking", 8f);
-        Invoke("StartUpLooking", 16f);
-        Invoke("StartDownLooking", 24f);
-        Invoke("StartHappyLooking", 32f);
+        player = CheckPlayerType();
+        GetCurrentPlayer();
     }
 
-    public void StartLeftLooking()
+    // Update is called once per frame
+    void Update()
     {
-        StopAllCoroutines();
-        activeSprites = leftLooking;
-        image.gameObject.transform.localScale = new Vector3(1, 1, 1);
-        spriteIndex = 0;
-        CycleSprites();
+        CheckOtherPlayerPosition();
     }
 
-    public void StartRightLooking()
+    private void GetCurrentPlayer()
     {
-        StopAllCoroutines();
-        activeSprites = rightLooking;
-        image.gameObject.transform.localScale = new Vector3(-1, 1, 1);
-        spriteIndex = 0;
-        CycleSprites();
+        currentPlayer = this.gameObject.GetComponentInParent<PlayerController>().gameObject;
     }
 
-    public void StartUpLooking()
+    private int CheckPlayerType()
     {
-        StopAllCoroutines();
-        activeSprites = upLooking;
-        image.gameObject.transform.localScale = new Vector3(1, 1, 1);
-        spriteIndex = 0;
-        CycleSprites();
-    }
-
-    public void StartDownLooking()
-    {
-        StopAllCoroutines();
-        activeSprites = downLooking;
-        image.gameObject.transform.localScale = new Vector3(1, 1, 1);
-        spriteIndex = 0;
-        CycleSprites();
-    }
-
-    public void StartHappyLooking()
-    {
-        StopAllCoroutines();
-        activeSprites = happyLooking;
-        image.gameObject.transform.localScale = new Vector3(1, 1, 1);
-        spriteIndex = 0;
-        CycleSprites();
-    }
-
-    public void StartSadLooking()
-    {
-        StopAllCoroutines();
-        activeSprites = sadLooking;
-        image.gameObject.transform.localScale = new Vector3(1, 1, 1);
-        spriteIndex = 0;
-        CycleSprites();
-    }
-
-    public void CycleSprites()
-    {
-        image.sprite = activeSprites[spriteIndex];
-
-        if(activeSprites.Length > 1)
+        if(gameObject.tag == "fire")
         {
-            StartCoroutine("CycleSpriteIndex", activeSprites.Length);
+            return fire;
+        }
+        else if(gameObject.tag == "water")
+        {
+            return water;
+        }
+        return -1;
+    }
+
+    private void GetOtherPlayer()
+    {
+        GameObject[] players;
+
+        players = GameObject.FindGameObjectsWithTag("playerFinishCollider");
+
+        foreach(GameObject p in players)
+        {
+            if(p.layer == LayerMask.NameToLayer("PlayerFire") && player != fire)
+            {
+                otherPlayer = p;
+            }
+            else if (p.layer == LayerMask.NameToLayer("PlayerWater") && player != water)
+            {
+                otherPlayer = p;
+            }
         }
     }
 
-    IEnumerator CycleSpriteIndex(int maxIteration)
+    public void CheckOtherPlayerPosition()
     {
-        if(spriteIndex < maxIteration - 1)
+        if(otherPlayer == null)
         {
-            spriteIndex++;
+            GetOtherPlayer();
         }
-        else
-        {
-            spriteIndex = 0;
-        }
-        
-        yield return new WaitForSeconds(3f);
 
-        CycleSprites();
+        if(otherPlayer && otherPlayer.transform.position.x >= currentPlayer.transform.position.x)
+        {
+            faceChangeController.StartRightLooking();
+            Debug.Log("Other Player is right");
+        }
+        else if(otherPlayer && otherPlayer.transform.position.x < currentPlayer.transform.position.x)
+        {
+            faceChangeController.StartLeftLooking();
+            Debug.Log("Other Player is left");
+        }
     }
 }
