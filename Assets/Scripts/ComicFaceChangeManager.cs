@@ -10,6 +10,12 @@ public class ComicFaceChangeManager : MonoBehaviour
     private int fire = 0;
     private int water = 1;
 
+    private int lookingDirection;
+    private int right = 0;
+    private int left = 1;
+    private int up = 2;
+    private int down = 3;
+
     [SerializeField]
     private ComicFaceChangeController faceChangeController;
 
@@ -54,11 +60,11 @@ public class ComicFaceChangeManager : MonoBehaviour
         {
             if(p.layer == LayerMask.NameToLayer("PlayerFire") && player != fire)
             {
-                otherPlayer = p;
+                otherPlayer = p.GetComponentInParent<PlayerController>().gameObject;
             }
             else if (p.layer == LayerMask.NameToLayer("PlayerWater") && player != water)
             {
-                otherPlayer = p;
+                otherPlayer = p.GetComponentInParent<PlayerController>().gameObject;
             }
         }
     }
@@ -70,14 +76,16 @@ public class ComicFaceChangeManager : MonoBehaviour
             GetOtherPlayer();
         }
 
-        if(otherPlayer && otherPlayer.transform.position.x >= currentPlayer.transform.position.x)
+        if (otherPlayer && otherPlayer.transform.position.x >= currentPlayer.transform.position.x && lookingDirection != right)
         {
             faceChangeController.StartRightLooking();
+            lookingDirection = right;
             Debug.Log("Other Player is right");
         }
-        else if(otherPlayer && otherPlayer.transform.position.x < currentPlayer.transform.position.x)
+        else if(otherPlayer && otherPlayer.transform.position.x < currentPlayer.transform.position.x && lookingDirection != left)
         {
             faceChangeController.StartLeftLooking();
+            lookingDirection = left;
             Debug.Log("Other Player is left");
         }
     }
