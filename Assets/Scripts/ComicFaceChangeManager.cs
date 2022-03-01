@@ -19,6 +19,13 @@ public class ComicFaceChangeManager : MonoBehaviour
     [SerializeField]
     private ComicFaceChangeController faceChangeController;
 
+    [SerializeField]
+    private Transform groundCheck;
+    [SerializeField]
+    private LayerMask groundLayer;
+
+    private int lastLookingDirection;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +37,26 @@ public class ComicFaceChangeManager : MonoBehaviour
     void Update()
     {
         CheckOtherPlayerPosition();
+    }
+
+    private void FixedUpdate()
+    {
+        bool isGrounded = Physics.CheckSphere(groundCheck.position, 0.2f, groundLayer);
+
+        if (!isGrounded)
+        {
+            faceChangeController.StartDownLooking();
+        } else
+        {
+            if(lookingDirection == right)
+            {
+                faceChangeController.StartRightLooking();
+            }
+            else if(lookingDirection == left)
+            {
+                faceChangeController.StartLeftLooking();
+            }
+        }
     }
 
     private void GetCurrentPlayer()
