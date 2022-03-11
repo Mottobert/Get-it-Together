@@ -18,7 +18,7 @@ public class ComicFaceChangeController : MonoBehaviour
     [SerializeField]
     private Sprite[] happyLooking;
     [SerializeField]
-    private Sprite[] sadLooking;
+    private Sprite[] jumpLooking;
 
     [SerializeField]
     private Image image;
@@ -32,11 +32,7 @@ public class ComicFaceChangeController : MonoBehaviour
 
     private void Start()
     {
-        StartLeftLooking();
-        Invoke("StartRightLooking", 8f);
-        Invoke("StartUpLooking", 16f);
-        Invoke("StartDownLooking", 24f);
-        Invoke("StartHappyLooking", 32f);
+        StartHappyLooking();
     }
 
     public void StartLeftLooking()
@@ -52,7 +48,7 @@ public class ComicFaceChangeController : MonoBehaviour
     {
         StopAllCoroutines();
         activeSprites = rightLooking;
-        image.gameObject.transform.localScale = new Vector3(-1, 1, 1);
+        image.gameObject.transform.localScale = new Vector3(1, 1, 1);
         spriteIndex = 0;
         CycleSprites();
     }
@@ -84,10 +80,10 @@ public class ComicFaceChangeController : MonoBehaviour
         CycleSprites();
     }
 
-    public void StartSadLooking()
+    public void StartJumpLooking()
     {
         StopAllCoroutines();
-        activeSprites = sadLooking;
+        activeSprites = jumpLooking;
         image.gameObject.transform.localScale = new Vector3(1, 1, 1);
         spriteIndex = 0;
         CycleSprites();

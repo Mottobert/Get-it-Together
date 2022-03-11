@@ -59,6 +59,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private BoxCollider triggerCollider;
 
+    private bool jump = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -73,9 +75,11 @@ public class PlayerController : MonoBehaviour
 
         bool isGrounded = Physics.CheckSphere(groundCheck.position, 0.2f, groundLayer);
 
-        if(inputController.verticalInput > 0.5 && isGrounded)
+        if(inputController.verticalInput > 0.5 && isGrounded || jump)
         {
             direction.y = jumpForce;
+            jump = false;
+            //PV.RPC("JumpForAll", RpcTarget.Others, PV.ViewID);
         }
 
         hInput = inputController.horizontalInput;  // Input.GetAxis(horizontalInput);
@@ -117,6 +121,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void Jump()
+    {
+        jump = true;
+    }
 
     private void ChangeTag(string newTag)
     {
@@ -314,6 +322,13 @@ public class PlayerController : MonoBehaviour
         GameObject.Find(name).GetComponent<LevelSelectionButton>().VoteDown(masterClient);
     }
 
+    [PunRPC]
+    public void JumpForAll(int viewID)
+    {
+        //Debug.Log("Jump");
+        //Debug.Log(name);
+        PhotonView.Find(viewID).GetComponent<PlayerController>().Jump();
+    }
 
     // Emoji
     [PunRPC]

@@ -58,6 +58,7 @@ MonoBehaviour:
   - ReloadSceneForAll
   - SendUsedTimeForOther
   - CheckCollisionCounterForMaster
+  - JumpForAll
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

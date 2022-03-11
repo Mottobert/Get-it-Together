@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 8992649697722354272, guid: 603acc212e5d04cd6ac2ad795cb52ad7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ee9d1519f4e3643d59e2d6229277b0fe, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -89,28 +89,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leftLooking:
-  - {fileID: -4438920433568766309, guid: 603acc212e5d04cd6ac2ad795cb52ad7, type: 3}
-  - {fileID: 4704461263031170988, guid: 603acc212e5d04cd6ac2ad795cb52ad7, type: 3}
-  - {fileID: -8452168638124348584, guid: 603acc212e5d04cd6ac2ad795cb52ad7, type: 3}
-  - {fileID: 1473420181340692046, guid: 603acc212e5d04cd6ac2ad795cb52ad7, type: 3}
+  - {fileID: 21300000, guid: b5dd76fe0819a48999f46f8bfe51cd43, type: 3}
   rightLooking:
-  - {fileID: -4438920433568766309, guid: 603acc212e5d04cd6ac2ad795cb52ad7, type: 3}
-  - {fileID: 4704461263031170988, guid: 603acc212e5d04cd6ac2ad795cb52ad7, type: 3}
-  - {fileID: -8452168638124348584, guid: 603acc212e5d04cd6ac2ad795cb52ad7, type: 3}
-  - {fileID: 1473420181340692046, guid: 603acc212e5d04cd6ac2ad795cb52ad7, type: 3}
+  - {fileID: 21300000, guid: 4143ff56ee96740fc8b46a47d77787a2, type: 3}
   upLooking:
-  - {fileID: 5890677564473549120, guid: 603acc212e5d04cd6ac2ad795cb52ad7, type: 3}
-  - {fileID: -1232169747236262728, guid: 603acc212e5d04cd6ac2ad795cb52ad7, type: 3}
-  - {fileID: 3762482396747916418, guid: 603acc212e5d04cd6ac2ad795cb52ad7, type: 3}
-  - {fileID: 745483083529707552, guid: 603acc212e5d04cd6ac2ad795cb52ad7, type: 3}
+  - {fileID: 21300000, guid: 43ac3390702f24c5b9bdb7564ff545c5, type: 3}
   downLooking:
-  - {fileID: -951465671018776538, guid: 603acc212e5d04cd6ac2ad795cb52ad7, type: 3}
+  - {fileID: 21300000, guid: 23857e22a680c4b21a92e21e4b37a599, type: 3}
   happyLooking:
-  - {fileID: 896611336479745532, guid: 603acc212e5d04cd6ac2ad795cb52ad7, type: 3}
-  sadLooking:
-  - {fileID: -2041263186133169838, guid: 603acc212e5d04cd6ac2ad795cb52ad7, type: 3}
+  - {fileID: 21300000, guid: ee9d1519f4e3643d59e2d6229277b0fe, type: 3}
+  jumpLooking:
+  - {fileID: 21300000, guid: b1c84695e338a4a689730a53c21400e5, type: 3}
   image: {fileID: 2309818701833646778}
-  faceChangeManager: {fileID: 0}
+  faceChangeManager: {fileID: 145685331246490262}
 --- !u!1 &853998863303811051
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,7 +149,7 @@ GameObject:
   - component: {fileID: 853998863966152564}
   - component: {fileID: 853998863966152562}
   - component: {fileID: 2992962766756869570}
-  - component: {fileID: 8253690377185598455}
+  - component: {fileID: 8537060560606129754}
   m_Layer: 8
   m_Name: FeuerSpieler
   m_TagString: fire
@@ -354,11 +345,11 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
-  - {fileID: 8253690377185598455}
+  - {fileID: 8537060560606129754}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &8253690377185598455
+--- !u!114 &8537060560606129754
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6027,7 +6018,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.347, y: -0.22}
-  m_SizeDelta: {x: 1, y: 1}
+  m_SizeDelta: {x: 1.2, y: 1.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1071214133394043588
 Canvas:
@@ -7409,6 +7400,9 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  ladderLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &9050610377335380142
 GameObject:
   m_ObjectHideFlags: 0

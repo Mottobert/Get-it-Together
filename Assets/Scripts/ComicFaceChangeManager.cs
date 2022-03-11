@@ -15,6 +15,8 @@ public class ComicFaceChangeManager : MonoBehaviour
     private int left = 1;
     private int up = 2;
     private int down = 3;
+    private int happy = 4;
+    private int jump = 5;
 
     [SerializeField]
     private ComicFaceChangeController faceChangeController;
@@ -23,8 +25,15 @@ public class ComicFaceChangeManager : MonoBehaviour
     private Transform groundCheck;
     [SerializeField]
     private LayerMask groundLayer;
+    [SerializeField]
+    private LayerMask ladderLayer;
 
-    private int lastLookingDirection;
+    private bool otherPlayerTimerStarted = false;
+    private bool checkOtherPlayer = false;
+
+    private Vector3 previousPosition;
+    private float verticalDifference;
+    private float horizontalDifference;
 
     // Start is called before the first frame update
     void Start()
@@ -33,28 +42,72 @@ public class ComicFaceChangeManager : MonoBehaviour
         GetCurrentPlayer();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        CheckOtherPlayerPosition();
-    }
-
     private void FixedUpdate()
     {
-        bool isGrounded = Physics.CheckSphere(groundCheck.position, 0.2f, groundLayer);
+        if (previousPosition != null)
+        {
+            verticalDifference = this.transform.position.x - previousPosition.x;
+            horizontalDifference = this.transform.position.y - previousPosition.y;
 
-        if (!isGrounded)
+            previousPosition = this.transform.position;
+        }
+
+        bool isGrounded = Physics.CheckSphere(groundCheck.position, 0.2f, groundLayer);
+        bool hitInfoLadder = Physics.Raycast(transform.position, Vector3.up, 2f, ladderLayer);
+
+        if (!isGrounded && !hitInfoLadder)
+        {
+            faceChangeController.StartJumpLooking();
+            lookingDirection = jump;
+            StopCoroutine(LookAfterOtherPlayerTimer());
+            otherPlayerTimerStarted = false;
+            checkOtherPlayer = false;
+        }
+        else if (hitInfoLadder && horizontalDifference > 0)
+        {
+            faceChangeController.StartUpLooking();
+            lookingDirection = up;
+            StopCoroutine(LookAfterOtherPlayerTimer());
+            otherPlayerTimerStarted = false;
+            checkOtherPlayer = false;
+        }
+        else if (hitInfoLadder && horizontalDifference < 0)
         {
             faceChangeController.StartDownLooking();
-        } else
+            lookingDirection = down;
+            StopCoroutine(LookAfterOtherPlayerTimer());
+            otherPlayerTimerStarted = false;
+            checkOtherPlayer = false;
+        }
+        else
         {
-            if(lookingDirection == right)
+            if(verticalDifference > 0)
             {
                 faceChangeController.StartRightLooking();
+                lookingDirection = right;
+                StopCoroutine(LookAfterOtherPlayerTimer());
+                otherPlayerTimerStarted = false;
+                checkOtherPlayer = false;
             }
-            else if(lookingDirection == left)
+            else if(verticalDifference < 0)
             {
                 faceChangeController.StartLeftLooking();
+                lookingDirection = left;
+                StopCoroutine(LookAfterOtherPlayerTimer());
+                otherPlayerTimerStarted = false;
+                checkOtherPlayer = false;
+            }
+            else if(!otherPlayerTimerStarted)
+            {
+                faceChangeController.StartHappyLooking();
+                lookingDirection = happy;
+                StartCoroutine(LookAfterOtherPlayerTimer());
+                otherPlayerTimerStarted = true;
+            }
+
+            if (checkOtherPlayer)
+            {
+                CheckOtherPlayerPosition();
             }
         }
     }
@@ -101,19 +154,25 @@ public class ComicFaceChangeManager : MonoBehaviour
         if(otherPlayer == null)
         {
             GetOtherPlayer();
+            faceChangeController.StartHappyLooking();
+            lookingDirection = happy;
         }
 
         if (otherPlayer && otherPlayer.transform.position.x >= currentPlayer.transform.position.x && lookingDirection != right)
         {
             faceChangeController.StartRightLooking();
             lookingDirection = right;
-            Debug.Log("Other Player is right");
         }
         else if(otherPlayer && otherPlayer.transform.position.x < currentPlayer.transform.position.x && lookingDirection != left)
         {
             faceChangeController.StartLeftLooking();
             lookingDirection = left;
-            Debug.Log("Other Player is left");
         }
+    }
+
+    IEnumerator LookAfterOtherPlayerTimer()
+    {
+        yield return new WaitForSeconds(2f);
+        checkOtherPlayer = true;
     }
 }
