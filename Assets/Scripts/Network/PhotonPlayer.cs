@@ -24,16 +24,56 @@ public class PhotonPlayer : MonoBehaviour
 
         PV = GetComponent<PhotonView>();
 
+        if (PV.IsMine)
+        {
+            Invoke("SpawnPlayer", 0.1f);
+        }
 
-        if (PV.IsMine && PhotonNetwork.IsMasterClient)
-        {
-            Invoke("SpawnPlayerFire", 0.1f);
-        }
-        else if(PV.IsMine && !PhotonNetwork.IsMasterClient)
-        {
-            Invoke("SpawnPlayerWater", 0.1f);
-        }
+        //if (PV.IsMine && PhotonNetwork.IsMasterClient)
+        //{
+        //    Invoke("SpawnPlayerFire", 0f);
+        //}
+        //else if(PV.IsMine && !PhotonNetwork.IsMasterClient)
+        //{
+        //    Invoke("SpawnPlayerWater", 0f);
+        //}
     }
+
+    private void SpawnPlayer()
+    {
+        //PlayerPrefs.SetString("playerCharacter", "");
+        PlayerController[] playerControllers = PhotonView.FindObjectsOfType<PlayerController>();
+
+        if(playerControllers != null)
+        {
+            foreach (PlayerController p in playerControllers)
+            {
+                if (p.gameObject.tag == "fire")
+                {
+                    PlayerPrefs.SetString("playerCharacter", "water");
+                }
+                else if (p.gameObject.tag == "water")
+                {
+                    PlayerPrefs.SetString("playerCharacter", "fire");
+                }
+            }
+        }
+
+        if (PV.IsMine && PlayerPrefs.GetString("playerCharacter") == "fire")
+        {
+            Invoke("SpawnPlayerFire", 0f);
+        }
+        else if (PV.IsMine && PlayerPrefs.GetString("playerCharacter") == "water")
+        {
+            Invoke("SpawnPlayerWater", 0f);
+        }
+
+        if (PV.IsMine && PlayerPrefs.GetString("playerCharacter") == "")
+        {
+            Invoke("SpawnPlayerFire", 0f);
+        }
+}
+        
 
     private void SpawnPlayerFire()
     {

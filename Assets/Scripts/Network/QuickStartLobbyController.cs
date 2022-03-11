@@ -4,6 +4,7 @@ using Photon.Realtime;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class QuickStartLobbyController : MonoBehaviourPunCallbacks
 {
@@ -15,6 +16,9 @@ public class QuickStartLobbyController : MonoBehaviourPunCallbacks
     private int roomSize;
 
     [SerializeField]
+    private Slider playerCharacterSlider;
+
+    [SerializeField]
     private bool playSound = true;
 
     private GameObject uiAudioManager;
@@ -24,6 +28,15 @@ public class QuickStartLobbyController : MonoBehaviourPunCallbacks
     private void Start()
     {
         uiAudioManager = GameObject.FindGameObjectWithTag("music");
+
+        if(PlayerPrefs.GetString("playerCharacter") == "fire")
+        {
+            playerCharacterSlider.value = 0;
+        }
+        else
+        {
+            playerCharacterSlider.value = 1;
+        }
     }
 
     public override void OnConnectedToMaster()
@@ -36,6 +49,17 @@ public class QuickStartLobbyController : MonoBehaviourPunCallbacks
 
     public void QuickStart()
     {
+        if(playerCharacterSlider.value == 0)
+        {
+            PlayerPrefs.SetString("playerCharacter", "fire");
+            Debug.Log("Fire");
+        }
+        else
+        {
+            PlayerPrefs.SetString("playerCharacter", "water");
+            Debug.Log("Water");
+        }
+
         if (playSound)
         {
             uiAudioManager.GetComponent<MMFeedbacks>().PlayFeedbacks();

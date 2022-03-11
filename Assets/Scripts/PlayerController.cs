@@ -75,11 +75,15 @@ public class PlayerController : MonoBehaviour
 
         bool isGrounded = Physics.CheckSphere(groundCheck.position, 0.2f, groundLayer);
 
-        if(inputController.verticalInput > 0.5 && isGrounded || jump)
+        if(inputController.verticalInput > 0.5 && isGrounded)
+        {
+            PV.RPC("JumpForAll", RpcTarget.All, PV.ViewID);
+        }
+
+        if (jump)
         {
             direction.y = jumpForce;
             jump = false;
-            //PV.RPC("JumpForAll", RpcTarget.Others, PV.ViewID);
         }
 
         hInput = inputController.horizontalInput;  // Input.GetAxis(horizontalInput);
