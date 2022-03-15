@@ -77,7 +77,8 @@ public class PlayerController : MonoBehaviour
 
         if(inputController.verticalInput > 0.5 && isGrounded)
         {
-            PV.RPC("JumpForAll", RpcTarget.All, PV.ViewID);
+            PV.RPC("JumpForAll", RpcTarget.Others, PV.ViewID);
+            jump = true;
         }
 
         if (jump)

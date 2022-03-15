@@ -24,6 +24,9 @@ public class LevelSelectionButton : MonoBehaviour
     [SerializeField]
     public bool nextLevel;
 
+    [SerializeField]
+    private InputController inputController;
+
     public int votes = 0;
 
     [SerializeField]
@@ -66,6 +69,11 @@ public class LevelSelectionButton : MonoBehaviour
         }
 
         levelSelectionPoll.CheckAllButtons();
+
+        if (playerPV.IsMine && !inputController.levelauswahlPanel.GetComponent<CanvasGroup>().interactable)
+        {
+            inputController.ShowNotificationIndicators();
+        }
     }
 
     public void VoteDownRPC()

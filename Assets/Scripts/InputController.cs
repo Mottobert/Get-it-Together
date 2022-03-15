@@ -20,7 +20,7 @@ public class InputController : MonoBehaviour
     [SerializeField]
     private GameObject mobileInputPanel;
     [SerializeField]
-    private GameObject levelauswahlPanel;
+    public GameObject levelauswahlPanel;
     [SerializeField]
     private GameObject kommunikationPanel;
     [SerializeField]
@@ -29,6 +29,9 @@ public class InputController : MonoBehaviour
     public GameObject finishedPanel;
     [SerializeField]
     private GameObject soundPanel;
+
+    [SerializeField]
+    private GameObject[] notificationIndicators;
 
     [SerializeField]
     private TextMeshProUGUI finishedPanelTimeLabel;
@@ -152,6 +155,8 @@ public class InputController : MonoBehaviour
         levelauswahlPanel.GetComponent<CanvasGroup>().blocksRaycasts = true;
         DeactivateKommunikationPanel();
         DeactivateMenuePanel();
+
+        HideNotificationIndicators();
         //mobileInputPanel.SetActive(false);
     }
 
@@ -328,5 +333,21 @@ public class InputController : MonoBehaviour
         soundPanel.GetComponent<CanvasGroup>().interactable = false;
         soundPanel.GetComponent<CanvasGroup>().blocksRaycasts = false;
         //ActivateMenuePanel();
+    }
+
+    public void ShowNotificationIndicators()
+    {
+        foreach(GameObject n in notificationIndicators)
+        {
+            n.GetComponent<Animator>().SetBool("active", true);
+        }
+    }
+
+    private void HideNotificationIndicators()
+    {
+        foreach (GameObject n in notificationIndicators)
+        {
+            n.GetComponent<Animator>().SetBool("active", false);
+        }
     }
 }
