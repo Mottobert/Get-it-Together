@@ -24807,7 +24807,6 @@ MonoBehaviour:
   activeWaterfall: 0
   puzzleManager: {fileID: 0}
   hintManager: {fileID: 0}
-  finish: {fileID: 0}
   deactivateDelay: 0
 --- !u!65 &4743769287138986883
 BoxCollider:
@@ -24978,7 +24977,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bba6411c99f6fb144afc57435441b736, type: 2}
+  - {fileID: 2100000, guid: b4553830ef84d4680b7404528c87c45b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

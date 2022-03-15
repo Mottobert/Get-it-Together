@@ -1092,6 +1092,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -3.38
       objectReference: {fileID: 0}
+    - target: {fileID: 4972752384113355777, guid: 3f3369505266d6741b9f678a410ab867, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.603
+      objectReference: {fileID: 0}
     - target: {fileID: 6097115064604134483, guid: 3f3369505266d6741b9f678a410ab867, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -2262,7 +2266,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1225602651774646178, guid: 4150b1251a171443a99d9bf0aabd406c, type: 3}
       propertyPath: ShapeModule.m_Scale.y
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1225602651774646178, guid: 4150b1251a171443a99d9bf0aabd406c, type: 3}
       propertyPath: ShapeModule.m_Scale.z
@@ -2286,7 +2290,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2016892108332378753, guid: 4150b1251a171443a99d9bf0aabd406c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.11
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2016892108332378753, guid: 4150b1251a171443a99d9bf0aabd406c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2826,7 +2830,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6996224681952772525, guid: f5083af230f954fa688acd46c966c0f5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.84
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6996224681952772525, guid: f5083af230f954fa688acd46c966c0f5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2866,7 +2870,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7775696712221383822, guid: f5083af230f954fa688acd46c966c0f5, type: 3}
       propertyPath: ShapeModule.m_Scale.y
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7775696712221383822, guid: f5083af230f954fa688acd46c966c0f5, type: 3}
       propertyPath: ShapeModule.m_Scale.z
