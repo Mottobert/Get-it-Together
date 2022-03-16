@@ -46,3 +46,6 @@ MonoBehaviour:
   puzzleObjects: []
   puzzleObjectsStatus: 
   solvedObject: {fileID: 0}
+  feedback: {fileID: 0}
+  cameraShake: 0
+  solved: 0

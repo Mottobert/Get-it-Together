@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using MoreMountains.Feedbacks;
 using Photon.Pun;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -61,6 +62,9 @@ public class PlayerController : MonoBehaviour
 
     private bool jump = false;
 
+    [SerializeField]
+    private MMFeedbacks jumpFeedback;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -79,6 +83,7 @@ public class PlayerController : MonoBehaviour
         {
             PV.RPC("JumpForAll", RpcTarget.Others, PV.ViewID);
             jump = true;
+            jumpFeedback.PlayFeedbacks();
         }
 
         if (jump)
