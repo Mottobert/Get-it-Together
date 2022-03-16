@@ -5,10 +5,51 @@ using UnityEngine;
 
 public class Iceblock : MonoBehaviour
 {
+    [SerializeField]
+    private ParticleSystem particleSystem;
+
+    private Vector3 previousPosition;
+
+    private Transform iceblockTransform;
+
+    private void Start()
+    {
+        iceblockTransform = this.gameObject.transform;
+
+        previousPosition = iceblockTransform.position;
+    }
+
     private void Update()
     {
-        this.gameObject.transform.rotation = Quaternion.identity;
-        this.gameObject.transform.position = new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 0);
+        iceblockTransform.rotation = Quaternion.identity;
+        iceblockTransform.position = new Vector3(iceblockTransform.position.x, iceblockTransform.position.y, 0);
+
+        //if(previousPosition != iceblockTransform.position)
+        //{
+        //    Debug.Log("Play Particles");
+        //    particleSystem.Play();
+        //    StopCoroutine(StopParticleSystem());
+        //}
+        //else
+        //{
+        //    if (!particleSystem.isStopped)
+        //    {
+        //        Debug.Log("Stop Particle");
+        //        StartCoroutine(StopParticleSystem());
+        //    }
+        //}
+        //
+        //if(Time.frameCount % 20 == 0)
+        //{
+        //    previousPosition = iceblockTransform.position;
+        //}
+    }
+
+    IEnumerator StopParticleSystem()
+    {
+        yield return new WaitForSeconds(0.3f);
+        particleSystem.Stop();
+        StopAllCoroutines();
     }
 
     private void OnTriggerEnter(Collider other)
