@@ -2049,6 +2049,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4433235363673728330, guid: 664620bcea88340f28ea816da903fb9e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 22.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 4433235363673728330, guid: 664620bcea88340f28ea816da903fb9e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.45
+      objectReference: {fileID: 0}
     - target: {fileID: 4433235363927992450, guid: 664620bcea88340f28ea816da903fb9e, type: 3}
       propertyPath: m_Name
       value: "Erkl\xE4rung 03 Feuer"
@@ -3335,6 +3343,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4433235363673728330, guid: 664620bcea88340f28ea816da903fb9e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 16.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 4433235363673728330, guid: 664620bcea88340f28ea816da903fb9e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.52
+      objectReference: {fileID: 0}
     - target: {fileID: 4433235363927992450, guid: 664620bcea88340f28ea816da903fb9e, type: 3}
       propertyPath: m_Name
       value: "Erkl\xE4rung 04 Feuer"
