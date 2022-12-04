@@ -5796,30 +5796,30 @@ MonoBehaviour:
   m_Root: {fileID: 7839835672235092188}
   m_Roots:
   - {fileID: 3438043143643528164}
-  m_UpdateRate: 60
+  m_UpdateRate: 30
   m_UpdateMode: 3
-  m_Damping: 0.1
+  m_Damping: 0.213
   m_DampingDistrib:
     serializedVersion: 2
     m_Curve: []
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  m_Elasticity: 0.1
+  m_Elasticity: 0.213
   m_ElasticityDistrib:
     serializedVersion: 2
     m_Curve: []
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  m_Stiffness: 0.1
+  m_Stiffness: 0.535
   m_StiffnessDistrib:
     serializedVersion: 2
     m_Curve: []
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  m_Inert: 0
+  m_Inert: 0.482
   m_InertDistrib:
     serializedVersion: 2
     m_Curve: []
